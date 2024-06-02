@@ -1,0 +1,255 @@
+<!DOCTYPE html><html><head>
+      <title>source build</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.13\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      <script type="text/javascript" src="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.13\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1>嵌入式科普(21)c代码究竟是如何一步步运行的之编译</h1>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#一-概述" class="md-toc-link">
+            <p>一、概述</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#二-最简单的两个例子" class="md-toc-link"><p>二、最简单的两个例子</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#21-linux输出hello-world" class="md-toc-link">
+            <p>2.1 linux输出Hello World</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#22-stm32arm输出hello-world" class="md-toc-link">
+            <p>2.2 stm32(arm)输出Hello World</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#23-嵌入式控制器和处理器分类tinxpstrenesas" class="md-toc-link">
+            <p>2.3 嵌入式控制器和处理器分类(TI/NXP/ST/Renesas)</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#三-编译的过程" class="md-toc-link"><p>三、编译的过程</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#31-linux-gcc-helloc--o-hello" class="md-toc-link">
+            <p>3.1 linux gcc hello.c -o hello</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#32-stm32cubeide-gcc" class="md-toc-link">
+            <p>3.2 stm32cubeide gcc</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#四-总结" class="md-toc-link">
+            <p>四、总结</p>
+
+          </a></div>
+</div>
+<h1 id="一-概述">一、概述 </h1>
+<ul>
+<li>从我们敲下代码到运行程序经历了哪些步骤：<strong>编译-&gt;链接-&gt;执行</strong></li>
+<li>我们从最简单步骤扩展到每个细节，分别介绍其中的最关键的步骤</li>
+<li>这里面包含的知识点太多，范围也不同。我们通过类比，介绍其中的关键点，以便我们日后再深入各个细节，从而解决实际问题</li>
+</ul>
+<h1 id="二-最简单的两个例子">二、最简单的两个例子 </h1>
+<h2 id="21-linux输出hello-world">2.1 linux输出Hello World </h2>
+<div class="mermaid">graph TB  
+A[hello.c] --编译链接--&gt; B[gcc hello.c -o hello]  
+B --可执行--&gt; C[./hello]  
+C --输出结果--&gt; D[Hello World!]  
+</div><p>上面例子展示了在linux中从敲下代码到运行程序的过程，但是他究竟是如何一步步的实现的呢？</p>
+<h2 id="22-stm32arm输出hello-world">2.2 stm32(arm)输出Hello World </h2>
+<div class="mermaid">graph TB  
+A[hello.c] --编译链接--&gt; B[keil/iar/eclipse等IDE]  
+B --可执行--&gt; C[.elf]  
+C --转换--&gt; D[.bin/.hex] 
+D --烧录输出--&gt; E[Hello World!]   
+</div><p>上面例子展示了在stm32(arm)中从敲下代码到运行程序的过程，但是他究竟是如何一步步的实现的呢？</p>
+<h2 id="23-嵌入式控制器和处理器分类tinxpstrenesas">2.3 嵌入式控制器和处理器分类(TI/NXP/ST/Renesas) </h2>
+<div class="mermaid">graph LR 
+A[嵌入式控制器&lt;br&gt;嵌入式处理器] --分类--&gt; B[mcu控制器] 
+A --&gt; C[mpu处理器]
+B --内核--&gt; D[51/TI/Renesas等]   
+B --&gt; E[ARM-M]  
+B -.-&gt; G[ARM-R]
+C -.-&gt; G[ARM-R]
+C --&gt; H[ARM-A] 
+B --&gt; F[RISC-V] 
+C --&gt; F[RISC-V] 
+D --例子--&gt; I[8051/430/C2000/RL78等]   
+E --&gt;J1[stm32F103]
+E --&gt;J2[stm32H7/i.MXRT]
+G --&gt;K[RZN2T2/AM243x]
+H --&gt;L[A7/A9/A55...]
+F --&gt;M1[GD32VF103]
+F --&gt;M2[全志C906]
+I --归类--&gt;N[例子2.2&lt;br&gt;内置ram/rom]
+J1 --&gt;N
+J2 --&gt;N
+K --&gt;O[例2.3？&lt;br&gt;内置ram/外挂flash]
+L --&gt;P[例子2.1&lt;br&gt;外挂ram/rom]
+M2 --&gt;P
+N --编译工具--&gt;Q[Keil/IAR/eclipse等IDE]
+O --&gt;Q
+P --&gt;R[交叉编译Makefile]
+</div><h1 id="三-编译的过程">三、编译的过程 </h1>
+<h2 id="31-linux-gcc-helloc--o-hello">3.1 linux gcc hello.c -o hello </h2>
+<ol>
+<li>
+<p><strong>预处理</strong>（生成预处理后的文件）：<br>
+虽然 GCC 没有直接输出预处理后文件的选项，但你可以通过重定向输出到一个文件来查看预处理后的内容。</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>gcc <span class="token parameter variable">-E</span> hello.c <span class="token parameter variable">-o</span> hello.i
+</code></pre><p><code>-E</code> 选项告诉 GCC 只进行预处理并停止。</p>
+</li>
+<li>
+<p><strong>编译</strong>（生成汇编代码）：<br>
+使用 <code>-S</code> 选项告诉 GCC 生成汇编代码并停止。</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>gcc <span class="token parameter variable">-S</span> hello.c <span class="token parameter variable">-o</span> hello.s
+</code></pre><p>或者如果你已经有了预处理后的文件 <code>hello.i</code>，你也可以这样编译它：</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>gcc <span class="token parameter variable">-S</span> hello.i <span class="token parameter variable">-o</span> hello.s
+</code></pre></li>
+<li>
+<p><strong>汇编</strong>（生成目标文件）：<br>
+使用 <code>-c</code> 选项告诉 GCC 只进行编译和汇编并生成目标文件。</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>gcc <span class="token parameter variable">-c</span> hello.c <span class="token parameter variable">-o</span> hello.o
+</code></pre><p>或者如果你已经有了汇编代码文件 <code>hello.s</code>，你也可以这样汇编它：</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>gcc <span class="token parameter variable">-x</span> assembler <span class="token parameter variable">-c</span> hello.s <span class="token parameter variable">-o</span> hello.o
+</code></pre><p><code>-x assembler</code> 选项告诉 GCC 接下来的文件是汇编代码。</p>
+</li>
+<li>
+<p><strong>链接</strong>（生成可执行文件）：<br>
+默认情况下，如果你不提供 <code>-c</code>、<code>-S</code> 或 <code>-E</code> 选项，GCC 会执行所有的步骤并生成可执行文件。但如果你已经有了目标文件并想单独链接它，你可以这样做：</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>gcc hello.o <span class="token parameter variable">-o</span> hello
+</code></pre><p>或者如果你有多个目标文件需要链接：</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>gcc hello1.o hello2.o <span class="token parameter variable">-o</span> hello
+</code></pre></li>
+</ol>
+<p>在实际使用中，我们通常只调用 <code>gcc hello.c -o hello</code> 来完成从源代码到可执行文件的整个过程，而不需要手动执行这些单独的步骤。这些步骤只是为了教学目的而分开说明的。</p>
+<h2 id="32-stm32cubeide-gcc">3.2 stm32cubeide gcc </h2>
+<ol>
+<li>
+<p><strong>gcc -c</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>arm-none-eabi-gcc "C:/Users/jerry/STM32Cube/Repository/STM32Cube_FW_H7_V1.11.1/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H723xx -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -IC:/Users/jerry/STM32Cube/Repository/STM32Cube_FW_H7_V1.11.1/Drivers/STM32H7xx_HAL_Driver/Inc -IC:/Users/jerry/STM32Cube/Repository/STM32Cube_FW_H7_V1.11.1/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -IC:/Users/jerry/STM32Cube/Repository/STM32Cube_FW_H7_V1.11.1/Drivers/CMSIS/Device/ST/STM32H7xx/Include -IC:/Users/jerry/STM32Cube/Repository/STM32Cube_FW_H7_V1.11.1/Drivers/CMSIS/Include -I../Core/ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.d" -MT"Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.o"
+</code></pre><p>这条命令是一个使用 <code>arm-none-eabi-gcc</code>（ARM 嵌入式 GCC）编译器的完整命令，用于编译 STM32H7xx 的 HAL（硬件抽象层）驱动源文件 <code>stm32h7xx_hal.c</code>。我将逐一解释命令中的各个部分：</p>
+<p>1). <strong><code>arm-none-eabi-gcc</code></strong>：这是 ARM 嵌入式 GCC 编译器的名称，用于编译 ARM 架构的裸机或嵌入式系统代码。<br>
+2). <strong>源文件</strong>：<code>"C:/Users/jerry/STM32Cube/Repository/STM32Cube_FW_H7_V1.11.1/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c"</code> 是要编译的源文件路径。<br>
+3). <strong>目标 CPU</strong>：<code>-mcpu=cortex-m7</code> 指定了目标 CPU 是 Cortex-M7。<br>
+4). <strong>C 标准</strong>：<code>-std=gnu11</code> 指定了使用 GNU 11 标准的 C 语言。<br>
+5). <strong>调试信息</strong>：<code>-g3</code> 设置了调试信息的级别。<br>
+6). <strong>定义宏</strong>：<code>-DDEBUG</code>, <code>-DUSE_HAL_DRIVER</code>, <code>-DSTM32H723xx</code>, <code>-DSTM32_THREAD_SAFE_STRATEGY=2</code> 等定义了编译时使用的宏。<br>
+7). <strong>编译到目标文件</strong>：<code>-c</code> 选项告诉编译器只编译源文件，不执行链接操作，生成目标文件（<code>.o</code> 文件）。<br>
+8). <strong>包含目录</strong>：<code>-I</code> 选项后面跟着的是包含头文件的目录路径。<br>
+9). <strong>优化级别</strong>：<code>-O0</code> 表示不进行优化。<br>
+10). <strong>函数和数据段</strong>：<code>-ffunction-sections -fdata-sections</code> 允许链接器丢弃未使用的函数和数据。<br>
+11). <strong>警告和错误</strong>：<code>-Wall</code> 打开所有常用的警告。<br>
+12). <strong>其他编译器选项</strong>：<code>-fstack-usage</code>, <code>-fcyclomatic-complexity</code> 等是额外的编译器选项，用于生成栈使用情况和圈复杂度等信息。<br>
+13). <strong>依赖生成</strong>：<code>-MMD -MP -MF"Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.d" -MT"Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.o"</code> 是用于生成依赖文件的选项。<br>
+14). <strong>规格文件</strong>：<code>--specs=nano.specs</code> 使用了 <code>nano.specs</code> 链接器规格文件，这通常用于嵌入式系统以减小生成的代码大小。<br>
+15). <strong>浮点单元和 ABI</strong>：<code>-mfpu=fpv5-d16 -mfloat-abi=hard</code> 设置了浮点单元和浮点 ABI（应用程序二进制接口）。<br>
+16). <strong>Thumb 模式</strong>：<code>-mthumb</code> 告诉编译器使用 Thumb 指令集（一种 16 位/32 位混合的 ARM 指令集）。<br>
+17). <strong>输出文件</strong>：<code>-o "Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.o"</code> 指定了生成的目标文件路径和名称。</p>
+</li>
+<li>
+<p><strong>gcc -o "h723.elf" @"objects.list"</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>arm-none-eabi-gcc -o "h723.elf" @"objects.list" -mcpu=cortex-m7 -T"E:\st_workspace\h723\STM32H723VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h723.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+</code></pre><p>1).<strong>@"objects.list"</strong>：包含要链接的所有目标文件的列表。<br>
+2).<strong>-T"E:\st_workspace\h723\STM32H723VETX_FLASH.ld"</strong>：指定链接脚本文件，它定义了内存布局和段分配。<br>
+3).<strong>--specs=nosys.specs</strong>：使用 nosys.specs 链接器规格文件，这通常用于不包含标准 C 库（如 libc）的嵌入式系统。<br>
+4).<strong>-Wl,-Map="h723.map"</strong>：生成链接映射文件。<br>
+5).<strong>-Wl,--gc-sections</strong>：允许链接器丢弃未使用的段。<br>
+6).<strong>-static</strong>：尝试静态链接所有库（但在这个上下文中可能有些混淆，因为通常与嵌入式系统不兼容）。<br>
+7).<strong>--specs=nano.specs（再次指定）</strong>：这在此上下文中可能是多余的，因为通常只会在编译或链接的某个阶段指定一次。<br>
+8).<strong>-u _printf_float</strong>：强制链接器包含 _printf_float 符号，这通常与浮点数打印有关。<br>
+9).<strong>-Wl,--start-group -lc -lm -Wl,--end-group</strong>：将 libc 和 libm 库放在链接器组中，以确保它们之间的循环依赖被正确解析。</p>
+</li>
+<li>
+<p><strong>arm-none-eabi-size  h723.elf</strong></p>
+</li>
+<li>
+<p><strong>arm-none-eabi-objdump -h -S h723.elf  &gt; "h723.list"</strong></p>
+</li>
+</ol>
+<h1 id="四-总结">四、总结 </h1>
+<ul>
+<li>mpu编译和链接由gcc完成(Makefile、sh、/lib)</li>
+<li>mcu编译和链接由IDE完成</li>
+<li>处于mcu与mpu中间的如RZT2/N2、STM32H7、iMXRT116需要重点关注链接过程</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    <script type="module">
+// TODO: If ZenUML gets integrated into mermaid in the future,
+//      we can remove the following lines.
+
+
+var MERMAID_CONFIG = ({"startOnLoad":false});
+if (typeof MERMAID_CONFIG !== 'undefined') {
+  MERMAID_CONFIG.startOnLoad = false
+  MERMAID_CONFIG.cloneCssStyles = false
+  MERMAID_CONFIG.theme = "default"
+}
+
+mermaid.initialize(MERMAID_CONFIG || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+} else {
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+}
+</script>
+    
+    
+    
+  
+    </body></html>
