@@ -1,0 +1,374 @@
+<!DOCTYPE html><html><head>
+      <title>Physiognomy mcu mpu</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1>嵌入式科普(26)“相面”各大厂MCU和MPU</h1>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#一-概述" class="md-toc-link">
+            <p>一、概述</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#二-芯片分类" class="md-toc-link">
+            <p>二、芯片分类</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#三-国外" class="md-toc-link"><p>三、国外</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#31-ti-德州仪器" class="md-toc-link">
+            <p>3.1 TI 德州仪器</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#32-nxp-恩智浦" class="md-toc-link">
+            <p>3.2 NXP 恩智浦</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#33-renesas-瑞萨电子" class="md-toc-link">
+            <p>3.3 Renesas 瑞萨电子</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#34-st-意法半导体" class="md-toc-link">
+            <p>3.4 ST 意法半导体</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#35-sliconlabs-芯科" class="md-toc-link">
+            <p>3.5 SliconLabs 芯科</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#36-microchip-微芯" class="md-toc-link">
+            <p>3.6 Microchip 微芯</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#四-国产" class="md-toc-link"><p>四、国产</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#41-gigadevice-兆易创新" class="md-toc-link">
+            <p>4.1 gigadevice 兆易创新</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#42-rockchip-瑞芯微" class="md-toc-link">
+            <p>4.2 Rockchip 瑞芯微</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#43-allwinner全志" class="md-toc-link">
+            <p>4.3 ALLWINNER全志</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#44-hpmicro-先辑" class="md-toc-link">
+            <p>4.4 HPmicro 先辑</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#45-hdsc-华大小华" class="md-toc-link">
+            <p>4.5 hdsc 华大小华</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#46-geehy-极海" class="md-toc-link">
+            <p>4.6 Geehy 极海</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#47-artery-雅特力" class="md-toc-link">
+            <p>4.7 ARTERY 雅特力</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#48-cmsemicon-中微" class="md-toc-link">
+            <p>4.8 Cmsemicon 中微</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#49-espressif-乐鑫" class="md-toc-link">
+            <p>4.9 ESPRESSIF 乐鑫</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#410-telink-泰凌微" class="md-toc-link">
+            <p>4.10 Telink 泰凌微</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#411-mindmotion-灵动微" class="md-toc-link">
+            <p>4.11 MindMotion 灵动微</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#412-chipsea-芯海" class="md-toc-link">
+            <p>4.12 CHIPSEA 芯海</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#413-sinowealth-中颖" class="md-toc-link">
+            <p>4.13 SINOWEALTH 中颖</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#414-sigmastar-星宸" class="md-toc-link">
+            <p>4.14 Sigmastar 星宸</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#415-semidrive-芯驰" class="md-toc-link">
+            <p>4.15 SemiDrive 芯驰</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#416-stc-国芯" class="md-toc-link">
+            <p>4.16 STC 国芯</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#417-hisilicon海思" class="md-toc-link">
+            <p>4.17 hisilicon海思</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#五-台湾" class="md-toc-link"><p>五、台湾</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#51-nuvoton-新唐" class="md-toc-link">
+            <p>5.1 nuvoton 新唐</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#52-sonic-松翰" class="md-toc-link">
+            <p>5.2 SONIC 松翰</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#53-ite-聯陽" class="md-toc-link">
+            <p>5.3 ITE 聯陽</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#六-总结" class="md-toc-link">
+            <p>六、总结</p>
+
+          </a></div>
+</div>
+<h1 id="一-概述">一、概述 </h1>
+<ul>
+<li>相由心生---&gt;相面术---&gt;面相和人格</li>
+<li>本文不看销售数字、不看股票、不看第三方排名。<br>
+仅对各大厂半导体芯片官网“相面”，来分析个大厂的产品定位和优势</li>
+<li>仅供娱乐，力求逻辑自洽</li>
+</ul>
+<h1 id="二-芯片分类">二、芯片分类 </h1>
+<ul>
+<li>芯片粗略分为：主动芯片和被动芯片</li>
+<li>主动芯片之前分享过CPU MCU MPU SOC DSP FPGA：<a href="https://mp.weixin.qq.com/s/K2ETAjzZVisdSp5dcwIsLQ?token=1942811917&amp;lang=zh_CN">一、瑞萨RZN2L介绍和各处理器概念---4.2 CPU MCU MPU SOC DSP FPGA</a></li>
+<li>被动芯片太广泛暂不予分析</li>
+</ul>
+<h1 id="三-国外">三、国外 </h1>
+<h2 id="31-ti-德州仪器">3.1 TI 德州仪器 </h2>
+<p><a href="https://www.ti.com.cn/zh-cn/microcontrollers-mcus-processors/overview.html">https://www.ti.com.cn/zh-cn/microcontrollers-mcus-processors/overview.html</a><br>
+<img src="./images/ti2.png" alt=""><br>
+<img src="./images/ti1.png" alt=""></p>
+<ul>
+<li>综合型半导体公司；C2000、ARM R、ARM A</li>
+</ul>
+<h2 id="32-nxp-恩智浦">3.2 NXP 恩智浦 </h2>
+<p><a href="https://www.nxp.com.cn/products/processors-and-microcontrollers:MICROCONTROLLERS-AND-PROCESSORS">https://www.nxp.com.cn/products/processors-and-microcontrollers:MICROCONTROLLERS-AND-PROCESSORS</a><br>
+<img src="./images/nxp2.png" alt=""><br>
+<img src="./images/nxp1.png" alt=""></p>
+<ul>
+<li>综合型半导体公司；<a href="http://i.MX">i.MX</a> RT、汽车</li>
+</ul>
+<h2 id="33-renesas-瑞萨电子">3.3 Renesas 瑞萨电子 </h2>
+<p><a href="https://www.renesas.cn/zh/products/microcontrollers-microprocessors#categories">https://www.renesas.cn/zh/products/microcontrollers-microprocessors#categories</a><br>
+<img src="./images/Renesas2.png" alt=""><br>
+<img src="./images/Renesas1.png" alt=""></p>
+<ul>
+<li>综合型半导体公司；ARM M、RL78/RX、汽车</li>
+</ul>
+<h2 id="34-st-意法半导体">3.4 ST 意法半导体 </h2>
+<p><a href="https://www.st.com.cn/content/st_com/zh.html">https://www.st.com.cn/content/st_com/zh.html</a><br>
+<a href="https://www.stmcu.com.cn/product">https://www.stmcu.com.cn/product</a><br>
+<img src="./images/st2.png" alt=""><br>
+<img src="./images/stm2.png" alt=""></p>
+<ul>
+<li>综合型半导体公司；ARM M、ARM A7</li>
+</ul>
+<h2 id="35-sliconlabs-芯科">3.5 SliconLabs 芯科 </h2>
+<p><a href="https://cn.silabs.com/wireless">https://cn.silabs.com/wireless</a><br>
+<img src="./images/silicon2.png" alt=""><br>
+<img src="./images/silicon1.png" alt=""></p>
+<ul>
+<li>无线soc</li>
+</ul>
+<h2 id="36-microchip-微芯">3.6 Microchip 微芯 </h2>
+<p><a href="https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors#Product%20Categories">https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors#Product Categories</a><br>
+<a href="https://www.microchip.com.cn/newcommunity/">https://www.microchip.com.cn/newcommunity/</a><br>
+<img src="./images/microchip2.png" alt=""><br>
+<img src="./images/microchip1.png" alt=""></p>
+<h1 id="四-国产">四、国产 </h1>
+<h2 id="41-gigadevice-兆易创新">4.1 gigadevice 兆易创新 </h2>
+<p><a href="https://www.gigadevice.com.cn/product/mcu">https://www.gigadevice.com.cn/product/mcu</a><br>
+<img src="./images/gd32-1.png" alt=""><br>
+<img src="./images/gd32-2.png" alt=""></p>
+<ul>
+<li>Flash、ARM M等</li>
+</ul>
+<h2 id="42-rockchip-瑞芯微">4.2 Rockchip 瑞芯微 </h2>
+<p><a href="https://www.rock-chips.com/a/cn/product/index.html">https://www.rock-chips.com/a/cn/product/index.html</a><br>
+<img src="./images/rockchip1.png" alt=""></p>
+<ul>
+<li>ARM A、显示方案等</li>
+</ul>
+<h2 id="43-allwinner全志">4.3 ALLWINNER全志 </h2>
+<p><a href="https://www.allwinnertech.com/index.php?c=product&amp;a=index&amp;topid=1">https://www.allwinnertech.com/index.php?c=product&amp;a=index&amp;topid=1</a><br>
+<img src="./images/allwinner.png" alt=""></p>
+<ul>
+<li>ARM A、显示方案等</li>
+<li></li>
+</ul>
+<h2 id="44-hpmicro-先辑">4.4 HPmicro 先辑 </h2>
+<p><a href="https://47.108.71.172/product-center/microcontroller">https://47.108.71.172/product-center/microcontroller</a><br>
+<img src="./images/HPmicro1.png" alt=""></p>
+<ul>
+<li>高性能工业车规MCU</li>
+</ul>
+<h2 id="45-hdsc-华大小华">4.5 hdsc 华大小华 </h2>
+<p><a href="https://www.hdsc.com.cn/">https://www.hdsc.com.cn/</a><br>
+<a href="https://www.xhsc.com.cn/%E4%BA%A7%E5%93%81%E7%BA%BF">https://www.xhsc.com.cn/产品线</a><br>
+<img src="./images/hdsc2.png" alt=""><br>
+<img src="./images/xhsc.png" alt=""></p>
+<ul>
+<li>晶圆、MCU、模拟功率、行业MCU等</li>
+</ul>
+<h2 id="46-geehy-极海">4.6 Geehy 极海 </h2>
+<p><a href="https://www.geehy.com/product/second/mcu">https://www.geehy.com/product/second/mcu</a><br>
+<img src="./images/Geehy2.png" alt=""><br>
+<img src="./images/Geehy1.png" alt=""></p>
+<ul>
+<li>行业MCU等</li>
+</ul>
+<h2 id="47-artery-雅特力">4.7 ARTERY 雅特力 </h2>
+<p><a href="https://www.arterytek.com/cn/product/index.jsp?t=1734920135141">https://www.arterytek.com/cn/product/index.jsp?t=1734920135141</a><br>
+<img src="./images/ARTERY1.png" alt=""></p>
+<ul>
+<li>通用MCU</li>
+</ul>
+<h2 id="48-cmsemicon-中微">4.8 Cmsemicon 中微 </h2>
+<p><a href="https://www.mcu.com.cn/products.html">https://www.mcu.com.cn/products.html</a><br>
+<img src="./images/Cmsemicon2.png" alt=""><br>
+<img src="./images/Cmsemicon1.png" alt=""></p>
+<ul>
+<li>通用MCU</li>
+</ul>
+<h2 id="49-espressif-乐鑫">4.9 ESPRESSIF 乐鑫 </h2>
+<p><a href="https://www.espressif.com.cn/zh-hans">https://www.espressif.com.cn/zh-hans</a><br>
+<img src="./images/ESPRESSIF2.png" alt=""><br>
+<img src="./images/ESPRESSIF1.png" alt=""></p>
+<ul>
+<li>IOT、软件等</li>
+</ul>
+<h2 id="410-telink-泰凌微">4.10 Telink 泰凌微 </h2>
+<p><a href="https://www.telink-semi.cn/">https://www.telink-semi.cn/</a><br>
+<img src="./images/telink.png" alt=""></p>
+<ul>
+<li>无线soc</li>
+</ul>
+<h2 id="411-mindmotion-灵动微">4.11 MindMotion 灵动微 </h2>
+<p><a href="https://www.mindmotion.com.cn/products/">https://www.mindmotion.com.cn/products/</a><br>
+<img src="./images/MindMotion1.png" alt=""></p>
+<ul>
+<li>通用MCU</li>
+</ul>
+<h2 id="412-chipsea-芯海">4.12 CHIPSEA 芯海 </h2>
+<p><a href="https://www.chipsea.com/product/fmcu/">https://www.chipsea.com/product/fmcu/</a><br>
+<img src="./images/chipsea2.png" alt=""><br>
+<img src="./images/chipsea1.png" alt=""></p>
+<ul>
+<li>通用MCU</li>
+</ul>
+<h2 id="413-sinowealth-中颖">4.13 SINOWEALTH 中颖 </h2>
+<p><a href="https://www.sinowealth.com/homes">https://www.sinowealth.com/homes</a><br>
+<img src="./images/sinowealth1.png" alt=""></p>
+<ul>
+<li>行业MCU</li>
+</ul>
+<h2 id="414-sigmastar-星宸">4.14 Sigmastar 星宸 </h2>
+<p><a href="https://www.sigmastar.com.cn/market/5">https://www.sigmastar.com.cn/market/5</a><br>
+<img src="./images/sigmastar1.png" alt=""></p>
+<ul>
+<li>行业ARM A</li>
+</ul>
+<h2 id="415-semidrive-芯驰">4.15 SemiDrive 芯驰 </h2>
+<p><a href="https://www.semidrive.com/product/X9">https://www.semidrive.com/product/X9</a><br>
+<img src="./images/semidrive1.png" alt=""></p>
+<ul>
+<li>汽车、工业行业MCU/MPU</li>
+</ul>
+<h2 id="416-stc-国芯">4.16 STC 国芯 </h2>
+<p><a href="https://www.stcmicro.com/cn/cp.html">https://www.stcmicro.com/cn/cp.html</a><br>
+<a href="https://www.stcai.com/sy">https://www.stcai.com/sy</a><br>
+<img src="./images/stc1.png" alt=""><br>
+<img src="./images/stc2.png" alt=""></p>
+<ul>
+<li>国产51</li>
+</ul>
+<h2 id="417-hisilicon海思">4.17 hisilicon海思 </h2>
+<p><a href="https://www.hisilicon.com/cn/products/MCU">https://www.hisilicon.com/cn/products/MCU</a><br>
+<img src="./images/hisilicon2.png" alt=""><br>
+<img src="./images/hisilicon1.png" alt=""></p>
+<h1 id="五-台湾">五、台湾 </h1>
+<h2 id="51-nuvoton-新唐">5.1 nuvoton 新唐 </h2>
+<p><a href="https://www.nuvoton.com.cn/products/">https://www.nuvoton.com.cn/products/</a><br>
+<img src="./images/nuvoton.png" alt=""></p>
+<ul>
+<li>综合型半导体公司；ARM M、ARM A</li>
+</ul>
+<h2 id="52-sonic-松翰">5.2 SONIC 松翰 </h2>
+<p><a href="https://www.sonix.com.tw/category-cn-508">https://www.sonix.com.tw/category-cn-508</a><br>
+<img src="./images/sonix.png" alt=""></p>
+<ul>
+<li>行业mcu</li>
+</ul>
+<h2 id="53-ite-聯陽">5.3 ITE 聯陽 </h2>
+<p><a href="https://www.ite.com.tw/tw/product">https://www.ite.com.tw/tw/product</a><br>
+<img src="./images/ite.png" alt=""></p>
+<ul>
+<li>行业芯片</li>
+</ul>
+<h1 id="六-总结">六、总结 </h1>
+<p>返回看目录<br>
+<img src="./images/cover2.png" alt=""></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
