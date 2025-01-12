@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\iar.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\..\Documents\Renesas\RZ\RZN2L\EP\pn_Source_1.0.0\pn_Source-20230901\iar_project\rzn2l_xspi_boot\RZN2L_PROFINET_RT_XSPI_BOOT.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>

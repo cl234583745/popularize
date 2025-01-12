@@ -1,0 +1,547 @@
+<!DOCTYPE html><html><head>
+      <title>source execute</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1>嵌入式科普(29)c代码究竟是如何一步步运行的之C语言运行的本质</h1>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#一-概述" class="md-toc-link">
+            <p>一、概述</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#二-相关资料" class="md-toc-link">
+            <p>二、相关资料</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#三-c语言是跨平台的" class="md-toc-link"><p>三、C语言是跨平台的</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#31-跨平台的含义" class="md-toc-link"><p>3.1 跨平台的含义</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#311-cpu-架构的不同" class="md-toc-link">
+            <p>3.1.1 CPU 架构的不同</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#312-操作系统的不同" class="md-toc-link">
+            <p>3.1.2 操作系统的不同</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#32-跨平台的实现" class="md-toc-link"><p>3.2 跨平台的实现</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#321-标准库" class="md-toc-link">
+            <p>3.2.1 标准库</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#323-条件编译" class="md-toc-link">
+            <p>3.2.3 条件编译</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#324-跨平台库" class="md-toc-link">
+            <p>3.2.4 跨平台库</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#325-编译器支持" class="md-toc-link">
+            <p>3.2.5 编译器支持</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#四-c语言运行的本质" class="md-toc-link"><p>四、C语言运行的本质</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#41-栈式函数调用" class="md-toc-link"><p>4.1 栈式函数调用</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#411-栈式函数调用和函数调用栈的区别" class="md-toc-link">
+            <p>4.1.1 "栈式函数调用"和"函数调用栈"的区别</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#412-函数调用的本质" class="md-toc-link">
+            <p>4.1.2 函数调用的本质</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#413-栈的作用" class="md-toc-link">
+            <p>4.1.3 栈的作用</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#414--递归调用" class="md-toc-link">
+            <p>4.1.4  递归调用</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#42-编译型语言" class="md-toc-link"><p>4.2 编译型语言</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#421-编译型语言和非编译型语言的区别" class="md-toc-link">
+            <p>4.2.1 编译型语言和非编译型语言的区别</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#422-c语言的编译过程" class="md-toc-link">
+            <p>4.2.2 C语言的编译过程</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#五-本文主题c代码的运行" class="md-toc-link"><p>五、本文主题：C代码的运行</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#51-加载运行环境准备" class="md-toc-link"><p>5.1 加载/运行环境准备</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#511-mcu运行环境准备" class="md-toc-link"><p>5.1.1 mcu运行环境准备</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#5111-普通mcu-stm32" class="md-toc-link">
+            <p>5.1.1.1 普通mcu stm32</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#5112-跨界mcumpu-rzn2l" class="md-toc-link">
+            <p>5.1.1.2 跨界mcu/mpu RZN2L</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#512-嵌入式linux启动u-boot和内核" class="md-toc-link">
+            <p>5.1.2 嵌入式Linux启动U-boot和内核</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#513-window和ubuntu-c程序加载" class="md-toc-link">
+            <p>5.1.3 window和Ubuntu c程序加载</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#52-执行栈式函数调用" class="md-toc-link"><p>5.2 执行/栈式函数调用</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#521-数据结构-栈" class="md-toc-link">
+            <p>5.2.1 数据结构---栈</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#522-windows-vscode运行" class="md-toc-link">
+            <p>5.2.2 Windows vscode运行</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#523-iar运行cm3内核" class="md-toc-link">
+            <p>5.2.3 IAR运行CM3内核</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#524-cm3栈示意图" class="md-toc-link"><p>5.2.4 CM3栈示意图</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#5241-分析静态栈" class="md-toc-link">
+            <p>5.2.4.1 分析"静态栈"</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#5242-分析动态栈" class="md-toc-link">
+            <p>5.2.4.2 分析"动态栈"</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#525-不同的cpu指令集" class="md-toc-link">
+            <p>5.2.5 不同的cpu指令集</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#六-总结" class="md-toc-link">
+            <p>六、总结</p>
+
+          </a></div>
+</div>
+<h1 id="一-概述">一、概述 </h1>
+<ul>
+<li>我们讨论C语言运行的本质，是在工程师软件角度上的，不讨论内核和硬件电路运行本质</li>
+<li>C语言是贴近硬件的高级语言，C语言是跨平台的，本文主要讨论嵌入式C语言</li>
+<li>先给结论：C语言运行的本质是<strong>栈式函数调用</strong>和<strong>编译型语言</strong></li>
+<li>通过一个简单的 C 语言程序，展示了函数调用栈的工作原理</li>
+</ul>
+<h1 id="二-相关资料">二、相关资料 </h1>
+<ul>
+<li><a href="https://baike.baidu.com/item/C11/3245086">https://baike.baidu.com/item/C11/3245086</a></li>
+<li><a href="https://www.iso.org/standard/82075.html">https://www.iso.org/standard/82075.html</a></li>
+<li><a href="https://cn.bing.com/search?q=cppreference">https://cn.bing.com/search?q=cppreference</a></li>
+<li><a href="https://cppreference.cn/w/">https://cppreference.cn/w/</a></li>
+</ul>
+<p><img src="./images/c++.png" alt=""><br>
+<img src="./images/c%20reference.png" alt=""></p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/133874308">https://zhuanlan.zhihu.com/p/133874308</a></li>
+</ul>
+<h1 id="三-c语言是跨平台的">三、C语言是跨平台的 </h1>
+<p>C语言之所以能在 MCU、嵌入式Linux、Windows 和 Ubuntu 等不同平台上运行，是因为 C 语言具有 跨平台性 和 可移植性。但仍然存在一些区别。</p>
+<h2 id="31-跨平台的含义">3.1 跨平台的含义 </h2>
+<p>跨平台 是指程序能够在不同的<strong>硬件平台</strong>或<strong>操作系统</strong>上运行。</p>
+<h3 id="311-cpu-架构的不同">3.1.1 CPU 架构的不同 </h3>
+<p>C 语言通过<strong>编译器</strong>实现跨 CPU 架构（如 x86、ARM、MIPS、RISC-V）的支持运行。编译器会根据目标 CPU 架构生成对应的机器码。</p>
+<h3 id="312-操作系统的不同">3.1.2 操作系统的不同 </h3>
+<p>C 语言通过标准库（如 stdio.h、stdlib.h） 和条件编译（如 #ifdef） 实现跨操作系统如 Windows、Linux、macOS、RTOS等）的支持。</p>
+<h2 id="32-跨平台的实现">3.2 跨平台的实现 </h2>
+<h3 id="321-标准库">3.2.1 标准库 </h3>
+<p>C 标准库（如 stdio.h、stdlib.h）提供了跨平台的函数接口。</p>
+<p>例如，printf 函数在 Windows 和 Linux 上的行为是一致的。</p>
+<h3 id="323-条件编译">3.2.3 条件编译 </h3>
+<p>使用预处理器指令（如 #ifdef）区分不同平台的代码。</p>
+<h3 id="324-跨平台库">3.2.4 跨平台库 </h3>
+<p>使用跨平台库（如 Qt）简化开发。</p>
+<h3 id="325-编译器支持">3.2.5 编译器支持 </h3>
+<p>使用支持多平台的编译器（如 GCC、Clang）。</p>
+<p>例如，GCC 可以为 x86、ARM、MIPS 等架构生成机器码。</p>
+<h1 id="四-c语言运行的本质">四、C语言运行的本质 </h1>
+<h2 id="41-栈式函数调用">4.1 栈式函数调用 </h2>
+<h3 id="411-栈式函数调用和函数调用栈的区别">4.1.1 "栈式函数调用"和"函数调用栈"的区别 </h3>
+<ul>
+<li>栈式函数调用主要强调<strong>机制</strong>，即通过<strong>栈</strong>来<strong>管理</strong>函数调用和返回</li>
+<li>函数调用栈主要强调<strong>状态</strong>，即<strong>栈</strong>中<strong>保存</strong>的函数调用信息。</li>
+<li>栈式函数调用 是实现 函数调用栈 的<strong>机制</strong>。</li>
+<li>函数调用栈 是 栈式函数调用 的具体<strong>表现</strong>。</li>
+<li>现代编程语言大多数都是栈式函数调用</li>
+</ul>
+<h3 id="412-函数调用的本质">4.1.2 函数调用的本质 </h3>
+<ul>
+<li>
+<p>函数调用：<br>
+程序执行流程从一个函数跳转到另一个函数。</p>
+</li>
+<li>
+<p>函数返回：<br>
+程序执行流程从被调用函数返回到调用函数。</p>
+</li>
+</ul>
+<h3 id="413-栈的作用">4.1.3 栈的作用 </h3>
+<ul>
+<li>
+<p>保存上下文：<br>
+栈用于保存函数调用的上下文（如返回地址、局部变量、寄存器的值）。</p>
+</li>
+<li>
+<p>管理执行流程：<br>
+栈式调用确保了函数调用和返回的顺序性和正确性。</p>
+</li>
+</ul>
+<h3 id="414--递归调用">4.1.4  递归调用 </h3>
+<p>栈式函数调用支持递归调用，每次递归调用都会创建一个新的栈帧。</p>
+<h2 id="42-编译型语言">4.2 编译型语言 </h2>
+<h3 id="421-编译型语言和非编译型语言的区别">4.2.1 编译型语言和非编译型语言的区别 </h3>
+<p>编译型语言和非编译型语言的区别主要在于 代码的执行方式，而不是函数调用机制</p>
+<ul>
+<li><strong>编译型语言;</strong>
+<ul>
+<li>编译过程：<br>
+源代码通过编译器转换为机器码。</li>
+<li>执行方式：<br>
+机器码直接运行在硬件上。</li>
+<li>优点：<br>
+执行效率高。<br>
+编译器可以进行各种优化。</li>
+<li>示例：<br>
+C、C++、Rust。</li>
+</ul>
+</li>
+<li><strong>非编译型语言:</strong>
+<ul>
+<li>解释执行：<br>
+源代码通过解释器逐行解释执行。</li>
+<li>字节码编译：<br>
+源代码编译为中间代码（字节码），然后在虚拟机上执行。</li>
+<li>优点：<br>
+跨平台。<br>
+开发效率高。</li>
+<li>示例：<br>
+Python、JavaScript、Ruby。</li>
+</ul>
+</li>
+</ul>
+<h3 id="422-c语言的编译过程">4.2.2 C语言的编译过程 </h3>
+<ul>
+<li>.c ---&gt; .o ---&gt; .exe/.elf ---&gt; .bin</li>
+<li>编译：<a href="https://mp.weixin.qq.com/s/S4zgB_YtJawDGHqGXkU71Q?token=1946762107&amp;lang=zh_CN">嵌入式科普(22)c代码究竟是如何一步步运行的之链接</a></li>
+<li>链接：<a href="https://mp.weixin.qq.com/s/xirMI0LaH6VJruCWwh1Pcw?token=1946762107&amp;lang=zh_CN">嵌入式科普(21)c代码究竟是如何一步步运行的之编译</a></li>
+</ul>
+<h1 id="五-本文主题c代码的运行">五、本文主题：C代码的运行 </h1>
+<p>为了方便理解，c语言的<strong>编译</strong>可以细分为<strong>编译</strong>和<strong>链接</strong>两个过程；<br>
+c语言的<strong>运行</strong>可以细分为<strong>加载</strong>和<strong>执行</strong>两个过程，我在嵌入式c语言的角度称为“<strong>运行环境准备</strong>”和“<strong>栈式函数调用</strong>”</p>
+<h2 id="51-加载运行环境准备">5.1 加载/运行环境准备 </h2>
+<h3 id="511-mcu运行环境准备">5.1.1 mcu运行环境准备 </h3>
+<p>startup.s启动文件</p>
+<ul>
+<li>初始化最基本的硬件（如内核、cpu、cache、时钟、rom/ram等）。</li>
+<li>从存储设备（如 内置Flash、外置Flash、SD 卡等）初始化栈（Stack）、堆（Heap）、.data 段、.bss 段、浮点、标准库、部分外设等</li>
+<li>跳转到main</li>
+</ul>
+<h4 id="5111-普通mcu-stm32">5.1.1.1 普通mcu stm32 </h4>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>    .section	.text.Reset_Handler
+	.weak	Reset_Handler
+	.type	Reset_Handler, %function
+Reset_Handler:
+  ldr   sp, =_estack    /* set stack pointer */
+/* Call the clock system initialization function.*/
+  bl  SystemInit
+
+/* Copy the data segment initializers from flash to SRAM */
+  movs	r1, #0
+  b	LoopCopyDataInit
+
+CopyDataInit:
+	ldr	r3, =_sidata
+	ldr	r3, [r3, r1]
+	str	r3, [r0, r1]
+	adds	r1, r1, #4
+
+LoopCopyDataInit:
+	ldr	r0, =_sdata
+	ldr	r3, =_edata
+	adds	r2, r0, r1
+	cmp	r2, r3
+	bcc	CopyDataInit
+	ldr	r2, =_sbss
+	b	LoopFillZerobss
+/* Zero fill the bss segment. */
+FillZerobss:
+	movs	r3, #0
+	str	r3, [r2], #4
+
+LoopFillZerobss:
+	ldr	r3, = _ebss
+	cmp	r2, r3
+	bcc	FillZerobss
+
+/* Call static constructors */
+    bl __libc_init_array
+/* Call the application's entry point.*/
+	bl	main
+
+LoopForever:
+    b LoopForever
+</code></pre><h4 id="5112-跨界mcumpu-rzn2l">5.1.1.2 跨界mcu/mpu RZN2L </h4>
+<ul>
+<li><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkxNDQyMTU4Mg==&amp;action=getalbum&amp;album_id=3167963498191110153#wechat_redirect">从0开始卷出一个新项目之瑞萨RZN2L</a></li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>BSP_TARGET_ARM void system_init (void)
+{
+    __asm volatile (
+        "set_hactlr:                              \n"
+        "    MOVW  r0, %[bsp_hactlr_bit_l]        \n" /* Set HACTLR bits(L) */
+        "    MOVT  r0, #0                         \n"
+        "    MCR   p15, #4, r0, c1, c0, #1        \n" /* Write r0 to HACTLR */
+        ::[bsp_hactlr_bit_l] "i" (BSP_HACTLR_BIT_L) : "memory");
+
+    __asm volatile (
+        "set_hcr:                                 \n"
+        "    MRC   p15, #4, r1, c1, c1, #0        \n" /* Read Hyp Configuration Register */
+        "    ORR   r1, r1, %[bsp_hcr_hcd_disable] \n" /* HVC instruction disable */
+        "    MCR   p15, #4, r1, c1, c1, #0        \n" /* Write Hyp Configuration Register */
+        ::[bsp_hcr_hcd_disable] "i" (BSP_HCR_HCD_DISABLE) : "memory");
+
+    __asm volatile (
+        "set_vbar:                                \n"
+        "    LDR   r0, =__Vectors                 \n"
+        "    MCR   p15, #0, r0, c12, c0, #0       \n" /* Write r0 to VBAR */
+        ::: "memory");
+
+#if (0 == BSP_CFG_CORE_CR52)
+    __asm volatile (
+        "LLPP_access_enable:                      \n"
+
+        /* Enable PERIPHPREGIONR (LLPP) */
+        "    MRC   p15, #0, r1, c15, c0,#0        \n" /* PERIPHPREGIONR */
+        "    ORR   r1, r1, #(0x1 &lt;&lt; 1)            \n" /* Enable PERIPHPREGIONR EL2 */
+        "    ORR   r1, r1, #(0x1)                 \n" /* Enable PERIPHPREGIONR EL1 and EL0 */
+        "    DSB                                  \n" /* Ensuring memory access complete */
+        "    MCR   p15, #0, r1, c15, c0,#0        \n" /* PERIPHREGIONR */
+        "    ISB                                  \n" /* Ensuring Context-changing */
+        ::: "memory");
+#endif
+....
+....
+....
+/* Jump to main. */
+    main();
+</code></pre><h3 id="512-嵌入式linux启动u-boot和内核">5.1.2 嵌入式Linux启动U-boot和内核 </h3>
+<p>U-boot和内核都有c代码</p>
+<ul>
+<li>汇编代码，负责完成最基本的硬件初始化（如设置堆栈指针、关闭中断、初始化内存控制器）。</li>
+<li>在汇编代码完成初始化后，U-Boot 跳转到 C 语言代码的入口点（通常是 board_init_f 或 board_init_r）</li>
+<li>C 语言代码进一步初始化硬件（如串口、网络、存储设备）</li>
+<li>加载 Linux 内核和设备树到内存</li>
+<li>跳转到 Linux 内核的入口点汇编代码（如 head.S），负责完成最基本的硬件初始化（如设置页表、启用 MMU）</li>
+<li>Linux 内核跳转到 C 语言代码的入口点（start_kernel）</li>
+<li>C 语言代码进一步初始化硬件（如中断控制器、设备驱动）</li>
+<li>挂载根文件系统。</li>
+<li>启动第一个用户空间进程（通常是 init 或 systemd）</li>
+</ul>
+<h3 id="513-window和ubuntu-c程序加载">5.1.3 window和Ubuntu c程序加载 </h3>
+<ul>
+<li>操作系统负责C运行环境准备，c代码直接运行到main函数</li>
+<li>程序执行<br>
+./hello<br>
+.\hello.exe</li>
+</ul>
+<h2 id="52-执行栈式函数调用">5.2 执行/栈式函数调用 </h2>
+<p>C语言运行环境准备好了之后，代码运行到main函数，mcu、嵌入式Linux、window、Ubuntu中c代码执行的国产是一样的，即栈式函数调用</p>
+<h3 id="521-数据结构-栈">5.2.1 数据结构---栈 </h3>
+<p>栈是一种<strong>后进先出LIFO</strong>的数据结构，通常用一个数组或链表实现。栈有两个主要操作：</p>
+<ul>
+<li>压栈（Push）：将数据放入栈顶。</li>
+<li>出栈（Pop）：从栈顶移除数据。</li>
+<li>栈有一个指针（通常称为栈顶指针SP），指向当前栈顶的位置。</li>
+</ul>
+<p><img src="./images/Totem_Pole.gif" alt=""></p>
+<h3 id="522-windows-vscode运行">5.2.2 Windows vscode运行 </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>#include &lt;stdio.h&gt;
+
+void func_c(void){
+    int c = 0;
+    c++;
+    printf("func_c\n");
+}
+void func_b(void){
+    int b = 0;
+    b++;
+    printf("func_b\n");
+    func_c();
+}
+void func_a(void){
+    int a = 0;
+    a++;
+    printf("func_a\n");
+    func_b();
+}
+
+int main(){
+    printf("hello world\n");
+
+    func_a();
+    return 0;
+}
+</code></pre><p><img src="./images/vscodeWindows.png" alt=""><br>
+<img src="./images/Totem_Pole1.gif" alt=""></p>
+<h3 id="523-iar运行cm3内核">5.2.3 IAR运行CM3内核 </h3>
+<p><img src="./images/iarcm3.png" alt=""><br>
+<img src="./images/Totem_Pole3.gif" alt=""></p>
+<h3 id="524-cm3栈示意图">5.2.4 CM3栈示意图 </h3>
+<ul>
+<li>注意地址高低在图中的位置</li>
+</ul>
+<p><img src="./images/iarfun.png" alt=""></p>
+<h4 id="5241-分析静态栈">5.2.4.1 分析"静态栈" </h4>
+<ul>
+<li>在<a href="https://mp.weixin.qq.com/s/2EqA11YOvn-nT_OuhoeVKA?token=1946762107&amp;lang=zh_CN">十六、e2studio VS STM32CubeIDE之"静态栈"分析窗口</a>的分享可以分析"静态栈"</li>
+</ul>
+<h4 id="5242-分析动态栈">5.2.4.2 分析"动态栈" </h4>
+<ul>
+<li>在<a href="https://mp.weixin.qq.com/s?__biz=MzkxNDQyMTU4Mg==&amp;mid=2247485435&amp;idx=1&amp;sn=2c22cb1e04dc1f9a8973f923f777a55a&amp;token=1655026831&amp;lang=zh_CN&amp;scene=21#wechat_redirect">十二、e2studio VS STM32CubeIDE之栈回溯cmbacktrace</a>可以分析“动态栈”</li>
+</ul>
+<h3 id="525-不同的cpu指令集">5.2.5 不同的cpu指令集 </h3>
+<ul>
+<li>Windows 64</li>
+</ul>
+<p><img src="./images/vscodeWindows-core.png" alt=""></p>
+<ul>
+<li>CM3内核</li>
+</ul>
+<p><img src="./images/iarcm3-core.png" alt=""></p>
+<h1 id="六-总结">六、总结 </h1>
+<ul>
+<li>C语言运行的本质是<strong>栈式函数调用</strong>和<strong>编译型语言</strong></li>
+<li>C函数调用栈的分析是重要技能</li>
+<li>理解C语言的编译链接原理</li>
+<li>最后对该系列（<em>嵌入式科普(29)c代码究竟是如何一步步运行的</em>）总结：
+<ul>
+<li>1、嵌入式C代码经过编译、链接生成可执行文件和bin文件；</li>
+<li>2、在ROM boot作用下执行到汇编代码，汇编代码初始化c语言的运行环境（cpu、flash、ram、text、data、bss、时钟等），跳转到main函数；</li>
+<li>3、用户C代码按照栈式函数调用的方式执行</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
