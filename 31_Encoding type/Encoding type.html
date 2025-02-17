@@ -1,0 +1,374 @@
+<!DOCTYPE html><html><head>
+      <title>Encoding type</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry.chen\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1>一文了解嵌入式涉及到的各类型编码</h1>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#一-概述" class="md-toc-link">
+            <p>一、概述</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#二-各类型编码对比表" class="md-toc-link">
+            <p>二、各类型编码对比表</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#三-数据编码" class="md-toc-link">
+            <p>三、数据编码</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#四-字符编码" class="md-toc-link">
+            <p>四、字符编码</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#五-调制编码" class="md-toc-link">
+            <p>五、调制编码</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#六-信道编码" class="md-toc-link">
+            <p>六、信道编码</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#七-总结" class="md-toc-link">
+            <p>七、总结</p>
+
+          </a></div>
+</div>
+<h1 id="一-概述">一、概述 </h1>
+<ul>
+<li>我们在<a href="https://mp.weixin.qq.com/s/ht_U2p3R6O4_cwm_D7kXyw">嵌入式科普(24)一张图真正看懂USB通信协议</a>提到了usb编码是NRZI和8b/10b；在stm32 usart也有NRZ编码</li>
+<li>本文从数据编码扩展到嵌入式领域。<br>
+<strong>核心内容：数据编码、字符编码、调制编码和信道编码</strong></li>
+<li>各类型编码的常见举例</li>
+</ul>
+<h1 id="二-各类型编码对比表">二、各类型编码对比表 </h1>
+<table>
+<thead>
+<tr>
+<th><strong>分类</strong></th>
+<th><strong>编码方式</strong></th>
+<th><strong>特点</strong></th>
+<th><strong>应用场景</strong></th>
+<th><strong>优点</strong></th>
+<th><strong>缺点</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>数据编码</strong></td>
+<td>NRZ</td>
+<td>高电平1，低电平0</td>
+<td><strong>串行通信UART IIC SPI CAN 485</strong></td>
+<td>简单高效</td>
+<td>时钟恢复困难</td>
+</tr>
+<tr>
+<td></td>
+<td>NRZI</td>
+<td>电平翻转表示1，保持不变表示0</td>
+<td><strong>USB2.0</strong></td>
+<td>抗干扰能力强</td>
+<td>实现复杂度较高</td>
+</tr>
+<tr>
+<td></td>
+<td>曼彻斯特编码</td>
+<td>每个比特周期中间有跳变</td>
+<td><strong>十兆以太网 RFID</strong></td>
+<td>自带时钟信息，抗干扰能力强</td>
+<td>带宽利用率低</td>
+</tr>
+<tr>
+<td></td>
+<td>4B/5B</td>
+<td>4位数据映射为5位编码</td>
+<td><strong>百兆以太网</strong></td>
+<td>提高带宽利用率</td>
+<td>需要额外编码表</td>
+</tr>
+<tr>
+<td></td>
+<td>8B/10B</td>
+<td>8位数据映射为10位编码</td>
+<td><strong>千兆以太网 PCIe USB3.0</strong></td>
+<td>平衡直流分量，适合高速通信</td>
+<td>编码效率较低</td>
+</tr>
+<tr>
+<td><strong>字符编码</strong></td>
+<td>ASCII</td>
+<td>7位编码，128个字符</td>
+<td><strong>英语文本</strong></td>
+<td>简单通用</td>
+<td>仅支持英文字符</td>
+</tr>
+<tr>
+<td></td>
+<td>GBK</td>
+<td>双字节编码，支持中文字符</td>
+<td><strong>中文环境</strong></td>
+<td>适合中文</td>
+<td>与其他编码不兼容</td>
+</tr>
+<tr>
+<td></td>
+<td>UTF-8</td>
+<td>变长编码，支持全球字符</td>
+<td><strong>国际化应用</strong></td>
+<td>兼容ASCII，支持多语言</td>
+<td>中文字符占用存储空间较大</td>
+</tr>
+<tr>
+<td><strong>调制编码</strong></td>
+<td>ASK</td>
+<td>改变载波幅度</td>
+<td><strong>433/315MHz RFID</strong></td>
+<td>实现简单</td>
+<td>抗噪声能力差</td>
+</tr>
+<tr>
+<td></td>
+<td>FSK</td>
+<td>改变载波频率</td>
+<td><strong>红外遥控  RFID</strong></td>
+<td>抗干扰能力强</td>
+<td>带宽利用率低</td>
+</tr>
+<tr>
+<td></td>
+<td>PSK</td>
+<td>改变载波相位</td>
+<td>数字电视、卫星通信</td>
+<td>带宽利用率高</td>
+<td>实现复杂度较高</td>
+</tr>
+<tr>
+<td><strong>信道编码</strong></td>
+<td>奇偶校验</td>
+<td>添加一个奇偶校验位</td>
+<td><strong>简单数据校验</strong></td>
+<td>实现简单</td>
+<td>只能检测单比特错误</td>
+</tr>
+<tr>
+<td></td>
+<td>汉明码</td>
+<td>多个校验位检测和纠正错误</td>
+<td>内存纠错</td>
+<td>纠错能力强</td>
+<td>实现复杂度较高</td>
+</tr>
+<tr>
+<td></td>
+<td>CRC</td>
+<td>多项式除法生成校验码</td>
+<td><strong>数据帧校验</strong></td>
+<td>检测能力强</td>
+<td>只能检错，不能纠错</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三-数据编码">三、数据编码 </h1>
+<p>数据编码是将数字数据转换为适合传输或存储的信号形式。</p>
+<ul>
+<li>（1）NRZ（Non-Return-to-Zero）</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   1   0   1   1   0   0   1   0
+信号:  ───┐   ┌───┐   ┌───────┐   ┌──
+          └───┘   └───┘       └───┘
+</code></pre><p>特点：高电平表示1，低电平表示0。</p>
+<p>应用：串行通信、存储介质。</p>
+<p>优点：简单高效。</p>
+<p>缺点：长串0或1时时钟恢复困难。</p>
+<ul>
+<li>（2）NRZI（Non-Return-to-Zero Inverted，不归零反转编码）</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   1   0   1   1   0   0   1   0
+信号:  ───┐       ┌───┐           ┌──
+          └───────┘   └───────────┘
+</code></pre><p>特点：1：电平翻转（从高到低或从低到高）。0：电平保持不变。</p>
+<p>应用：如 USB（通用串行总线）协议中使用 NRZI 编码。如硬盘、磁带等存储设备中使用 NRZI 编码。</p>
+<p>优点：实现简单，适合高速数据传输。</p>
+<p>缺点：如果数据中有长串0，电平保持不变，可能导致接收端无法正确恢复时钟。</p>
+<ul>
+<li>（3）曼彻斯特编码（Manchester Encoding）</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   1   0   1   1   0   0   1   0
+信号:  ─┐ ┌─┐ ─┐ ─┐ ┌─┐ ┌─┐ ─┐ ┌─
+         └─┘ └─┘ └─┘ └─┘ └─┘ └─┘
+</code></pre><p>特点：每个比特周期中间有跳变，1表示高到低，0表示低到高。</p>
+<p>应用：以太网、RFID。</p>
+<p>优点：自带时钟信息，抗干扰能力强。</p>
+<p>缺点：带宽利用率低。</p>
+<ul>
+<li>（4）4B/5B 编码</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   0101 (4位)
+编码:   01011 (5位)
+</code></pre><p>特点：将4位数据映射为5位编码，确保足够的跳变。</p>
+<p>应用：光纤通信（如FDDI）。</p>
+<p>优点：提高带宽利用率。</p>
+<p>缺点：需要额外的编码表。</p>
+<ul>
+<li>（5）8B/10B 编码</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   01010101 (8位)
+编码:   0101010101 (10位)
+</code></pre><p>特点：将8位数据映射为10位编码，平衡直流分量。</p>
+<p>应用：PCIe、USB。</p>
+<p>优点：适合高速串行通信。</p>
+<p>缺点：编码效率较低。</p>
+<h1 id="四-字符编码">四、字符编码 </h1>
+<p>字符编码是将字符映射为计算机可以存储和处理的二进制数据。</p>
+<ul>
+<li>（1）ASCII</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>字符:   A
+二进制: 01000001
+</code></pre><p>特点：7位编码，128个字符。</p>
+<p>应用：英语文本。</p>
+<p>优点：简单通用。</p>
+<p>缺点：仅支持英文字符。</p>
+<ul>
+<li>（2）GBK</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>字符:   中
+二进制: 11010101 11010101
+</code></pre><p>特点：双字节编码，支持中文字符。</p>
+<p>应用：中文环境。</p>
+<p>优点：适合中文。</p>
+<p>缺点：与其他编码不兼容。</p>
+<ul>
+<li>（3）UTF-8</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>  字符:   中
+二进制: 11100100 10111000 10101101
+</code></pre><p>特点：变长编码，支持全球字符。</p>
+<p>应用：国际化应用。</p>
+<p>优点：兼容ASCII，支持多语言。</p>
+<p>缺点：中文字符占用存储空间较大。</p>
+<ul>
+<li>（4）Unicode<br>
+特点：全球统一字符集。</li>
+</ul>
+<p>应用：国际化文本处理。</p>
+<p>优点：支持所有语言字符。</p>
+<p>缺点：存储空间较大。</p>
+<h1 id="五-调制编码">五、调制编码 </h1>
+<p>调制编码是将数字信号转换为模拟信号的过程。</p>
+<ul>
+<li>（1）ASK（幅移键控）</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   1   0   1
+信号:  ───┐   ┌───
+          └───┘
+</code></pre><p>特点：通过改变载波幅度表示数据。</p>
+<p>应用：简单无线通信。</p>
+<p>优点：实现简单。</p>
+<p>缺点：抗噪声能力差。</p>
+<ul>
+<li>（2）FSK（频移键控）</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   1   0   1
+信号:  ───┐   ┌───
+          └───┘
+</code></pre><p>特点：通过改变载波频率表示数据。</p>
+<p>应用：无线通信、红外遥控。</p>
+<p>优点：抗干扰能力强。</p>
+<p>缺点：带宽利用率低。</p>
+<ul>
+<li>（3）PSK（相移键控）</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   1   0   1
+信号:  ───┐   ┌───
+          └───┘
+</code></pre><p>特点：通过改变载波相位表示数据。</p>
+<p>应用：数字电视、卫星通信。</p>
+<p>优点：带宽利用率高。</p>
+<p>缺点：实现复杂度较高。</p>
+<ul>
+<li>（4）QAM（正交幅度调制）</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   1   0   1
+信号:  ───┐   ┌───
+          └───┘
+</code></pre><p>特点：同时改变载波的幅度和相位。</p>
+<p>应用：有线电视、Wi-Fi。</p>
+<p>优点：带宽利用率极高。</p>
+<p>缺点：对噪声敏感。</p>
+<h1 id="六-信道编码">六、信道编码 </h1>
+<p>信道编码是为了提高数据传输的可靠性，通常通过添加冗余信息来实现纠错和检错。</p>
+<ul>
+<li>（1）奇偶校验（Parity Check）</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   1   0   1   1   0   0   1
+校验位: 0
+</code></pre><p>特点：添加一个奇偶校验位。</p>
+<p>应用：简单数据校验。</p>
+<p>优点：实现简单。</p>
+<p>缺点：只能检测单比特错误。</p>
+<ul>
+<li>（2）汉明码（Hamming Code）</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   1   0   1   1
+编码:   1   0   1   1   0   1   0
+</code></pre><p>特点：通过多个校验位检测和纠正错误。</p>
+<p>应用：内存纠错。</p>
+<p>优点：纠错能力强。</p>
+<p>缺点：实现复杂度较高。</p>
+<ul>
+<li>（3）CRC（循环冗余校验）</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据:   1   0   1   1   0   0   1
+CRC:    1   0   1
+</code></pre><p>特点：通过多项式除法生成校验码。</p>
+<p>应用：数据帧校验。</p>
+<p>优点：检测能力强。</p>
+<p>缺点：只能检错，不能纠错。</p>
+<ul>
+<li>（4）LDPC码（低密度奇偶校验码）<br>
+特点：基于稀疏矩阵的纠错编码。</li>
+</ul>
+<p>应用：5G通信、卫星通信。</p>
+<p>优点：纠错性能极佳。</p>
+<p>缺点：实现复杂度高。</p>
+<h1 id="七-总结">七、总结 </h1>
+<ul>
+<li>还有Wi-Fi、Zigbee、BLE（蓝牙低功耗）、433/315MHz、4G 和 5G 等无线通信的编码方式和调制方式</li>
+<li>在半导体或编程世界中只有0和1，0代表关/低，1代表开/高。但各类型编码复杂的很。</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
