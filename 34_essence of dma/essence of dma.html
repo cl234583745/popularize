@@ -1,0 +1,346 @@
+<!DOCTYPE html><html><head>
+      <title>essence of dma</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1>嵌入式科普(34)通过对比看透DMA的本质</h1>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#1概述" class="md-toc-link">
+            <p>1.概述</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#2dma高级功能对比" class="md-toc-link">
+            <p>2.DMA高级功能对比</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#3硬件并行" class="md-toc-link">
+            <p>3.硬件并行</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#4释放cpu" class="md-toc-link">
+            <p>4.释放CPU</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#5减少中断对比表" class="md-toc-link">
+            <p>5.减少中断对比表</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#6批量传输对比表" class="md-toc-link">
+            <p>6.批量传输对比表</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#7总结" class="md-toc-link">
+            <p>7.总结</p>
+
+          </a></div>
+</div>
+<h1 id="1概述">1.概述 </h1>
+<ul>
+<li>众所周知，使用DMA能高效传输数据，因为无需CPU参与。<br>
+但高性能/跨界的MCU/MPU有更复杂的DMA功能，需要有更深层次的理解。</li>
+<li>通过对比STM32和RZN2L的DMA功能，了解其中的复杂性，尝试总结DMA的本质</li>
+<li>DMA通过<strong>硬件并行、释放CPU、减少中断、批量传输</strong>，显著提升数据传输效率，确保关键任务实时性</li>
+</ul>
+<h1 id="2dma高级功能对比">2.DMA高级功能对比 </h1>
+<table>
+<thead>
+<tr>
+<th><strong>对比项</strong></th>
+<th><strong>RZN2L DMA</strong></th>
+<th><strong>STM32H7 DMA</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>架构</strong></td>
+<td>双DMAC单元（DMAC0和DMAC1），共16通道</td>
+<td>双DMA控制器（DMA1和DMA2），每个控制器8个流（Stream）</td>
+<td>RZN2L的DMAC为独立单元，STM32H7通过流（Stream）和DMAMUX管理多通道请求。</td>
+</tr>
+<tr>
+<td><strong>通道/流数量</strong></td>
+<td>每DMAC 8通道，共16通道</td>
+<td>每DMA控制器8个流，共16流，每个流支持115个通道请求（通过DMAMUX）</td>
+<td>STM32H7通过DMAMUX灵活映射外设请求到流，通道扩展性更强。</td>
+</tr>
+<tr>
+<td><strong>数据<br>传输模式</strong></td>
+<td>支持单次传输（Per-request）、块传输（Block）、寄存器模式（Register）、链接模式（Link）</td>
+<td>支持常规模式（内存↔外设）、双缓冲模式（Double Buffer）、内存↔内存、FIFO模式</td>
+<td>RZN2L的链接模式支持描述符链式传输；STM32H7双缓冲适合连续数据流处理。</td>
+</tr>
+<tr>
+<td><strong>数据宽度</strong></td>
+<td>8/16/32/64/128/256/512位</td>
+<td>8/16/32位</td>
+<td>RZN2L支持更宽的数据宽度（如512位），适合高带宽场景。</td>
+</tr>
+<tr>
+<td><strong>最大<br>传输大小</strong></td>
+<td>单次传输最大为3字节（2^32-1）</td>
+<td>每个传输项支持1~65535次传输（DMA流控制器）</td>
+<td>RZN2L支持更大规模的连续数据传输。</td>
+</tr>
+<tr>
+<td><strong>触发方式</strong></td>
+<td>外部请求（DRECQ）、外设请求、软件请求</td>
+<td>硬件触发（外设请求）、软件触发、DMAMUX事件触发</td>
+<td>STM32H7的DMAMUX支持事件触发，灵活性更高。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><strong>对比项</strong></th>
+<th><strong>RZN2L DMA</strong></th>
+<th><strong>STM32H7 DMA</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>优先级控制</strong></td>
+<td>固定优先级或循环调度（Round-Robin）</td>
+<td>4级软件可编程优先级（非常髙/高/中/低）或硬件默认优先级</td>
+<td>RZN2L支持动态调度，STM32H7优先级更细分。</td>
+</tr>
+<tr>
+<td><strong>地址增量</strong></td>
+<td>支持源/目标地址独立增量</td>
+<td>支持源/目标地址独立增量，且支持突发传输（4/8/16拍）</td>
+<td>STM32H7突发传输优化总线利用率。</td>
+</tr>
+<tr>
+<td><strong>中断类型</strong></td>
+<td>传输完成、传输错误（每DMAC单元独立）</td>
+<td>传输完成、半传输、传输错误、FIFO错误、直接模式错误</td>
+<td>STM32H7中断类型更细分，支持实时监控多种状态。</td>
+</tr>
+<tr>
+<td><strong>FIFO功能</strong></td>
+<td>无明确FIFO描述，但支持缓冲区刷新（Buffer Flush）</td>
+<td>4级深度FIFO，支持阈值配置（1/4、1/2、3/4）或直接模式</td>
+<td>STM32H7的FIFO优化了数据传输连续性。</td>
+</tr>
+<tr>
+<td><strong>双缓冲<br>/循环模式</strong></td>
+<td>支持双缓冲（Double Buffer）</td>
+<td>支持双缓冲和循环缓冲（Circular Buffer）</td>
+<td>两者均适合连续数据流处理。</td>
+</tr>
+<tr>
+<td><strong>错误处理</strong></td>
+<td>传输错误中断，支持自动暂停和缓冲区刷新</td>
+<td>传输错误、FIFO错误、直接模式错误检测</td>
+<td>RZN2L支持暂停和刷新，STM32H7错误检测更全面。</td>
+</tr>
+<tr>
+<td><strong>特殊功能</strong></td>
+<td>链表模式（Link Mode）、传输间隔调整（Interval Function）</td>
+<td>DMAMUX请求多路复用器（支持115个外设请求映射）、突发传输</td>
+<td>RZN2L的链表模式支持复杂传输链；STM32H7的DMAMUX扩展了外设兼容性。</td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td>工业通信（以太网、CAN-FD）、高速数据采集</td>
+<td>实时控制（电机驱动）、多通道传感器采集、音频流处理</td>
+<td>RZN2L侧重高带宽工业协议；STM32H7侧重灵活外设管理和实时控制。</td>
+</tr>
+</tbody>
+</table>
+<p><img src="./images/stm32h7dma1.png" alt=""><br>
+<img src="./images/stm32h7dma2.png" alt=""><br>
+<img src="./images/rzn2ldma3.png" alt=""><br>
+<img src="./images/rzn2ldma2.png" alt=""><br>
+<img src="./images/rzn2ldma1.png" alt=""></p>
+<h1 id="3硬件并行">3.硬件并行 </h1>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>无DMA的传统传输</th>
+<th>DMA传输</th>
+<th>对比结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总线占用方式</td>
+<td>CPU与外设共享总线，需频繁仲裁</td>
+<td>DMA通过专用总线独立操作，与CPU并行</td>
+<td>DMA减少总线竞争，提升带宽利用率</td>
+</tr>
+<tr>
+<td>传输控制</td>
+<td>CPU逐字节操作，指令周期占用总线</td>
+<td>DMA硬件控制器管理传输，突发模式批量搬运数据</td>
+<td>突发传输优化总线占用周期</td>
+</tr>
+<tr>
+<td>吞吐量峰值</td>
+<td>受限于CPU指令效率（如32位MCU约50MB/s）</td>
+<td>依赖总线宽度（如64位AXI总线可达3.2GB/s）</td>
+<td>DMA吞吐量提升10倍以上</td>
+</tr>
+<tr>
+<td>典型场景</td>
+<td>小数据量传输（如GPIO控制）</td>
+<td>高速数据流（如千兆以太网、摄像头采集）</td>
+<td>DMA适合高带宽需求场景</td>
+</tr>
+</tbody>
+</table>
+<h1 id="4释放cpu">4.释放CPU </h1>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>无DMA的传统传输</th>
+<th>DMA传输</th>
+<th>对比结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU占用率</td>
+<td>高（需执行LOAD/STORE指令，占用80%+算力）</td>
+<td>低（仅初始化参数，占用&lt;5%算力）</td>
+<td>CPU算力释放给核心算法（如AI推理、控制逻辑）</td>
+</tr>
+<tr>
+<td>任务并行性</td>
+<td>CPU阻塞在数据搬运中，无法处理其他任务</td>
+<td>CPU与DMA并行工作，实现多任务流水线</td>
+<td>系统整体效率显著提升</td>
+</tr>
+<tr>
+<td>实时性保障</td>
+<td>高负载下响应延迟不可控</td>
+<td>确定性传输保障硬实时任务（如PWM波形更新）</td>
+<td>关键任务（电机控制）延迟降低至微秒级</td>
+</tr>
+<tr>
+<td>代码复杂度</td>
+<td>需手动编写数据搬运逻辑，代码冗余</td>
+<td>硬件自动处理，代码简洁易维护</td>
+<td>开发效率提升，减少潜在错误</td>
+</tr>
+</tbody>
+</table>
+<h1 id="5减少中断对比表">5.减少中断对比表 </h1>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>无DMA的传统传输</th>
+<th>DMA传输</th>
+<th>对比结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中断频率</td>
+<td>每个数据项触发一次中断（如1KB数据需1024次中断）</td>
+<td>整块传输完成触发一次中断</td>
+<td>中断频率降低99.9%</td>
+</tr>
+<tr>
+<td>上下文切换开销</td>
+<td>高频中断导致大量寄存器保存/恢复操作</td>
+<td>极低的中断次数减少上下文切换</td>
+<td>CPU有效算力提升20%-30%</td>
+</tr>
+<tr>
+<td>实时任务影响</td>
+<td>中断延迟可能阻塞高优先级任务</td>
+<td>确定性中断触发，优先级可配置</td>
+<td>硬实时任务（如ADC采样）抖动小于1μs</td>
+</tr>
+<tr>
+<td>功耗优化</td>
+<td>频繁中断唤醒CPU，增加动态功耗</td>
+<td>CPU可进入低功耗模式，仅响应最终完成中断</td>
+<td>系统待机功耗降低50%+</td>
+</tr>
+</tbody>
+</table>
+<h1 id="6批量传输对比表">6.批量传输对比表 </h1>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>无DMA的传统传输</th>
+<th>DMA传输</th>
+<th>对比结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传输粒度</td>
+<td>单字节/单字传输，效率低下</td>
+<td>支持突发传输（4/8/16拍）或整块传输（如1KB）</td>
+<td>有效带宽利用率提升至90%+</td>
+</tr>
+<tr>
+<td>数据一致性</td>
+<td>逐项处理易因中断导致数据错位</td>
+<td>硬件保证数据块原子性传输</td>
+<td>避免数据丢失或错位（如SD卡写入）</td>
+</tr>
+<tr>
+<td>复杂数据流支持</td>
+<td>需软件手动管理非连续数据</td>
+<td>支持描述符链表（如RZN2L）自动跳转传输</td>
+<td>协议栈分包处理效率提升3倍+</td>
+</tr>
+<tr>
+<td>典型优化场景</td>
+<td>小文件读写</td>
+<td>大文件传输、音视频流、网络协议栈</td>
+<td>DMA使能后，FPS（帧率）稳定性提升40%</td>
+</tr>
+</tbody>
+</table>
+<h1 id="7总结">7.总结 </h1>
+<ul>
+<li>DMA的本质是硬件级并行化，释放CPU、减少中断，数据批处理。</li>
+<li>理解DMA的本质便于理解/学习更复杂的DMA功能。</li>
+<li>后续会有通过DMA输出PWM、DMA连续传输ADC等例子分享。</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
