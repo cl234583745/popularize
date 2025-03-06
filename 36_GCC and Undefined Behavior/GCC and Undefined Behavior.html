@@ -1,0 +1,263 @@
+<!DOCTYPE html><html><head>
+      <title>GCC and Undefined Behavior</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1>嵌入式科普(36)【程序员必看】GCC编译优化：你的代码为何“神秘消失”？</h1>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#一-概述" class="md-toc-link">
+            <p>一、概述</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#二-参考资料" class="md-toc-link">
+            <p>二、参考资料</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#三-gcc优化功能" class="md-toc-link"><p>三、GCC优化功能</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#31-gcc优化选项" class="md-toc-link">
+            <p>3.1 GCC优化选项</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#32-gcc优化技术" class="md-toc-link">
+            <p>3.2 GCC优化技术</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#33-gcc未使用代码和变量" class="md-toc-link">
+            <p>3.3 GCC未使用代码和变量</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#34-gcc调试优化代码" class="md-toc-link">
+            <p>3.4 GCC调试优化代码</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#35-gcc优化对代码行为的影响" class="md-toc-link">
+            <p>3.5 GCC优化对代码行为的影响</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#四-代码消失的场景" class="md-toc-link">
+            <p>四、代码“消失”的场景</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#五-防止代码被优化" class="md-toc-link"><p>五、防止代码“被优化”</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#51-关闭优化使用-o0选项" class="md-toc-link">
+            <p>5.1 关闭优化：使用-O0选项</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#52-volatile关键字" class="md-toc-link">
+            <p>5.2 volatile关键字</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#53-启用编译警告使用-wall" class="md-toc-link">
+            <p>5.3 启用编译警告：使用-Wall</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#54-单独优化等级" class="md-toc-link">
+            <p>5.4 单独优化等级</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#55-写代码规范化" class="md-toc-link">
+            <p>5.5 写代码规范化</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#六-总结" class="md-toc-link">
+            <p>六、总结</p>
+
+          </a></div>
+</div>
+<h1 id="一-概述">一、概述 </h1>
+<ul>
+<li>明明代码逻辑无误，但是debug就是不运行，似乎代码直接“消失”了！</li>
+<li>调试时一切正常，开启-O2优化后程序崩溃？</li>
+<li>GCC编译器优化等级到底有什么影响？</li>
+</ul>
+<h1 id="二-参考资料">二、参考资料 </h1>
+<ul>
+<li><a href="https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html">GCC Optimization Options</a></li>
+<li><a href="https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html">GCC Warning Options</a></li>
+<li><a href="https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html">GCC Debugging Options</a></li>
+<li><a href="https://gcc.gnu.org/onlinedocs/gcc-12.2.0/gcc/Optimize-Options.html#index-undefined-behavior">GCC and Undefined Behavior</a></li>
+<li><a href="https://gcc.gnu.org/onlinedocs/">GCC Online Documentation</a></li>
+</ul>
+<h1 id="三-gcc优化功能">三、GCC优化功能 </h1>
+<h2 id="31-gcc优化选项">3.1 GCC优化选项 </h2>
+<ul>
+<li>
+<p>-O0：关闭优化（默认选项）。</p>
+</li>
+<li>
+<p>-O1、-O2、-O3：不同级别的优化。</p>
+</li>
+<li>
+<p>-Os：优化代码大小。</p>
+</li>
+<li>
+<p>-Ofast：激进优化，可能违反严格的标准合规性。</p>
+</li>
+</ul>
+<h2 id="32-gcc优化技术">3.2 GCC优化技术 </h2>
+<ul>
+<li>
+<p>死代码消除（Dead Code Elimination）</p>
+</li>
+<li>
+<p>常量传播（Constant Propagation）</p>
+</li>
+<li>
+<p>函数内联（Function Inlining）</p>
+</li>
+<li>
+<p>循环优化（Loop Optimization）</p>
+</li>
+</ul>
+<h2 id="33-gcc未使用代码和变量">3.3 GCC未使用代码和变量 </h2>
+<ul>
+<li>
+<p>未使用的变量和函数可能会被优化掉，尤其是在启用优化选项时。</p>
+</li>
+<li>
+<p>使用-Wall和-Wunused选项可以在编译时警告未使用的变量和函数。</p>
+</li>
+</ul>
+<h2 id="34-gcc调试优化代码">3.4 GCC调试优化代码 </h2>
+<ul>
+<li>
+<p>-g：生成调试信息。</p>
+</li>
+<li>
+<p>-fno-inline：禁用函数内联。</p>
+</li>
+<li>
+<p>-fno-eliminate-unused-debug-types：保留未使用的调试信息。</p>
+</li>
+</ul>
+<h2 id="35-gcc优化对代码行为的影响">3.5 GCC优化对代码行为的影响 </h2>
+<ul>
+<li>
+<p>未初始化的变量。</p>
+</li>
+<li>
+<p>越界访问。</p>
+</li>
+<li>
+<p>违反严格的别名规则。</p>
+</li>
+</ul>
+<h1 id="四-代码消失的场景">四、代码“消失”的场景 </h1>
+<ul>
+<li>死代码消除</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>int x = 10;
+x = 20;  // 第一次赋值被优化掉
+printf("%d", x);  
+</code></pre><ul>
+<li>未使用的变量：没用过的东西，留着占地方？</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>int y = 30;  
+printf("Hello");  
+</code></pre><ul>
+<li>永远不执行的循环</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>for (int i=0; i&lt;0; i++) {  
+    printf("这循环能执行算我输！");  
+}  
+</code></pre><ul>
+<li>常量条件判断</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>const int debug = 0;  
+if (debug) {  
+    printf("这条日志你永远看不到！");  
+}  
+</code></pre><ul>
+<li>冗余赋值</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>int a = 10;  
+a = 20;  // 前一条赋值被优化  
+printf("%d", a);  
+</code></pre><ul>
+<li>编译器版本和死代码<br>
+gcc新版本12、13等优化更严格</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>volatile unsigned int coremarkTick;
+void g_cmtw0CB(timer_callback_args_t *p_args)
+{
+    //oid)p_args;
+    coremarkTick++;
+    
+}
+</code></pre><pre data-role="codeBlock" data-info="" class="language-text"><code>printf("==============");
+printf("start\n");
+
+printf("end\n");
+printf("==============");
+</code></pre><h1 id="五-防止代码被优化">五、防止代码“被优化” </h1>
+<h2 id="51-关闭优化使用-o0选项">5.1 关闭优化：使用-O0选项 </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>gcc -O0 -o program program.c
+</code></pre><h2 id="52-volatile关键字">5.2 volatile关键字 </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>volatile int sensor_value; // 禁止优化此变量
+</code></pre><h2 id="53-启用编译警告使用-wall">5.3 启用编译警告：使用-Wall </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>gcc -Wall -O2 -o program program.c
+</code></pre><h2 id="54-单独优化等级">5.4 单独优化等级 </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>#pragma GCC optimize ("O1")
+#pragma GCC reset_options
+</code></pre><h2 id="55-写代码规范化">5.5 写代码规范化 </h2>
+<ul>
+<li>最重要</li>
+</ul>
+<h1 id="六-总结">六、总结 </h1>
+<ul>
+<li>GCC优化会加速代码运行效率</li>
+<li>GCC最新版本对代码的规范化更严格</li>
+<li>合理的设置优化等级、单独优化、防止优化等功能</li>
+<li>分享你遇到的非期望优化例子</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
