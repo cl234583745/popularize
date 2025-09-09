@@ -1,0 +1,170 @@
+
+
+
+/* for parameter descriptions see PDRV V4.2 table 144 and others */
+
+/* PNU00001..PNU00899: device specific, insert your parameters here -------------------------------------------------*/
+
+/** PNU00100: gradient of ramp in [%/ms] for the Ramp Function Generator
+ * @details Setting parameter for the Ramp Function Generator (PDRV V4.2 Figure 29)
+ *          application specific, can be changed by the PDRV user
+ */
+PDRV_PARAMETER(
+    100U,               /**< parameter number */
+    (PDRV_PARID_N4),    /**< identifier */
+    0U,                 /**< number of elements or length of string */
+    PDRV_UNIT_PCT,      /**< variable attribute */
+    60000U,             /**< DO IO DATA reference parameter */
+    0x801EU,            /**< DO IO DATA normalisation */
+    FLOAT_N4_FAC,       /**< standardisation factor */
+    0U,                 /**< low limit */
+    0x10000000U,        /**< high limit */
+    "Ramp Gradient",    /**< pointer at name (16 valid characters) */
+    PDRV_NULL_T,        /**< function pointer - function is called if additional text is read */
+    uPdrv_RfPnu00100,   /**< function pointer - function is called before value is read */
+    uPdrv_WfPnu00100    /**< function pointer - function is called after value is written */
+)
+
+/** PNU00110: +- allowed speed tolerance for ZSW1 bit 8 "speed errror within tolerance range"
+ * @details Setting parameter for calculation of ZSW1 bit 8 (PDRV V4.2 Figure 29)
+ *          application specific, can be changed by the PDRV user
+ */
+PDRV_PARAMETER(
+    110U,               /**< parameter number */
+    (PDRV_PARID_N4),    /**< identifier */
+    0U,                 /**< number of elements or length of string */
+    PDRV_UNIT_PCT,      /**< variable attribute */
+    60000U,             /**< DO IO DATA reference parameter */
+    0x801EU,            /**< DO IO DATA normalisation */
+    FLOAT_N4_FAC,       /**< standardisation factor */
+    0U,                 /**< low limit */
+    0x7FFFFFFFU,        /**< high limit */
+    "range speederror", /**< pointer at name (16 valid characters) */
+    PDRV_NULL_T,        /**< function pointer - function is called if additional text is read */
+    uPdrv_RfPnu00110,   /**< function pointer - function is called before value is read */
+    uPdrv_WfPnu00110    /**< function pointer - function is called after value is written */
+)
+
+
+
+
+/** pre declaration of parameter object */
+typedef struct PDRV_PAR_OBJ PDRV_PAR_OBJ;
+
+/** parameter object inclusive description elements (see PDRV V4.2 table 17)
+ * @details no reserved datas, different order from PDRV description, order is arbitrary (consider alignment)
+ */
+struct PDRV_PAR_OBJ
+{
+    PDRV_UINT16 uPnu;           /**< parameter number */
+    PDRV_UINT16 uIdentifier;    /**< identifier */
+    PDRV_UINT16 uNrOfElements;  /**< number of elements or length of string */
+    PDRV_UINT16 uVarAttrib;     /**< variable attribute */
+    PDRV_UINT16 uRefPar;        /**< DO IO DATA reference parameter */
+    PDRV_UINT16 uNormalisation; /**< DO IO DATA normalisation */
+    PDRV_FLT32  fStdFactor;     /**< standardisation factor */
+    PDRV_UINT32 uLoLimit;       /**< low limit */
+    PDRV_UINT32 uHiLimit;       /**< high limit */
+    const char* puName;         /**< pointer at name */
+    char* (*pfnText)(const PDRV_PAR_OBJ *p_ptParObj, PDRV_UINT16 p_uSubindex); /**< function pointer - function is called if additional text is read */
+    PDRV_UINT32 (*pfnRead)(const PDRV_PAR_OBJ *p_ptParObj, PDRV_UINT16 p_uSubindex, PDRV_UINT16 p_uNrOfElements, PDRV_ParValues * p_ptValues); /**< function pointer - function is called before value is read */
+    PDRV_UINT32 (*pfnWrite)(const PDRV_PAR_OBJ *p_ptParObj, PDRV_UINT16 p_uSubindex, PDRV_UINT16 p_uNrOfElements, PDRV_ParValues * p_ptValues); /**< function pointer - function is called after value is written */
+};
+
+
+
+
+/*------------  extern  functions  ------------*/
+/** declaration of all text functions */
+#define PDRV_PARAMETER(Pnu, Identifier, NrOfElements, VarAttrib, RefPar, Normalisation, StdFactor, LoLimit, HiLimit, Name, TextFunc, ReadFunc, WriteFunc) \
+        extern char * TextFunc (PDRV_PAR_OBJ const *p_ptParObj, PDRV_UINT16 p_uSubindex);
+
+#include "pdrv_parameter_ac4.inc"
+
+#undef PDRV_PARAMETER
+
+/** declaration of all read functions */
+#define PDRV_PARAMETER(Pnu, Identifier, NrOfElements, VarAttrib, RefPar, Normalisation, StdFactor, LoLimit, HiLimit, Name, TextFunc, ReadFunc, WriteFunc) \
+        extern PDRV_UINT32 ReadFunc (PDRV_PAR_OBJ const *p_ptParObj, PDRV_UINT16 p_uSubindex, PDRV_UINT16 p_uNrOfElements, PDRV_ParValues * p_ptValues);
+
+#include "pdrv_parameter_ac4.inc"
+
+#undef PDRV_PARAMETER
+
+/** declaration of all read functions */
+#define PDRV_PARAMETER(Pnu, Identifier, NrOfElements, VarAttrib, RefPar, Normalisation, StdFactor, LoLimit, HiLimit, Name, TextFunc, ReadFunc, WriteFunc) \
+        extern PDRV_UINT32 WriteFunc (PDRV_PAR_OBJ const *p_ptParObj, PDRV_UINT16 p_uSubindex, PDRV_UINT16 p_uNrOfElements, PDRV_ParValues * p_ptValues);
+
+#include "pdrv_parameter_ac4.inc"
+
+#undef PDRV_PARAMETER
+
+/*------------  extern  data  ------------*/
+
+
+/*------------  type definitions, constants, enums  ------------*/
+
+/** complete list of all parameters for implementation of parameters PNU00980 to PNU00989 */
+static const PDRV_O2 m_tParList[] =
+{
+#define PDRV_PARAMETER(Pnu, Identifier, NrOfElements, VarAttrib, RefPar, Normalisation, StdFactor, LoLimit, HiLimit, Name, TextFunc, ReadFunc, WriteFunc) \
+                       Pnu,
+#include "pdrv_parameter_ac4.inc"
+#undef PDRV_PARAMETER
+};
+
+#define PDRV_NOOFPARAMETERS (sizeof(m_tParList)/sizeof(m_tParList[0]))  /**< number of all parameters */
+
+/** table with parameter objects */
+static const PDRV_PAR_OBJ m_tParObjDatas[] =
+{
+#define PDRV_NULL_T PDRV_NULL   /**< redefinition to NULL pointer */
+#define PDRV_NULL_R PDRV_NULL   /**< redefinition to NULL pointer */
+#define PDRV_NULL_W PDRV_NULL   /**< redefinition to NULL pointer */
+#define PDRV_PARAMETER(Pnu, Identifier, NrOfElements, VarAttrib, RefPar, Normalisation, StdFactor, LoLimit, HiLimit, Name, TextFunc, ReadFunc, WriteFunc) \
+       {.uPnu = Pnu, \
+        .uIdentifier = Identifier, \
+        .uNrOfElements = NrOfElements, \
+        .uVarAttrib = VarAttrib, \
+        .uRefPar = RefPar, \
+        .uNormalisation = Normalisation, \
+        .fStdFactor = StdFactor, \
+        .uLoLimit = LoLimit, \
+        .uHiLimit = HiLimit, \
+        .puName = Name, \
+        .pfnText = TextFunc, \
+        .pfnRead = ReadFunc, \
+        .pfnWrite = WriteFunc},
+
+#include "pdrv_parameter_ac4.inc"
+
+#undef PDRV_PARAMETER
+#undef PDRV_NULL_W
+#undef PDRV_NULL_R
+#undef PDRV_NULL_T
+};
+
+
+/** PROFIdrive search for parameter number and get pointer of found parameter object
+ *  @details
+ *  @return     pointer with parameter object, PDRV_NULL if not found
+*/
+const PDRV_PAR_OBJ * ptPdrvPar_GetParObj
+    (PDRV_UINT16 p_uPnu     /**< [in] search this parameter number */
+    )
+{
+    PDRV_PAR_OBJ const *ptParObj = PDRV_NULL;
+    PDRV_UINT uI;
+
+    for(uI = 0U; uI < PDRV_NOOFPARAMETERS; uI++)
+    {
+        /* parameter found? */
+        if (m_tParList[uI] == p_uPnu)
+        {
+            ptParObj = &m_tParObjDatas[uI];
+            break;
+        }
+    }
+
+    return ptParObj;
+}

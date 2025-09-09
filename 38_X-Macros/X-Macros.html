@@ -1,0 +1,774 @@
+<!DOCTYPE html><html><head>
+      <title>X-Macros</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.19\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      <script type="text/javascript" src="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.19\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1>嵌入式科普(38)C语言预编译X-Macros深度分析和实际项目代码分享</h1>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#一-概述" class="md-toc-link">
+            <p>一、概述</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#二-参考资料" class="md-toc-link">
+            <p>二、参考资料</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#三-经典x-macros代码分析" class="md-toc-link"><p>三、经典X-Macros代码分析</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#31-经典代码" class="md-toc-link">
+            <p>3.1 经典代码</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#32-代码结构解析四步构建自动化系统" class="md-toc-link"><p>3.2 代码结构解析（四步构建自动化系统）</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#321-中央数据表唯一数据源" class="md-toc-link">
+            <p>3.2.1 中央数据表（唯一数据源）</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#322-动态生成枚举" class="md-toc-link">
+            <p>3.2.2 动态生成枚举</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#323-自动生成字符串表" class="md-toc-link">
+            <p>3.2.3 自动生成字符串表</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#324-函数指针表自动映射核心执行逻辑" class="md-toc-link">
+            <p>3.2.4 函数指针表自动映射（核心执行逻辑）</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#33-运行时工作原理" class="md-toc-link">
+            <p>3.3 运行时工作原理</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#四-优劣势解析" class="md-toc-link">
+            <p>四、优劣势解析</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#五-x-macros的四大本质特征" class="md-toc-link"><p>五、X-Macros的四大本质特征</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#51-集中式数据表" class="md-toc-link">
+            <p>5.1 集中式数据表</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#52-可重定义的宏函数" class="md-toc-link">
+            <p>5.2 可重定义的宏函数</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#53-多次展开机制" class="md-toc-link">
+            <p>5.3 多次展开机制</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#54-生成关联结构" class="md-toc-link">
+            <p>5.4 生成关联结构</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#六-为什么vscode无法展开x-macro" class="md-toc-link"><p>六、为什么VSCode无法展开X-Macro？</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#61-解决方案" class="md-toc-link"><p>6.1 解决方案</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#611-使用编译器预处理推荐" class="md-toc-link">
+            <p>6.1.1 使用编译器预处理（推荐）</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#612-vscode-插件辅助" class="md-toc-link">
+            <p>6.1.2 VSCode 插件辅助</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#62-深入探讨宏处理和-ide-支持的本质区别" class="md-toc-link"><p>6.2 深入探讨宏处理和 IDE 支持的本质区别</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#621--所有宏都是预处理的但-ide-支持分层次" class="md-toc-link">
+            <p>6.2.1  所有宏都是预处理的，但 IDE 支持分层次</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#622--关键差异宏展开的阶段可见性" class="md-toc-link">
+            <p>6.2.2  关键差异：宏展开的"阶段可见性"</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#623-为什么普通宏可见而x-macros不可见" class="md-toc-link">
+            <p>6.2.3 为什么普通宏可见而X-Macros不可见？</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#七-比x-macros更复杂的宏" class="md-toc-link">
+            <p>七、比X-Macros更复杂的宏</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#八-西门子profidrive使用x-macros技术的源码" class="md-toc-link">
+            <p>八、西门子profidrive使用X-Macros技术的源码</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#九-总结" class="md-toc-link">
+            <p>九、总结</p>
+
+          </a></div>
+</div>
+<h1 id="一-概述">一、概述 </h1>
+<ul>
+<li>X-Macros是C语言一种古老的、编译时代码生成技术，并不是数据结构。简单说是一种代码技巧，是一种复杂的宏。</li>
+<li>介绍X-Macros的工作流程和主要特征</li>
+<li>通过经典例子介绍使用X-Macros代码的运行时的工作原理</li>
+<li>实际项目代码分享：西门子profidrive使用X-Macros技术的源码</li>
+</ul>
+<h1 id="二-参考资料">二、参考资料 </h1>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/521073931">https://zhuanlan.zhihu.com/p/521073931</a></li>
+<li><a href="https://www.drdobbs.com/cpp/the-new-c-x-macros/184401387">https://www.drdobbs.com/cpp/the-new-c-x-macros/184401387</a></li>
+<li><a href="https://tetzank.github.io/posts/x-macros/">https://tetzank.github.io/posts/x-macros/</a></li>
+<li><a href="https://github.com/garcia/xdata">https://github.com/garcia/xdata</a></li>
+<li><a href="https://github.com/swansontec/map-macro">https://github.com/swansontec/map-macro</a></li>
+<li><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkxNDQyMTU4Mg==&amp;action=getalbum&amp;album_id=3167963498191110153&amp;subscene=190&amp;scenenote=https%3A%2F%2Fmp.weixin.qq.com%2Fs%3F__biz%3DMzkxNDQyMTU4Mg%3D%3D%26mid%3D2247486280%26idx%3D1%26sn%3D268f6fe35e25884151c34c6dd692a6ce%26chksm%3Dc16fe969f618607f8c38162b0372dea69b85e465395b7daebd6e4ec1a51badcd93934c52b90b%26cur_album_id%3D3167963498191110153%26scene%3D190%26ascene%3D0%26devicetype%3DiOS15.2%26version%3D1800383b%26nettype%3D3G%2B%26abtest_cookie%3DAAACAA%253D%253D%26lang%3Dzh_CN%26countrycode%3DAL%26fontScale%3D100%26exportkey%3Dn_ChQIAhIQJVfuFN7QF%252B8hAAp6gGWLbhLXAQIE97dBBAEAAAAAAJJBCDsn4s4AAAAOpnltbLcz9gKNyK89dVj0KdtEHPPFUWk8AsjGTHH8c3C%252BtKT7Z1gQyEfo6SClTtao3n%252FaSlq3%252BS4QgyAQiJTtborhYPrGCK09NCHDGJgoVXM8hN1OXPSeybS8YTxxUVXi2FfEU2REeVtzLECCevkLu%252FdMdZst5KqG%252BvS9eKU%252FP0qRlxpeqU2%252Bkjl1AytleYxEgYxAWo%252B8w6zT51WiC5PaetVuSiMUlovEvNULKI0CM9BZ%252BjN8tD7fHiGLyQ%252BcP05M%26pass_ticket%3Dr2cbIHJnl90DtlyaMvIU8r3RZ%252Fm8AQYfVuFJ877aQwGsPjXJzPyTB2oBaIeNsv57%26wx_header%3D3&amp;nolastread=1#wechat_redirect">瑞萨RZN2L产品-第22章</a> 分析西门子profidrive使用X-Macros技术的源码</li>
+</ul>
+<h1 id="三-经典x-macros代码分析">三、经典X-Macros代码分析 </h1>
+<h2 id="31-经典代码">3.1 经典代码 </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>#include &lt;stdio.h&gt;
+
+#define MACROS_TABLE                    \
+    X_MACROS(CMD_LED_ON,  led_on)       \
+    X_MACROS(CMD_LED_OFF, led_off)      \
+
+/*定义命令列表*/
+typedef enum
+{
+    #define X_MACROS(a, b) a,
+    MACROS_TABLE
+    #undef X_MACROS
+    CMD_MAX
+}cmd_e;
+
+
+/*定义字符串列表用作Log打印*/
+const char* cmd_str[] = 
+{
+    #define X_MACROS(a, b) #a,
+    MACROS_TABLE
+    #undef X_MACROS
+};
+
+
+typedef void (*func)(void* p);
+
+static void led_on(void* p)
+{
+    printf("%s \r\n", (char *)p);
+}
+
+static void led_off(void* p)
+{
+    printf("%s \r\n", (char *)p);
+}
+
+/*定义函数列表*/
+const func func_table[] = 
+{
+    #define X_MACROS(a, b) b,
+    MACROS_TABLE
+    #undef X_MACROS
+};
+
+
+/*直接通过索引的方式调用函数*/
+static void cmd_handle(cmd_e cmd)
+{
+    if(cmd &lt; CMD_MAX)
+    {
+        func_table[cmd]((void*)cmd_str[cmd]);
+    }
+}
+
+
+void main(void)
+{
+    cmd_handle(CMD_LED_ON);
+    cmd_handle(CMD_LED_OFF);
+}
+</code></pre><h2 id="32-代码结构解析四步构建自动化系统">3.2 代码结构解析（四步构建自动化系统） </h2>
+<div class="mermaid">graph TD
+    A[宏定义表] --&gt; B[枚举生成]
+    A --&gt; C[字符串表生成]
+    A --&gt; D[函数表生成]
+    B --&gt; E[命令处理]
+    C --&gt; E
+    D --&gt; E
+</div><h3 id="321-中央数据表唯一数据源">3.2.1 中央数据表（唯一数据源） </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>#define MACROS_TABLE \
+    X_MACROS(CMD_LED_ON,  led_on) \
+    X_MACROS(CMD_LED_OFF, led_off)
+</code></pre><p>这是系统的唯一数据源，定义了：</p>
+<ul>
+<li>命令枚举名 CMD_LED_ON</li>
+<li>对应函数名 led_on</li>
+<li>自动保持顺序一致性</li>
+</ul>
+<h3 id="322-动态生成枚举">3.2.2 动态生成枚举 </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>typedef enum {
+    #define X_MACROS(a, b) a,  // 展开为 CMD_LED_ON, CMD_LED_OFF
+    MACROS_TABLE
+    #undef X_MACROS
+    CMD_MAX  // 自动计算命令总数
+} cmd_e;
+</code></pre><p>展开后等价于：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>typedef enum {
+    CMD_LED_ON, 
+    CMD_LED_OFF,
+    CMD_MAX
+} cmd_e;
+</code></pre><h3 id="323-自动生成字符串表">3.2.3 自动生成字符串表 </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>const char* cmd_str[] = {
+    #define X_MACROS(a, b) #a,  // 字符串化：CMD_LED_ON -&gt; "CMD_LED_ON"
+    MACROS_TABLE
+    #undef X_MACROS
+};
+</code></pre><p>展开效果：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>const char* cmd_str[] = {
+    "CMD_LED_ON", 
+    "CMD_LED_OFF"
+};
+</code></pre><h3 id="324-函数指针表自动映射核心执行逻辑">3.2.4 函数指针表自动映射（核心执行逻辑） </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>const func func_table[] = {
+    #define X_MACROS(a, b) b,  // 提取函数名：led_on, led_off
+    MACROS_TABLE
+    #undef X_MACROS
+};
+</code></pre><p>等价于：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>const func func_table[] = {
+    led_on, 
+    led_off
+};
+</code></pre><h2 id="33-运行时工作原理">3.3 运行时工作原理 </h2>
+<div class="mermaid">sequenceDiagram
+    main-&gt;&gt;cmd_handle: CMD_LED_ON(0)
+    cmd_handle-&gt;&gt;func_table: 索引[0]
+    func_table--&gt;&gt;led_on: 调用函数
+    led_on-&gt;&gt;cmd_str: 取字符串[0]
+    cmd_str--&gt;&gt;printf: "CMD_LED_ON"
+</div><h1 id="四-优劣势解析">四、优劣势解析 </h1>
+<ul>
+<li>零同步成本<br>
+所有关联数据（枚举/字符串/函数）自动同步，避免人工维护不一致</li>
+<li>扩展极简<br>
+新增命令只需在宏表中添加一行：<pre data-role="codeBlock" data-info="" class="language-text"><code>X_MACROS(CMD_DOOR_OPEN, door_open)
+</code></pre></li>
+<li>安全保证<br>
+<strong>CMD_MAX</strong> 自动计算数组边界，防止越界访问</li>
+<li>自文档化<br>
+字符串表自动生成，日志输出与代码完全一致</li>
+<li>代码可读性降低</li>
+<li>绝大多数的阅读软件或IDE无法预览/展开<br>
+需要编译器在预编译阶段宏展开</li>
+</ul>
+<h1 id="五-x-macros的四大本质特征">五、X-Macros的四大本质特征 </h1>
+<div class="mermaid">graph TD
+    A[核心数据表] --&gt; B[宏函数重定义]
+    B --&gt; C[多次展开]
+    C --&gt; D[生成关联结构]
+</div><h2 id="51-集中式数据表">5.1 集中式数据表 </h2>
+<p>用 #define 定义的垂直结构表，每个条目包含关联数据</p>
+<p>典型形式：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>#define COLOR_TABLE \
+    ENTRY(RED,    0xFF0000) \
+    ENTRY(GREEN,  0x00FF00) \
+    ENTRY(BLUE,   0x0000FF)
+</code></pre><h2 id="52-可重定义的宏函数">5.2 可重定义的宏函数 </h2>
+<p>名为 ENTRY 或 X 的通用处理宏</p>
+<p>通过重定义改变其行为</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>/* 阶段1：生成枚举 */
+#define ENTRY(name, value) COLOR_##name,
+
+/* 阶段2：生成字符串 */
+#define ENTRY(name, value) #name,
+</code></pre><h2 id="53-多次展开机制">5.3 多次展开机制 </h2>
+<p>同一数据表被多次使用，每次生成不同代码</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>// 第一次展开：生成枚举
+enum Colors {
+    COLOR_TABLE  // 展开为 COLOR_RED, COLOR_GREEN...
+};
+
+// 第二次展开：生成字符串数组
+const char* color_names[] = {
+    COLOR_TABLE  // 展开为 "RED", "GREEN"...
+};
+</code></pre><h2 id="54-生成关联结构">5.4 生成关联结构 </h2>
+<p>输出逻辑相关但语法不同的代码结构</p>
+<h1 id="六-为什么vscode无法展开x-macro">六、为什么VSCode无法展开X-Macro？ </h1>
+<ul>
+<li>
+<p>IDE 限制：<br>
+VSCode 的 C/C++ 扩展基于 Clang/IntelliSense<br>
+这些工具不模拟完整的预处理流程（尤其多次重定义的宏）<br>
+只能显示当前作用域的宏定义，无法展示多阶段展开</p>
+</li>
+<li>
+<p>宏的工作机制：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>  #define X_MACROS(a, b) a,  // 阶段1：定义枚举
+  MACROS_TABLE             // 此处展开
+  #undef X_MACROS          // 立即取消定义
+
+  #define X_MACROS(a, b) #a, // 阶段2：定义字符串
+  MACROS_TABLE             // 重新展开
+</code></pre><p>VSCode 只能显示最后一次展开的结果</p>
+</li>
+<li>
+<p>预处理 vs 编辑时：</p>
+<ul>
+<li>X-Macro 是预处理阶段的特性</li>
+<li>VSCode 是源代码编辑器，不执行完整预处理</li>
+</ul>
+</li>
+</ul>
+<h2 id="61-解决方案">6.1 解决方案 </h2>
+<h3 id="611-使用编译器预处理推荐">6.1.1 使用编译器预处理（推荐） </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code># GCC/Clang
+gcc -E your_file.c -o expanded.c
+</code></pre><pre data-role="codeBlock" data-info="" class="language-text"><code>// 枚举展开后
+typedef enum
+{
+    CMD_LED_ON,
+    CMD_LED_OFF,
+    CMD_MAX
+} cmd_e;
+
+// 字符串表展开后
+const char* cmd_str[] = 
+{
+    "CMD_LED_ON",
+    "CMD_LED_OFF"
+};
+
+// 函数表展开后
+const func func_table[] = 
+{
+    led_on,
+    led_off
+};
+</code></pre><h3 id="612-vscode-插件辅助">6.1.2 VSCode 插件辅助 </h3>
+<ul>
+<li>C/C++ Advanced Lint：显示宏展开警告</li>
+<li>Preprocessor Macro Expander：手动展开选中宏</li>
+<li>Clangd（替代默认C++扩展）：更好的宏支持</li>
+</ul>
+<h2 id="62-深入探讨宏处理和-ide-支持的本质区别">6.2 深入探讨宏处理和 IDE 支持的本质区别 </h2>
+<h3 id="621--所有宏都是预处理的但-ide-支持分层次">6.2.1  所有宏都是预处理的，但 IDE 支持分层次 </h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">宏类型</th>
+<th style="text-align:left">预处理阶段</th>
+<th style="text-align:left">IDE 支持级别</th>
+<th style="text-align:left">VSCode 悬停效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>简单对象宏</strong><br><code>#define PI 3.14</code></td>
+<td style="text-align:left">✅ 完全支持</td>
+<td style="text-align:left">★★★★★</td>
+<td style="text-align:left">显示 <code>3.14</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>函数式宏</strong><br><code>#define MIN(x,y) ((x)&lt;(y)?(x):(y))</code></td>
+<td style="text-align:left">✅ 完全支持</td>
+<td style="text-align:left">★★★★☆</td>
+<td style="text-align:left">显示展开表达式</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>链式宏</strong><br>(多层嵌套宏)</td>
+<td style="text-align:left">✅ 完全支持</td>
+<td style="text-align:left">★★★☆☆</td>
+<td style="text-align:left">部分展开</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>X-Macro</strong><br>(依赖重定义和多次展开)</td>
+<td style="text-align:left">✅ 完全支持</td>
+<td style="text-align:left">★☆☆☆☆</td>
+<td style="text-align:left">通常无法显示</td>
+</tr>
+</tbody>
+</table>
+<h3 id="622--关键差异宏展开的阶段可见性">6.2.2  关键差异：宏展开的"阶段可见性" </h3>
+<ul>
+<li>
+<p>预处理器：执行完整递归展开（深度优先）</p>
+</li>
+<li>
+<p>IDE 语法解析器：执行浅层展开（通常只展开1-2层）</p>
+</li>
+</ul>
+<div class="mermaid">graph LR
+    A[源代码] --&gt; B[预处理器]
+    B --&gt; C[完全展开的代码]
+    C --&gt; D[编译器]
+    
+    subgraph IDE处理
+    A --&gt; E[语法解析器]
+    E --&gt; F[部分展开视图]
+    end
+</div><h3 id="623-为什么普通宏可见而x-macros不可见">6.2.3 为什么普通宏可见而X-Macros不可见？ </h3>
+<ul>
+<li>普通宏 IDE 只需简单替换即可展示</li>
+</ul>
+<pre data-role="codeBlock" data-info="#define PI 3.1415926" class="language-#define #define"><code>#define CIRCLE_AREA(r) (PI * (r) * (r))
+
+// 悬停在 CIRCLE_AREA(5) 显示：
+// (3.1415926 * (5) * (5))
+</code></pre><ul>
+<li>X-Macros示例（VSCode 难解析）：<br>
+IDE 无法同时保存两种 ENTRY 定义状态</li>
+</ul>
+<pre data-role="codeBlock" data-info="#define TABLE \" class="language-#define #define"><code>    ENTRY(red) \
+    ENTRY(blue)
+
+// 第一次展开
+#define ENTRY(color) COLOR_##color,
+enum Colors {
+    TABLE
+};
+// 期望：COLOR_red, COLOR_blue
+
+// 第二次展开（不同定义）
+#define ENTRY(color) #color,
+const char* color_names[] = {
+    TABLE
+};
+// 期望："red", "blue"
+</code></pre><ul>
+<li>预处理器的完整工作流程</li>
+</ul>
+<div class="mermaid">sequenceDiagram
+    Preprocessor-&gt;&gt;Source: 读取源文件
+    loop 处理所有指令
+        Preprocessor-&gt;&gt;Preprocessor: 执行#define/#undef
+        Preprocessor-&gt;&gt;Preprocessor: 递归展开宏
+        Preprocessor-&gt;&gt;Preprocessor: 处理#include
+    end
+    Preprocessor-&gt;&gt;Compiler: 输出完全展开代码
+</div><ul>
+<li>IDE 的实时解析</li>
+</ul>
+<div class="mermaid">sequenceDiagram
+    IDE Parser-&gt;&gt;Source: 解析当前文件
+    IDE Parser-&gt;&gt;IDE Parser: 应用当前宏定义
+    IDE Parser-&gt;&gt;User: 显示部分展开结果
+    Note right of IDE Parser: 不保存历史状态&lt;br&gt;不处理后续重定义
+</div><h1 id="七-比x-macros更复杂的宏">七、比X-Macros更复杂的宏 </h1>
+<ul>
+<li>X-Macros只是宏技术的"中级阶段"</li>
+</ul>
+<div class="mermaid">graph TD
+    A[基础宏] --&gt; B[条件编译]
+    B --&gt; C[可变参数宏]
+    C --&gt; D[X-Macros]
+    D --&gt; E[递归宏]
+    E --&gt; F[图灵完备宏系统]
+    F --&gt; G[自生成代码]
+</div><ul>
+<li>
+<p>宏的替代方案：</p>
+<ul>
+<li>
+<p>C++ 模板：类型安全的泛型</p>
+</li>
+<li>
+<p>C++ constexpr：编译时计算</p>
+</li>
+<li>
+<p>代码生成器：Python/Lua 脚本</p>
+</li>
+<li>
+<p>LLVM 插件：编译时元编程</p>
+</li>
+<li>
+<p>专用预处理器：如 Qt 的 moc</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="八-西门子profidrive使用x-macros技术的源码">八、西门子profidrive使用X-Macros技术的源码 </h1>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>
+
+/* for parameter descriptions see PDRV V4.2 table 144 and others */
+
+/* PNU00001..PNU00899: device specific, insert your parameters here -------------------------------------------------*/
+
+/** PNU00100: gradient of ramp in [%/ms] for the Ramp Function Generator
+ * @details Setting parameter for the Ramp Function Generator (PDRV V4.2 Figure 29)
+ *          application specific, can be changed by the PDRV user
+ */
+PDRV_PARAMETER(
+    100U,               /**&lt; parameter number */
+    (PDRV_PARID_N4),    /**&lt; identifier */
+    0U,                 /**&lt; number of elements or length of string */
+    PDRV_UNIT_PCT,      /**&lt; variable attribute */
+    60000U,             /**&lt; DO IO DATA reference parameter */
+    0x801EU,            /**&lt; DO IO DATA normalisation */
+    FLOAT_N4_FAC,       /**&lt; standardisation factor */
+    0U,                 /**&lt; low limit */
+    0x10000000U,        /**&lt; high limit */
+    "Ramp Gradient",    /**&lt; pointer at name (16 valid characters) */
+    PDRV_NULL_T,        /**&lt; function pointer - function is called if additional text is read */
+    uPdrv_RfPnu00100,   /**&lt; function pointer - function is called before value is read */
+    uPdrv_WfPnu00100    /**&lt; function pointer - function is called after value is written */
+)
+
+/** PNU00110: +- allowed speed tolerance for ZSW1 bit 8 "speed errror within tolerance range"
+ * @details Setting parameter for calculation of ZSW1 bit 8 (PDRV V4.2 Figure 29)
+ *          application specific, can be changed by the PDRV user
+ */
+PDRV_PARAMETER(
+    110U,               /**&lt; parameter number */
+    (PDRV_PARID_N4),    /**&lt; identifier */
+    0U,                 /**&lt; number of elements or length of string */
+    PDRV_UNIT_PCT,      /**&lt; variable attribute */
+    60000U,             /**&lt; DO IO DATA reference parameter */
+    0x801EU,            /**&lt; DO IO DATA normalisation */
+    FLOAT_N4_FAC,       /**&lt; standardisation factor */
+    0U,                 /**&lt; low limit */
+    0x7FFFFFFFU,        /**&lt; high limit */
+    "range speederror", /**&lt; pointer at name (16 valid characters) */
+    PDRV_NULL_T,        /**&lt; function pointer - function is called if additional text is read */
+    uPdrv_RfPnu00110,   /**&lt; function pointer - function is called before value is read */
+    uPdrv_WfPnu00110    /**&lt; function pointer - function is called after value is written */
+)
+
+
+
+
+/** pre declaration of parameter object */
+typedef struct PDRV_PAR_OBJ PDRV_PAR_OBJ;
+
+/** parameter object inclusive description elements (see PDRV V4.2 table 17)
+ * @details no reserved datas, different order from PDRV description, order is arbitrary (consider alignment)
+ */
+struct PDRV_PAR_OBJ
+{
+    PDRV_UINT16 uPnu;           /**&lt; parameter number */
+    PDRV_UINT16 uIdentifier;    /**&lt; identifier */
+    PDRV_UINT16 uNrOfElements;  /**&lt; number of elements or length of string */
+    PDRV_UINT16 uVarAttrib;     /**&lt; variable attribute */
+    PDRV_UINT16 uRefPar;        /**&lt; DO IO DATA reference parameter */
+    PDRV_UINT16 uNormalisation; /**&lt; DO IO DATA normalisation */
+    PDRV_FLT32  fStdFactor;     /**&lt; standardisation factor */
+    PDRV_UINT32 uLoLimit;       /**&lt; low limit */
+    PDRV_UINT32 uHiLimit;       /**&lt; high limit */
+    const char* puName;         /**&lt; pointer at name */
+    char* (*pfnText)(const PDRV_PAR_OBJ *p_ptParObj, PDRV_UINT16 p_uSubindex); /**&lt; function pointer - function is called if additional text is read */
+    PDRV_UINT32 (*pfnRead)(const PDRV_PAR_OBJ *p_ptParObj, PDRV_UINT16 p_uSubindex, PDRV_UINT16 p_uNrOfElements, PDRV_ParValues * p_ptValues); /**&lt; function pointer - function is called before value is read */
+    PDRV_UINT32 (*pfnWrite)(const PDRV_PAR_OBJ *p_ptParObj, PDRV_UINT16 p_uSubindex, PDRV_UINT16 p_uNrOfElements, PDRV_ParValues * p_ptValues); /**&lt; function pointer - function is called after value is written */
+};
+
+
+
+
+/*------------  extern  functions  ------------*/
+/** declaration of all text functions */
+#define PDRV_PARAMETER(Pnu, Identifier, NrOfElements, VarAttrib, RefPar, Normalisation, StdFactor, LoLimit, HiLimit, Name, TextFunc, ReadFunc, WriteFunc) \
+        extern char * TextFunc (PDRV_PAR_OBJ const *p_ptParObj, PDRV_UINT16 p_uSubindex);
+
+#include "pdrv_parameter_ac4.inc"
+
+#undef PDRV_PARAMETER
+
+/** declaration of all read functions */
+#define PDRV_PARAMETER(Pnu, Identifier, NrOfElements, VarAttrib, RefPar, Normalisation, StdFactor, LoLimit, HiLimit, Name, TextFunc, ReadFunc, WriteFunc) \
+        extern PDRV_UINT32 ReadFunc (PDRV_PAR_OBJ const *p_ptParObj, PDRV_UINT16 p_uSubindex, PDRV_UINT16 p_uNrOfElements, PDRV_ParValues * p_ptValues);
+
+#include "pdrv_parameter_ac4.inc"
+
+#undef PDRV_PARAMETER
+
+/** declaration of all read functions */
+#define PDRV_PARAMETER(Pnu, Identifier, NrOfElements, VarAttrib, RefPar, Normalisation, StdFactor, LoLimit, HiLimit, Name, TextFunc, ReadFunc, WriteFunc) \
+        extern PDRV_UINT32 WriteFunc (PDRV_PAR_OBJ const *p_ptParObj, PDRV_UINT16 p_uSubindex, PDRV_UINT16 p_uNrOfElements, PDRV_ParValues * p_ptValues);
+
+#include "pdrv_parameter_ac4.inc"
+
+#undef PDRV_PARAMETER
+
+/*------------  extern  data  ------------*/
+
+
+/*------------  type definitions, constants, enums  ------------*/
+
+/** complete list of all parameters for implementation of parameters PNU00980 to PNU00989 */
+static const PDRV_O2 m_tParList[] =
+{
+#define PDRV_PARAMETER(Pnu, Identifier, NrOfElements, VarAttrib, RefPar, Normalisation, StdFactor, LoLimit, HiLimit, Name, TextFunc, ReadFunc, WriteFunc) \
+                       Pnu,
+#include "pdrv_parameter_ac4.inc"
+#undef PDRV_PARAMETER
+};
+
+#define PDRV_NOOFPARAMETERS (sizeof(m_tParList)/sizeof(m_tParList[0]))  /**&lt; number of all parameters */
+
+/** table with parameter objects */
+static const PDRV_PAR_OBJ m_tParObjDatas[] =
+{
+#define PDRV_NULL_T PDRV_NULL   /**&lt; redefinition to NULL pointer */
+#define PDRV_NULL_R PDRV_NULL   /**&lt; redefinition to NULL pointer */
+#define PDRV_NULL_W PDRV_NULL   /**&lt; redefinition to NULL pointer */
+#define PDRV_PARAMETER(Pnu, Identifier, NrOfElements, VarAttrib, RefPar, Normalisation, StdFactor, LoLimit, HiLimit, Name, TextFunc, ReadFunc, WriteFunc) \
+       {.uPnu = Pnu, \
+        .uIdentifier = Identifier, \
+        .uNrOfElements = NrOfElements, \
+        .uVarAttrib = VarAttrib, \
+        .uRefPar = RefPar, \
+        .uNormalisation = Normalisation, \
+        .fStdFactor = StdFactor, \
+        .uLoLimit = LoLimit, \
+        .uHiLimit = HiLimit, \
+        .puName = Name, \
+        .pfnText = TextFunc, \
+        .pfnRead = ReadFunc, \
+        .pfnWrite = WriteFunc},
+
+#include "pdrv_parameter_ac4.inc"
+
+#undef PDRV_PARAMETER
+#undef PDRV_NULL_W
+#undef PDRV_NULL_R
+#undef PDRV_NULL_T
+};
+
+
+/** PROFIdrive search for parameter number and get pointer of found parameter object
+ *  @details
+ *  @return     pointer with parameter object, PDRV_NULL if not found
+*/
+const PDRV_PAR_OBJ * ptPdrvPar_GetParObj
+    (PDRV_UINT16 p_uPnu     /**&lt; [in] search this parameter number */
+    )
+{
+    PDRV_PAR_OBJ const *ptParObj = PDRV_NULL;
+    PDRV_UINT uI;
+
+    for(uI = 0U; uI &lt; PDRV_NOOFPARAMETERS; uI++)
+    {
+        /* parameter found? */
+        if (m_tParList[uI] == p_uPnu)
+        {
+            ptParObj = &amp;m_tParObjDatas[uI];
+            break;
+        }
+    }
+
+    return ptParObj;
+}
+</code></pre><h1 id="九-总结">九、总结 </h1>
+<ul>
+<li>X-Macros是一种代码技术/技巧，适用于中小型项目中。</li>
+<li>X-Macros在Linux内核和工业自动化领域非常普遍（如西门子 SINAMICS、倍福 TwinCAT）</li>
+<li>推荐使用gcc -E命令在预编译阶段展开</li>
+<li>我们在后续的<a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkxNDQyMTU4Mg==&amp;action=getalbum&amp;album_id=3167963498191110153&amp;subscene=190&amp;scenenote=https%3A%2F%2Fmp.weixin.qq.com%2Fs%3F__biz%3DMzkxNDQyMTU4Mg%3D%3D%26mid%3D2247486280%26idx%3D1%26sn%3D268f6fe35e25884151c34c6dd692a6ce%26chksm%3Dc16fe969f618607f8c38162b0372dea69b85e465395b7daebd6e4ec1a51badcd93934c52b90b%26cur_album_id%3D3167963498191110153%26scene%3D190%26ascene%3D0%26devicetype%3DiOS15.2%26version%3D1800383b%26nettype%3D3G%2B%26abtest_cookie%3DAAACAA%253D%253D%26lang%3Dzh_CN%26countrycode%3DAL%26fontScale%3D100%26exportkey%3Dn_ChQIAhIQJVfuFN7QF%252B8hAAp6gGWLbhLXAQIE97dBBAEAAAAAAJJBCDsn4s4AAAAOpnltbLcz9gKNyK89dVj0KdtEHPPFUWk8AsjGTHH8c3C%252BtKT7Z1gQyEfo6SClTtao3n%252FaSlq3%252BS4QgyAQiJTtborhYPrGCK09NCHDGJgoVXM8hN1OXPSeybS8YTxxUVXi2FfEU2REeVtzLECCevkLu%252FdMdZst5KqG%252BvS9eKU%252FP0qRlxpeqU2%252Bkjl1AytleYxEgYxAWo%252B8w6zT51WiC5PaetVuSiMUlovEvNULKI0CM9BZ%252BjN8tD7fHiGLyQ%252BcP05M%26pass_ticket%3Dr2cbIHJnl90DtlyaMvIU8r3RZ%252Fm8AQYfVuFJ877aQwGsPjXJzPyTB2oBaIeNsv57%26wx_header%3D3&amp;nolastread=1#wechat_redirect">瑞萨RZN2L产品-第22章</a> 分析西门子profidrive使用X-Macros技术的源码</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    <script type="module">
+// TODO: If ZenUML gets integrated into mermaid in the future,
+//      we can remove the following lines.
+
+
+var MERMAID_CONFIG = ({"startOnLoad":false});
+if (typeof MERMAID_CONFIG !== 'undefined') {
+  MERMAID_CONFIG.startOnLoad = false
+  MERMAID_CONFIG.cloneCssStyles = false
+  MERMAID_CONFIG.theme = "default"
+}
+
+mermaid.initialize(MERMAID_CONFIG || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+} else {
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+}
+</script>
+    
+    
+    
+  
+    </body></html>
