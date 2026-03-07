@@ -32,43 +32,47 @@
             <p>一、目的/概述</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#二-资料来源" class="md-toc-link">
-            <p>二、资料来源</p>
+          <a href="#二-什么是lvgl-pro" class="md-toc-link">
+            <p>二、什么是LVGL Pro</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#三-环境要求" class="md-toc-link">
-            <p>三、环境要求</p>
+          <a href="#三-资料来源" class="md-toc-link">
+            <p>三、资料来源</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#四-环境要求" class="md-toc-link">
+            <p>四、环境要求</p>
 
           </a></div><details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#四-下载与安装步骤" class="md-toc-link"><p>四、下载与安装步骤</p>
+          <a href="#五-下载与安装步骤" class="md-toc-link"><p>五、下载与安装步骤</p>
 </a>
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#41-下载lvgl-pro编辑器" class="md-toc-link">
-            <p>4.1 下载LVGL Pro编辑器</p>
+          <a href="#51-下载lvgl-pro编辑器" class="md-toc-link">
+            <p>5.1 下载LVGL Pro编辑器</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#42-安装e2-studio插件" class="md-toc-link">
-            <p>4.2 安装e² studio插件</p>
+          <a href="#52-安装e2-studio插件" class="md-toc-link">
+            <p>5.2 安装e² studio插件</p>
 
           </a></div>
         </div>
       </details>
     <details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#五-wsl与容器环境配置" class="md-toc-link"><p>五、WSL与容器环境配置</p>
+          <a href="#六-wsl与容器环境配置" class="md-toc-link"><p>六、WSL与容器环境配置</p>
 </a>
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#51-安装wsl" class="md-toc-link">
-            <p>5.1 安装WSL</p>
+          <a href="#61-安装wsl" class="md-toc-link">
+            <p>6.1 安装WSL</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#52-安装podman自动化" class="md-toc-link">
-            <p>5.2 安装Podman（自动化）</p>
+          <a href="#62-安装podman自动化" class="md-toc-link">
+            <p>6.2 安装Podman（自动化）</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#63-配置网络加速" class="md-toc-link">
@@ -109,21 +113,44 @@
           </a></div>
 </div>
 <h1 id="一-目的概述">一、目的/概述 </h1>
-<p>瑞萨电子与LVGL官方合作，为瑞萨客户<strong>免费提供LVGL Pro商用授权</strong>。LVGL Pro是一款专业的嵌入式GUI编辑器，支持实时预览、自动生成C代码等功能。本文旨在详细介绍如何：</p>
+<p><a href="https://mp.weixin.qq.com/s/7owRqseJF4a80du1PTItqQ">瑞萨与LVGL合作，为瑞萨客户<strong>免费提供LVGL Pro商用授权</strong></a>。<br>
+本文旨在详细介绍如何：</p>
 <ol>
+<li>什么是LVGL Pro，瑞萨e2如何集成？如何免费？</li>
 <li>下载并安装LVGL Pro编辑器</li>
 <li>将LVGL Pro插件集成到e² studio</li>
 <li>配置Windows下必要的WSL和Podman环境</li>
 <li>创建第一个LVGL Pro工程，并实现实时预览</li>
 </ol>
-<h1 id="二-资料来源">二、资料来源 </h1>
+<h1 id="二-什么是lvgl-pro">二、什么是LVGL Pro </h1>
+<p>LVGL Pro是一个功能完备的工具包，可高效地用于构建、测试、共享和发布嵌入式用户界面。</p>
+<p>它由4种主要工具组成：</p>
+<ul>
+<li>
+<p>这是一款功能强大的<strong>XML编辑器</strong>，具备自动完成功能，可用于描述UI组件、界面、测试用例、动画效果、数据绑定等内容。在输入XML代码时，编辑器会实时显示精确到像素的预览效果。此外，该编辑器还能生成C代码，并能重新编译预览结果以运行自定义C代码。在这些页面中，您可以了解更多关于XML以及编辑器的信息。</p>
+</li>
+<li>
+<p><strong>Online Share</strong>是Editor的在线版本，它可以从GitHub仓库加载XML文件，从而无需搭建任何开发环境即可轻松共享开发的用户界面。欲了解更多信息，请点击此处。</p>
+</li>
+<li>
+<p>**CLI（命令行界面）**是一种工具，能够验证XML文件并从中生成C代码，或在CI/CD环境中运行UI测试。欲了解更多信息，请点击此处。</p>
+</li>
+<li>
+<p>这是一款<strong>Figma插件</strong>，可帮助您从Figma元素中提取样式属性，并将其同步到编辑器或命令行界面中。欲了解更多信息，请点击此处。</p>
+</li>
+</ul>
+<p><img src="./images/14.png" alt=""><br>
+<img src="./images/15.png" alt=""></p>
+<h1 id="三-资料来源">三、资料来源 </h1>
 <ul>
 <li>LVGL官方文档：<a href="https://docs.lvgl.io/master/index.html">LVGL 9.6 documentation</a></li>
 <li>LVGL Pro安装指南：<a href="https://docs.lvgl.io/master/xml/index.html">LVGL Pro and XML</a></li>
 <li>瑞萨集成LVGL Pro：<a href="https://docs.lvgl.io/master/xml/integration/renesas-dev-tools.html#">Renesas - LVGL 9.6 documentation</a></li>
 <li>LVGL 下载：<a href="https://pro.lvgl.io/#download">Download LVGL Pro</a></li>
+<li><a href="https://mp.weixin.qq.com/s/7owRqseJF4a80du1PTItqQ">瑞萨携手LVGL PRO，打造嵌入式图形界面开发一体化解决方案</a></li>
+<li><a href="https://www.renesas.cn/zh/products/microcontrollers-microprocessors/ra-cortex-m-mcus/ra-partners/lvgl-pro">Renesas Ready Ecosystem Partner Solution LVGL Pro Embedded UI Editor</a></li>
 </ul>
-<h1 id="三-环境要求">三、环境要求 </h1>
+<h1 id="四-环境要求">四、环境要求 </h1>
 <ul>
 <li><strong>硬件</strong>：瑞萨RA系列开发板（如RA8P1）</li>
 <li><strong>操作系统</strong>：Windows 10/11 (必须)</li>
@@ -133,11 +160,14 @@
 <ul>
 <li>Windows Subsystem for Linux (WSL)</li>
 <li>Podman (由LVGL Editor自动管理)</li>
+<li>LVGL_Pro_Editor-1.1.1-windows</li>
+<li>LVGL_Pro_e2.studio_plugin.v1.0.1</li>
+<li>lvglio_emscripten-sdl2_0.2.0-amd64</li>
 </ul>
 </li>
 </ul>
-<h1 id="四-下载与安装步骤">四、下载与安装步骤 </h1>
-<h2 id="41-下载lvgl-pro编辑器">4.1 下载LVGL Pro编辑器 </h2>
+<h1 id="五-下载与安装步骤">五、下载与安装步骤 </h1>
+<h2 id="51-下载lvgl-pro编辑器">5.1 下载LVGL Pro编辑器 </h2>
 <ol>
 <li>访问 <a href="https://pro.lvgl.io/#download">pro.lvgl.io/#download</a></li>
 <li>根据操作系统下载对应的 <strong>Editor Desktop App</strong>（例如Windows版 <code>lvgl-editor-*.exe</code>）</li>
@@ -145,7 +175,7 @@
 </ol>
 <p><img src="./images/12.png" alt=""><br>
 <em>图：LVGL官网下载页面，红框内为Renesas Integration插件和Editor Desktop App</em></p>
-<h2 id="42-安装e2-studio插件">4.2 安装e² studio插件 </h2>
+<h2 id="52-安装e2-studio插件">5.2 安装e² studio插件 </h2>
 <ol>
 <li>在上述下载页面，找到 <strong>Renesas Integration</strong> 区域，下载插件压缩包（<code>LVGL_Pro_e2.studio_plugin.v*.zip</code>）</li>
 <li><strong>务必解压</strong>到一个单独的文件夹（例如 <code>D:\lvgl_plugin</code>），确保文件夹内包含 <code>features</code> 和 <code>plugins</code> 子目录</li>
@@ -160,9 +190,9 @@
 </ul>
 <p><img src="./images/13.png" alt=""><br>
 <img src="./images/2.png" alt=""></p>
-<h1 id="五-wsl与容器环境配置">五、WSL与容器环境配置 </h1>
+<h1 id="六-wsl与容器环境配置">六、WSL与容器环境配置 </h1>
 <p>LVGL Pro的预览功能依赖Linux容器环境，Windows下必须配置WSL和Podman。</p>
-<h2 id="51-安装wsl">5.1 安装WSL </h2>
+<h2 id="61-安装wsl">6.1 安装WSL </h2>
 <ol>
 <li>以<strong>管理员身份</strong>打开PowerShell</li>
 <li>执行命令：<code>wsl --install</code>，安装默认Ubuntu发行版</li>
@@ -170,7 +200,7 @@
 <li>验证：<code>wsl -l -v</code>，应看到Ubuntu处于Running状态</li>
 </ol>
 <p><strong>注意：盗版Windows可能无法安装WSL，建议下载安装微软win11 iso</strong></p>
-<h2 id="52-安装podman自动化">5.2 安装Podman（自动化） </h2>
+<h2 id="62-安装podman自动化">6.2 安装Podman（自动化） </h2>
 <ol>
 <li><strong>无需手动安装</strong>。首次在e² studio中点击LVGL图标启动编辑器，并尝试预览时，编辑器会自动检测并创建名为 <code>podman-machine-default</code> 的虚拟机</li>
 <li>此过程可能需要几分钟，请耐心等待</li>
