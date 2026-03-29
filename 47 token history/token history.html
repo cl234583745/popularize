@@ -1,0 +1,291 @@
+<!DOCTYPE html><html><head>
+      <title>token history</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.22\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      <script type="text/javascript" src="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.22\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1>嵌入式科普(47)一文理解 Token 的前世今生：从虎符到词元</h1>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#一-概述" class="md-toc-link">
+            <p>一、概述</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#二-资料来源" class="md-toc-link">
+            <p>二、资料来源</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#三-为什么要追溯-token-的含义" class="md-toc-link">
+            <p>三、为什么要追溯 Token 的含义</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#四-token-的千年演变三个关键时代" class="md-toc-link"><p>四、Token 的千年演变：三个关键时代</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#41-古代token--虎符--信物" class="md-toc-link">
+            <p>4.1 古代：Token = 虎符 / 信物</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#42-计算机时代token--访问令牌" class="md-toc-link">
+            <p>4.2 计算机时代：Token = 访问令牌</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#43-ai-时代token--词元" class="md-toc-link">
+            <p>4.3 AI 时代：Token = 词元</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#五-token-演变对比表" class="md-toc-link">
+            <p>五、Token 演变对比表</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#六-一个中文词语的类比经济的变迁" class="md-toc-link">
+            <p>六、一个中文词语的类比：“经济”的变迁</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#七-总结" class="md-toc-link">
+            <p>七、总结</p>
+
+          </a></div>
+</div>
+<hr>
+<blockquote>
+<p>同一个英文单词，为何在计算机里叫“令牌”，在 AI 里叫“词元”？<br>
+本文带你穿越千年，看懂 Token 的演变逻辑。</p>
+</blockquote>
+<hr>
+<h1 id="一-概述">一、概述 </h1>
+<ul>
+<li>简介 Token 在三个时代的核心含义：古代信物、计算机令牌、AI 词元</li>
+<li>对比不同时期的中文翻译及其背后的技术范式</li>
+<li>本文重点是对 Token 概念演变的理解，以及翻译如何反映本质变化</li>
+</ul>
+<h1 id="二-资料来源">二、资料来源 </h1>
+<ul>
+<li>历史文献：《史记·魏公子列传》（虎符典故）</li>
+<li>计算机科学：RFC 6749（OAuth 2.0 令牌规范）</li>
+<li>AI 技术：OpenAI API 文档、NLP 分词原理</li>
+<li>中文译名考证：技术社区讨论及主流产品翻译实践</li>
+</ul>
+<h1 id="三-为什么要追溯-token-的含义">三、为什么要追溯 Token 的含义 </h1>
+<p>在技术领域，同一个英文术语在不同场景下可能承担截然不同的角色。如果沿用旧译名，容易造成误解：</p>
+<ul>
+<li>在安全场景中，Token 是“钥匙”，用于鉴权；</li>
+<li>在 AI 场景中，Token 是“砖块”，用于计量。</li>
+</ul>
+<p>若不区分，开发者可能会困惑：“为什么我的访问令牌（Access Token）要按个数收费？”<br>
+明确 Token 在各阶段的本质，有助于准确理解技术文档和架构设计。</p>
+<h1 id="四-token-的千年演变三个关键时代">四、Token 的千年演变：三个关键时代 </h1>
+<h2 id="41-古代token--虎符--信物">4.1 古代：Token = 虎符 / 信物 </h2>
+<p><strong>核心含义</strong>：实物凭证，验证身份与权限。</p>
+<p><img src="./images/1.png" alt=""></p>
+<p>古代 Token 表现为实物信物。中国最典型的例子是 <strong>虎符</strong>。虎符分为两半，皇帝持右半，将领持左半；调兵时必须左右相合，方可发令。成语“符合”即源于此。</p>
+<p>在西方，古希腊的 <strong>tessera</strong> 陶片也扮演类似角色——士兵凭它进入营地，观众凭它入场观看角斗。</p>
+<p><strong>中文翻译</strong>：在历史小说或译作中，这类信物常被直译为 <strong>“令牌”</strong> 或 <strong>“信物”</strong>。例如《冰与火之歌》中文版中，“信使令牌”就是传递命令的凭证。</p>
+<div class="mermaid">graph TD
+    A[君主] --&gt;|右半虎符| B[使者]
+    B --&gt;|两半相合| C[将领]
+    C --&gt;|验证通过| D[调动军队]
+    
+    style A fill:#e3f2fd
+    style C fill:#fff3e0
+    style D fill:#e8f5e8
+</div><h2 id="42-计算机时代token--访问令牌">4.2 计算机时代：Token = 访问令牌 </h2>
+<p><strong>核心含义</strong>：数字密钥，授权与认证。</p>
+<p><img src="./images/2.png" alt=""></p>
+<p>进入计算机领域，Token 被借用到网络安全中。最典型的是 <strong>Access Token（访问令牌）</strong>。</p>
+<p>当你登录微信、支付宝或任何网站时，服务器会返回一串字符。后续每次请求带上它，服务器就能识别你的身份，无需重复输入密码。</p>
+<p>这个阶段的 Token 本质是一把“钥匙”，翻译为 <strong>“令牌”</strong> 非常贴切——它既继承了古代信物的认证功能，又数字化了。</p>
+<div class="mermaid">graph TD
+    A[用户登录] --&gt; B[服务器验证]
+    B --&gt; C[颁发 Access Token]
+    C --&gt; D[后续请求携带 Token]
+    D --&gt; E[服务器放行]
+    
+    style C fill:#fff3e0
+    style E fill:#e8f5e8
+</div><h2 id="43-ai-时代token--词元">4.3 AI 时代：Token = 词元 </h2>
+<p><strong>核心含义：最小语义单元，计量单位。</strong></p>
+<p><img src="./images/3.png" alt=""></p>
+<p>大模型出现后，Token 的含义发生了根本转变。模型不认识文字，需要将自然语言切分成它能处理的最小单元——这个单元就叫 Token。</p>
+<p>“我爱你”可能被切成 3 个 Token（我、爱、你）。</p>
+<p>“ChatGPT”可能被切成 1 个 Token。</p>
+<p>一个汉字可能占 1 个或 2 个 Token，取决于分词算法。</p>
+<p>它既不是严格意义上的“字”，也不是“词”，而是<strong>最小的语义承载单元</strong>。技术界将其译为 <strong>“词元”</strong>——“词”指向语言，“元”指基本元素。</p>
+<p>此时的 Token 不再是钥匙，而是<strong>计量单位</strong>：模型的收费按词元数算，能力上限按上下文词元长度衡量。</p>
+<div class="mermaid">graph TD
+    A[输入文本] --&gt; B[分词器]
+    B --&gt; C[词元序列]
+    C --&gt; D[大模型处理]
+    D --&gt; E[按词元数计费]
+    
+    style B fill:#fff3e0
+    style C fill:#e8f5e8
+    style E fill:#e3f2fd
+</div><h1 id="五-token-演变对比表">五、Token 演变对比表 </h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">时代</th>
+<th style="text-align:center">典型场景</th>
+<th style="text-align:center">核心含义</th>
+<th style="text-align:center">中文译名</th>
+<th style="text-align:center">本质作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>古代</strong></td>
+<td style="text-align:center">虎符、tessera</td>
+<td style="text-align:center">实物信物</td>
+<td style="text-align:center">令牌 / 信物</td>
+<td style="text-align:center">验证身份与权限</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>计算机</strong></td>
+<td style="text-align:center">Access Token</td>
+<td style="text-align:center">数字密钥</td>
+<td style="text-align:center">访问令牌</td>
+<td style="text-align:center">认证与授权</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>AI</strong></td>
+<td style="text-align:center">大模型分词</td>
+<td style="text-align:center">语义单元</td>
+<td style="text-align:center">词元</td>
+<td style="text-align:center">量化输入与输出</td>
+</tr>
+</tbody>
+</table>
+<h1 id="六-一个中文词语的类比经济的变迁">六、一个中文词语的类比：“经济”的变迁 </h1>
+<p>中文里也有一个词，含义随时代发生了巨大变化——<strong>“经济”</strong>。</p>
+<ul>
+<li>
+<p><strong>古代</strong>：“经济”意为“经世济民”，指治国安邦的才能。如《红楼梦》中“学问经济”，即指治世之能。</p>
+</li>
+<li>
+<p><strong>近现代</strong>：被借用来翻译西方的 economy，变成了今天我们说的“经济活动、GDP、市场经济”。</p>
+</li>
+</ul>
+<p>同一个词，从“治国抱负”变成了“资源配置”，跨度之大，不亚于 Token 从“虎符”到“词元”的演变。</p>
+<h1 id="七-总结">七、总结 </h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类别</th>
+<th style="text-align:center">时代</th>
+<th style="text-align:center">关键词</th>
+<th style="text-align:center">翻译</th>
+<th style="text-align:center">应用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">信物时代</td>
+<td style="text-align:center">古代</td>
+<td style="text-align:center">虎符、tessera</td>
+<td style="text-align:center">令牌</td>
+<td style="text-align:center">军事调令、入场凭证</td>
+</tr>
+<tr>
+<td style="text-align:center">认证时代</td>
+<td style="text-align:center">计算机</td>
+<td style="text-align:center">Access Token</td>
+<td style="text-align:center">访问令牌</td>
+<td style="text-align:center">登录、API 调用</td>
+</tr>
+<tr>
+<td style="text-align:center">量化时代</td>
+<td style="text-align:center">AI</td>
+<td style="text-align:center">词元</td>
+<td style="text-align:center">词元</td>
+<td style="text-align:center">模型计费、上下文长度</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>现代 CPU 的速度远远超过内存访问速度</strong>，所以需要 Cache 来提升性能——这个逻辑与 Token 的演变无关，但说明技术术语总是随需求而变。</p>
+</li>
+<li>
+<p>Token 的每一次含义转变，都对应一次技术范式的跃迁：从物理信物到数字钥匙，再到语义砖块。</p>
+</li>
+<li>
+<p>翻译也随之调整：从“令牌”到“词元”，精准反映了本质变化。</p>
+</li>
+</ul>
+<p>当你在文档中看到“上下文 128K 词元”时，你不仅知道这是 128K 个最小语义单元，更知道这个词背后站着虎符、访问令牌和大模型的分词器。</p>
+
+      </div>
+      
+      
+    
+    
+    <script type="module">
+// TODO: If ZenUML gets integrated into mermaid in the future,
+//      we can remove the following lines.
+
+
+var MERMAID_CONFIG = ({"startOnLoad":false});
+if (typeof MERMAID_CONFIG !== 'undefined') {
+  MERMAID_CONFIG.startOnLoad = false
+  MERMAID_CONFIG.cloneCssStyles = false
+  MERMAID_CONFIG.theme = "default"
+}
+
+mermaid.initialize(MERMAID_CONFIG || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('div.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+  await mermaid.run({
+    nodes: document.querySelectorAll('div.mermaid')
+  })
+} else {
+  await mermaid.run({
+    nodes: document.querySelectorAll('div.mermaid')
+  })
+}
+</script>
+    
+    
+    
+  
+    </body></html>
