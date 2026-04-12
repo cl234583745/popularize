@@ -1,0 +1,620 @@
+<!DOCTYPE html><html><head>
+      <title>SIMD_NEON_Helium</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.22\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      <script type="text/javascript" src="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.22\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1>嵌入式科普(48)嵌入式SIMD技术介绍：SIMD、NEON、Helium</h1>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#一-概述" class="md-toc-link">
+            <p>一、概述</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#二-simd技术" class="md-toc-link"><p>二、SIMD技术</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#21-传统标量计算-vs-simd向量计算" class="md-toc-link"><p>2.1 传统标量计算 vs SIMD向量计算</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#传统标量计算scalar" class="md-toc-link">
+            <p>传统标量计算（Scalar）</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#simd向量计算vector" class="md-toc-link">
+            <p>SIMD向量计算（Vector）</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#对比图" class="md-toc-link">
+            <p>对比图</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#22-性能对比" class="md-toc-link">
+            <p>2.2 性能对比</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#23-simd的优势" class="md-toc-link">
+            <p>2.3 SIMD的优势</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#24-常见的simd指令集" class="md-toc-link">
+            <p>2.4 常见的SIMD指令集</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#三-arm-neon" class="md-toc-link"><p>三、ARM NEON</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#31-neon简介" class="md-toc-link">
+            <p>3.1 NEON简介</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#32-neon特性" class="md-toc-link">
+            <p>3.2 NEON特性</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#33-neon寄存器" class="md-toc-link">
+            <p>3.3 NEON寄存器</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#34-neon代码示例" class="md-toc-link">
+            <p>3.4 NEON代码示例</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#四-helium-mve" class="md-toc-link"><p>四、Helium (MVE)</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#41-helium简介" class="md-toc-link">
+            <p>4.1 Helium简介</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#42-helium特点" class="md-toc-link">
+            <p>4.2 Helium特点</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#43-helium代码示例" class="md-toc-link">
+            <p>4.3 Helium代码示例</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#五-neon-vs-helium-vs-dsp" class="md-toc-link"><p>五、NEON vs Helium vs DSP</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#51-技术对比" class="md-toc-link">
+            <p>5.1 技术对比</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#52-选择建议" class="md-toc-link">
+            <p>5.2 选择建议</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#六-编译器优化" class="md-toc-link"><p>六、编译器优化</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#61-自动向量化" class="md-toc-link">
+            <p>6.1 自动向量化</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#62-向量化级别" class="md-toc-link">
+            <p>6.2 向量化级别</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#七-总结" class="md-toc-link"><p>七、总结</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#71-核心要点" class="md-toc-link">
+            <p>7.1 核心要点</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#72-联系" class="md-toc-link">
+            <p>7.2 联系</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#73-后续" class="md-toc-link">
+            <p>7.3 后续</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+<h1 id="一-概述">一、概述 </h1>
+<p>1、在嵌入式领域，为了提升数据处理性能，<strong>SIMD</strong>（Single Instruction Multiple Data）技术被广泛应用。</p>
+<p>2、本文介绍SIMD、NEON、Helium等技术的概念和联系，为后续NEON性能测试报告提供基础知识。</p>
+<h1 id="二-simd技术">二、SIMD技术 </h1>
+<h2 id="21-传统标量计算-vs-simd向量计算">2.1 传统标量计算 vs SIMD向量计算 </h2>
+<h3 id="传统标量计算scalar">传统标量计算（Scalar） </h3>
+<p>CPU一次只处理<strong>一个</strong>数据：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据：     a[0]  a[1]  a[2]  a[3]  a[4]  a[5]  a[6]  a[7]
+            ↓     ↓     ↓     ↓     ↓     ↓     ↓     ↓
+操作：    [+b[0] [+b[1] [+b[2] [+b[3] [+b[4] [+b[5] [+b[6] [+b[7]
+            ↓     ↓     ↓     ↓     ↓     ↓     ↓     ↓
+结果：    c[0]  c[1]  c[2]  c[3]  c[4]  c[5]  c[6]  c[7]
+
+需要8条指令，CPU串行执行8次
+</code></pre><h3 id="simd向量计算vector">SIMD向量计算（Vector） </h3>
+<p>CPU一次处理<strong>多个</strong>数据：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>数据：  a[0]a[1]a[2]a[3]  a[4]a[5]a[6]a[7]
+        └──────────┘        └──────────┘
+              ↓                  ↓
+         [+b[0..3]           [+b[4..7]
+              ↓                  ↓
+        c[0]c[1]c[2]c[3]    c[4]c[5]c[6]c[7]
+
+只需要2条指令，理论性能提升4倍
+</code></pre><h3 id="对比图">对比图 </h3>
+<p><strong>传统标量计算（8次循环）：</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────┐
+│                 CPU 执行单元                     │
+├─────────────────────────────────────────────────┤
+│  循环1: 加载a[0] → 加法 → 存储c[0]               │
+│  循环2: 加载a[1] → 加法 → 存储c[1]               │
+│  循环3: 加载a[2] → 加法 → 存储c[2]               │
+│  ...                                            │
+│  循环8: 加载a[7] → 加法 → 存储c[7]               │
+├─────────────────────────────────────────────────┤
+│  总计：8次循环，8次加载，8次加法，8次存储          │
+└─────────────────────────────────────────────────┘
+</code></pre><p><strong>SIMD向量计算（1次循环）：</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────┐
+│              128位 NEON 寄存器                   │
+├─────────────────────────────────────────────────┤
+│  ┌────────────────────────────────────────────┐  │
+│  │D0: a[0]a[1]a[2]a[3] │D1: b[0]b[1]b[2]b[3] │  │
+│  └────────────────────────────────────────────┘  │
+│                      ↓                          │
+│            [vaddq_s32 向量加法]                  │
+│                      ↓                          │
+│  ┌────────────────────────────────────────────┐  │
+│  │    c[0]c[1]c[2]c[3] (结果)                │  │
+│  └────────────────────────────────────────────┘  │
+├─────────────────────────────────────────────────┤
+│  总计：1次循环，1次加载，1次加法，1次存储         │
+└─────────────────────────────────────────────────┘
+</code></pre><p><strong>执行对比：</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>传统:  [■][■][■][■][■][■][■][■] → 8个时钟周期
+       ═════════════════════��═
+       
+SIMD:  [■■■■] → 2个时钟周期
+       ══════
+</code></pre><h2 id="22-性能对比">2.2 性能对比 </h2>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>传统标量</th>
+<th>SIMD</th>
+<th>提升</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>指令数</strong></td>
+<td>8条</td>
+<td>2条</td>
+<td><strong>4x</strong></td>
+</tr>
+<tr>
+<td><strong>循环次数</strong></td>
+<td>8次</td>
+<td>1次</td>
+<td><strong>8x</strong></td>
+</tr>
+<tr>
+<td><strong>带宽需求</strong></td>
+<td>高</td>
+<td>低</td>
+<td><strong>4x</strong></td>
+</tr>
+<tr>
+<td><strong>功耗</strong></td>
+<td>高</td>
+<td>低</td>
+<td>↓</td>
+</tr>
+</tbody>
+</table>
+<h2 id="23-simd的优势">2.3 SIMD的优势 </h2>
+<table>
+<thead>
+<tr>
+<th>优势</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>并行处理</strong></td>
+<td>一条指令处理多个数据</td>
+</tr>
+<tr>
+<td><strong>提升性能</strong></td>
+<td>理论上有N倍性能提升</td>
+</tr>
+<tr>
+<td><strong>降低功耗</strong></td>
+<td>减少指令decode开销</td>
+</tr>
+<tr>
+<td><strong>节省带宽</strong></td>
+<td>减少内存访问次数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="24-常见的simd指令集">2.4 常见的SIMD指令集 </h2>
+<table>
+<thead>
+<tr>
+<th>指令集</th>
+<th>架构</th>
+<th>典型处理器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NEON</strong></td>
+<td>ARM</td>
+<td>Cortex-A/R系列</td>
+</tr>
+<tr>
+<td><strong>Helium</strong></td>
+<td>ARM</td>
+<td>Cortex-M55/M85</td>
+</tr>
+<tr>
+<td><strong>SSE/AVX</strong></td>
+<td>x86</td>
+<td>Intel/AMD</td>
+</tr>
+<tr>
+<td><strong>AltiVec</strong></td>
+<td>PowerPC</td>
+<td>NXP T系列</td>
+</tr>
+<tr>
+<td><strong>DSP</strong></td>
+<td>多家</td>
+<td>TI C6000等</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三-arm-neon">三、ARM NEON </h1>
+<h2 id="31-neon简介">3.1 NEON简介 </h2>
+<p><strong>NEON</strong>是ARM的SIMD指令集扩展，主要用于：</p>
+<ul>
+<li><strong>Cortex-A系列</strong>：手机、平板、嵌入式</li>
+<li><strong>Cortex-R系列</strong>：实时控制器（如RZN2L）</li>
+</ul>
+<h2 id="32-neon特性">3.2 NEON特性 </h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>128位向量寄存器</strong></td>
+<td>16个（D0-D15）或32个</td>
+</tr>
+<tr>
+<td><strong>数据类型</strong></td>
+<td>8/16/32/64位整数、单精度浮点</td>
+</tr>
+<tr>
+<td><strong>指令数量</strong></td>
+<td>约200条</td>
+</tr>
+<tr>
+<td><strong>并行度</strong></td>
+<td>最多4×32位或8×16位</td>
+</tr>
+</tbody>
+</table>
+<h2 id="33-neon寄存器">3.3 NEON寄存器 </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>NEON寄存器：
+  D0-D15 (64位) 或
+  Q0-Q7 (128位)
+
+示例：
+  D0 = [byte0 | byte1 | ... | byte7]
+  Q0 = [word0 | word1 | word2 | word3]  (128位)
+</code></pre><h2 id="34-neon代码示例">3.4 NEON代码示例 </h2>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;arm_neon.h&gt;</span></span>
+
+<span class="token comment">// C代码（标量）</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">add_array_c</span><span class="token punctuation">(</span><span class="token class-name">int32_t</span> <span class="token operator">*</span>c<span class="token punctuation">,</span> <span class="token keyword keyword-const">const</span> <span class="token class-name">int32_t</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token keyword keyword-const">const</span> <span class="token class-name">int32_t</span> <span class="token operator">*</span>b<span class="token punctuation">,</span> <span class="token keyword keyword-int">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        c<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// NEON代码（向量）</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">add_array_neon</span><span class="token punctuation">(</span><span class="token class-name">int32_t</span> <span class="token operator">*</span>c<span class="token punctuation">,</span> <span class="token keyword keyword-const">const</span> <span class="token class-name">int32_t</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token keyword keyword-const">const</span> <span class="token class-name">int32_t</span> <span class="token operator">*</span>b<span class="token punctuation">,</span> <span class="token keyword keyword-int">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-int">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n <span class="token operator">-</span> <span class="token number">4</span><span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">int32x4_t</span> va <span class="token operator">=</span> <span class="token function">vld1q_s32</span><span class="token punctuation">(</span>a <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">int32x4_t</span> vb <span class="token operator">=</span> <span class="token function">vld1q_s32</span><span class="token punctuation">(</span>b <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">int32x4_t</span> vc <span class="token operator">=</span> <span class="token function">vaddq_s32</span><span class="token punctuation">(</span>va<span class="token punctuation">,</span> vb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">vst1q_s32</span><span class="token punctuation">(</span>c <span class="token operator">+</span> i<span class="token punctuation">,</span> vc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 性能提升：约2-4倍</span>
+</code></pre><h1 id="四-helium-mve">四、Helium (MVE) </h1>
+<h2 id="41-helium简介">4.1 Helium简介 </h2>
+<p><strong>Helium</strong>是ARM针对<strong>Cortex-M</strong>微控制器的SIMD技术，原名<strong>MVE</strong>（Helium Vector Extension）：</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>NEON</th>
+<th>Helium</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>向量宽度</td>
+<td>128位</td>
+<td>128位</td>
+</tr>
+<tr>
+<td>目标</td>
+<td>Cortex-A/R</td>
+<td>Cortex-M55/M85</td>
+</tr>
+<tr>
+<td>浮点支持</td>
+<td>必须</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>整数支持</td>
+<td>必须</td>
+<td>必须</td>
+</tr>
+</tbody>
+</table>
+<h2 id="42-helium特点">4.2 Helium特点 </h2>
+<ol>
+<li><strong>专为微控制器设计</strong>：低功耗、小面积</li>
+<li><strong>可选浮点单元</strong>：灵活配置</li>
+<li><strong>与DSP指令集兼容</strong>：Cortex-M7兼容</li>
+</ol>
+<h2 id="43-helium代码示例">4.3 Helium代码示例 </h2>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;arm_math.h&gt;</span></span>
+
+<span class="token comment">// Helium DSP</span>
+<span class="token keyword keyword-float">float</span> <span class="token function">dot_product_mve</span><span class="token punctuation">(</span><span class="token keyword keyword-float">float</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token keyword keyword-float">float</span> <span class="token operator">*</span>b<span class="token punctuation">,</span> <span class="token keyword keyword-int">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">float32x4_t</span> sum <span class="token operator">=</span> <span class="token function">vdupq_n_f32</span><span class="token punctuation">(</span><span class="token number">0.0f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        sum <span class="token operator">=</span> <span class="token function">vfmaq_f32</span><span class="token punctuation">(</span>sum<span class="token punctuation">,</span> <span class="token function">vld1q_f32</span><span class="token punctuation">(</span>a <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">vld1q_f32</span><span class="token punctuation">(</span>b <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-return">return</span> <span class="token function">vaddvq_f32</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h1 id="五-neon-vs-helium-vs-dsp">五、NEON vs Helium vs DSP </h1>
+<h2 id="51-技术对比">5.1 技术对比 </h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>NEON</th>
+<th>Helium</th>
+<th>传统DSP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>架构</strong></td>
+<td>ARMv7/v8</td>
+<td>ARMv8.1-M</td>
+<td>各厂商</td>
+</tr>
+<tr>
+<td><strong>位宽</strong></td>
+<td>128位</td>
+<td>128位</td>
+<td>32-64位</td>
+</tr>
+<tr>
+<td><strong>寄存器</strong></td>
+<td>16×64/32×128</td>
+<td>16×128</td>
+<td>8-32×32</td>
+</tr>
+<tr>
+<td><strong>性能</strong></td>
+<td>最高</td>
+<td>中等</td>
+<td>较低</td>
+</tr>
+<tr>
+<td><strong>适用</strong></td>
+<td>Cortex-A/R</td>
+<td>Cortex-M55</td>
+<td>TI/NXP</td>
+</tr>
+</tbody>
+</table>
+<h2 id="52-选择建议">5.2 选择建议 </h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐技术</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>高端嵌入式</strong>（RZN2L）</td>
+<td>NEON</td>
+</tr>
+<tr>
+<td><strong>微控制器</strong></td>
+<td>Helium</td>
+</tr>
+<tr>
+<td><strong>低成本DSP</strong></td>
+<td>传统DSP</td>
+</tr>
+<tr>
+<td><strong>通用CPU</strong></td>
+<td>AVX/SSE</td>
+</tr>
+</tbody>
+</table>
+<h1 id="六-编译器优化">六、编译器优化 </h1>
+<h2 id="61-自动向量化">6.1 自动向量化 </h2>
+<p>现代编译器支持<strong>自动向量化</strong>，自动将C代码编译为SIMD指令：</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># 编译选项</span>
+<span class="token parameter variable">-mcpu</span><span class="token operator">=</span>cortex-r52 <span class="token parameter variable">-mfpu</span><span class="token operator">=</span>neon-fp-armv8 <span class="token parameter variable">-O2</span>
+</code></pre><h2 id="62-向量化级别">6.2 向量化级别 </h2>
+<div class="mermaid">flowchart LR
+    A[无优化 -O0] --&gt; B[基本优化 -O1]
+    B --&gt; C[自动向量化 -O2]
+    C --&gt; D[激进优化 -O3]
+    
+    style A fill:#f9f,stroke:#333
+    style B fill:#ff9,stroke:#333
+    style C fill:#9f9,stroke:#333
+    style D fill:#9ff,stroke:#333
+</div><h1 id="七-总结">七、总结 </h1>
+<h2 id="71-核心要点">7.1 核心要点 </h2>
+<table>
+<thead>
+<tr>
+<th>技术</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SIMD</strong></td>
+<td>单指令多数据并行技术</td>
+</tr>
+<tr>
+<td><strong>NEON</strong></td>
+<td>ARM Cortex-A/R的SIMD</td>
+</tr>
+<tr>
+<td><strong>Helium</strong></td>
+<td>ARM Cortex-M的SIMD</td>
+</tr>
+</tbody>
+</table>
+<h2 id="72-联系">7.2 联系 </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>SIMD（概念）
+  ├─ ARM实现 → NEON（Cortex-A/R）
+  │           └─ Helium（Cortex-M）
+  ├─ x86实现 → SSE/AVX
+  └─ DSP → TI C6000等
+</code></pre><h2 id="73-后续">7.3 后续 </h2>
+<blockquote>
+<p>详细性能测试数据和分析见<a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkxNDQyMTU4Mg==&amp;action=getalbum&amp;album_id=3167963498191110153#wechat_redirect">二十五、RZN2L NEON性能测试分析报告</a></p>
+</blockquote>
+
+      </div>
+      
+      
+    
+    
+    <script type="module">
+// TODO: If ZenUML gets integrated into mermaid in the future,
+//      we can remove the following lines.
+
+
+var MERMAID_CONFIG = ({"startOnLoad":false});
+if (typeof MERMAID_CONFIG !== 'undefined') {
+  MERMAID_CONFIG.startOnLoad = false
+  MERMAID_CONFIG.cloneCssStyles = false
+  MERMAID_CONFIG.theme = "default"
+}
+
+mermaid.initialize(MERMAID_CONFIG || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('div.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+  await mermaid.run({
+    nodes: document.querySelectorAll('div.mermaid')
+  })
+} else {
+  await mermaid.run({
+    nodes: document.querySelectorAll('div.mermaid')
+  })
+}
+</script>
+    
+    
+    
+  
+    </body></html>
