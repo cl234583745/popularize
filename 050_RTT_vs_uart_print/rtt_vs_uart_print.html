@@ -1,0 +1,1068 @@
+<!DOCTYPE html><html><head>
+      <title>rtt_vs_uart_print</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.25\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      <script type="text/javascript" src="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.25\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-details{margin:0;padding:0;border:none}.markdown-preview .md-toc summary.md-toc-link-wrapper{cursor:pointer;list-style-position:outside}.markdown-preview .md-toc summary.md-toc-link-wrapper::marker{font-size:.85em}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='0']{margin-left:12px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='1']{margin-left:28px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='2']{margin-left:44px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='3']{margin-left:60px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='4']{margin-left:76px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='5']{margin-left:80px}.markdown-preview a.tag,.markdown-preview a.tag:active,.markdown-preview a.tag:link,.markdown-preview a.tag:visited,.markdown-preview span.tag{display:inline-block;background-color:var(--vscode-badge-background,rgba(127,127,127,.18));color:var(--vscode-badge-foreground,currentColor);border-radius:2em;font-size:.85em;font-weight:500;padding:.05em .55em;line-height:1.5;white-space:nowrap;text-decoration:none;text-shadow:none;box-shadow:none;transition:background-color .12s ease,opacity .12s ease}.markdown-preview a.tag{cursor:pointer}.markdown-preview a.tag:focus,.markdown-preview a.tag:hover{background-color:var(--vscode-badge-background,rgba(127,127,127,.32));color:var(--vscode-badge-foreground,currentColor);opacity:.85;text-decoration:none;outline:0}.markdown-preview .wikilink-embed-content{border-left:3px solid var(--vscode-textBlockQuote-border,rgba(128,128,128,.3));background:var(--vscode-textBlockQuote-background,rgba(128,128,128,.05));margin:.5em 0;padding:.5em .75em;border-radius:0 3px 3px 0}.markdown-preview .wikilink-embed-content.wikilink-embed-error{border-left-color:var(--vscode-errorForeground,#cf222e);color:var(--vscode-errorForeground,#cf222e);font-style:italic;opacity:.8}.markdown-preview .wikilink-embed-content h1:first-child,.markdown-preview .wikilink-embed-content h2:first-child,.markdown-preview .wikilink-embed-content h3:first-child,.markdown-preview .wikilink-embed-content h4:first-child,.markdown-preview .wikilink-embed-content h5:first-child,.markdown-preview .wikilink-embed-content h6:first-child{margin-top:.25em}.markdown-preview .wikilink-embed-content .wikilink-embed-content{margin:.25em 0;padding:.25em .5em}.markdown-preview .block-id{display:none}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-details{margin:0;padding:0;border:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='0']{padding-left:0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='1']{padding-left:16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='2']{padding-left:32px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='3']{padding-left:48px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='4']{padding-left:64px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='5']{padding-left:80px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1>嵌入式科普(50)SEGGER RTT vs UART打印速度深度分析</h1>
+<div class="md-toc">
+<div class="md-toc-link-wrapper" data-level="0">
+  <a href="#一-目的" class="md-toc-link">一、目的</a>
+</div>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="0">
+  <a href="#二-核心结论" class="md-toc-link">二、核心结论</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#性能对比图" class="md-toc-link">性能对比图</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#各阶段时间占比详解" class="md-toc-link">各阶段时间占比详解</a>
+</div>
+</details>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="0">
+  <a href="#三-核心原因分析" class="md-toc-link">三、核心原因分析</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#31-为什么uart慢" class="md-toc-link">3.1 为什么UART慢？</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#32-dma为什么也慢" class="md-toc-link">3.2 DMA为什么也慢？</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#33-rtt为什么快" class="md-toc-link">3.3 RTT为什么快？</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#34-本质区别" class="md-toc-link">3.4 本质区别</a>
+</div>
+</details>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="0">
+  <a href="#四-引用数据" class="md-toc-link">四、引用数据</a>
+</summary>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="1">
+  <a href="#41-segger官方性能数据" class="md-toc-link">4.1 SEGGER官方性能数据</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#速度对比stm32f407-cortex-m4--168mhz" class="md-toc-link">速度对比（STM32F407 Cortex-M4 @ 168MHz）</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#rtt性能指标" class="md-toc-link">RTT性能指标</a>
+</div>
+</details>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#42-不同数据量性能对比" class="md-toc-link">4.2 不同数据量性能对比</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#43-rtt速度优势的底层原因" class="md-toc-link">4.3 RTT速度优势的底层原因</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#44-rtt格式化函数优化" class="md-toc-link">4.4 RTT格式化函数优化</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#45-直接字符串输出最快" class="md-toc-link">4.5 直接字符串输出（最快）</a>
+</div>
+</details>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="0">
+  <a href="#五-rtt工作原理" class="md-toc-link">五、RTT工作原理</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#51-数据流对比" class="md-toc-link">5.1 数据流对比</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#52-时间线对比" class="md-toc-link">5.2 时间线对比</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#53-rtt内部结构" class="md-toc-link">5.3 RTT内部结构</a>
+</div>
+</details>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="0">
+  <a href="#六-rtt的缺点与局限性" class="md-toc-link">六、RTT的缺点与局限性</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#61-硬件依赖" class="md-toc-link">6.1 硬件依赖</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#62-使用场景限制" class="md-toc-link">6.2 使用场景限制</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#63-与uart对比的局限性" class="md-toc-link">6.3 与UART对比的局限性</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#64-成本对比" class="md-toc-link">6.4 成本对比</a>
+</div>
+</details>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="0">
+  <a href="#七-实际应用建议" class="md-toc-link">七、实际应用建议</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#71-何时使用rtt" class="md-toc-link">7.1 何时使用RTT</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#72-优化建议" class="md-toc-link">7.2 优化建议</a>
+</div>
+</details>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="0">
+  <a href="#八-总结" class="md-toc-link">八、总结</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#81-时间分布对比" class="md-toc-link">8.1 时间分布对比</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#82-核心结论" class="md-toc-link">8.2 核心结论</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#83-最终结论" class="md-toc-link">8.3 最终结论</a>
+</div>
+</details>
+<div class="md-toc-link-wrapper" data-level="0">
+  <a href="#九-参考资料" class="md-toc-link">九、参考资料</a>
+</div>
+</div>
+<h1 id="一-目的">一、目的 </h1>
+<p>1、分析嵌入式调试中printf输出的性能瓶颈</p>
+<p>2、对比SEGGER RTT与传统UART（轮询/中断/DMA）的耗时差异</p>
+<p>3、说明本文内容与具体芯片无关，适用于所有支持J-Link的平台</p>
+<h1 id="二-核心结论">二、核心结论 </h1>
+<p>以典型调试日志<code>printf("val=%d\n", 123);</code>（15字节）为例：</p>
+<blockquote>
+<p><strong>测试条件</strong>：STM32F407 Cortex-M4 @ 168MHz，UART 115200bps，J-Link Pro @ 50MHz SWD</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>总耗时</th>
+<th>格式化占比</th>
+<th>传输占比</th>
+<th>瓶颈所在</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UART轮询</td>
+<td>~1060μs</td>
+<td>~1.5%</td>
+<td><strong>~98.5%</strong></td>
+<td>等待串口移位发送</td>
+</tr>
+<tr>
+<td>UART中断</td>
+<td>~1065μs</td>
+<td>~2%</td>
+<td><strong>~98%</strong></td>
+<td>等待串口移位发送</td>
+</tr>
+<tr>
+<td>UART DMA</td>
+<td>~1080μs</td>
+<td>~3%</td>
+<td><strong>~97%</strong></td>
+<td>串口移位发送+占用总线</td>
+</tr>
+<tr>
+<td><strong>RTT</strong></td>
+<td><strong>~12μs</strong></td>
+<td><strong>~83%</strong></td>
+<td><strong>~17%</strong></td>
+<td>格式化计算</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>推算依据</strong>：</p>
+<ul>
+<li>UART传输时间 = 15字节 × 10bit/字节 ÷ 115200bps = 1.3ms（物理限制）</li>
+<li>RTT传输时间 = 基于SEGGER官方"一行文本&lt;1μs"，15字节约2μs（内存拷贝）</li>
+<li>格式化时间 = 基于DigiKey测试，简单整数格式化约65-365μs（取决于时钟频率）</li>
+</ul>
+</blockquote>
+<p><strong>一句话总结</strong>：</p>
+<ul>
+<li><strong>UART/DMA</strong>：98%时间花在<strong>串行移位发送</strong>（115200bps物理限制）</li>
+<li><strong>RTT</strong>：瓶颈在<strong>格式化</strong>，传输仅2μs（一次内存拷贝）</li>
+</ul>
+<h2 id="性能对比图">性能对比图 </h2>
+<div class="mermaid">gantt
+    title printf("val=%d\n", 123) 时间分布
+    dateFormat X
+    axisFormat %sμs
+    
+    section UART轮询
+    格式化 (1.6%)     :0, 17
+    串口传输 (98.4%)   :17, 1059
+    
+    section UART DMA
+    格式化 (3.3%)     :0, 36
+    DMA+串口传输 (96.7%) :36, 1077
+    
+    section RTT
+    格式化 (83%)      :0, 10
+    内存拷贝 (17%)    :10, 12
+</div><h2 id="各阶段时间占比详解">各阶段时间占比详解 </h2>
+<blockquote>
+<p><strong>测试条件</strong>：STM32F407 @ 168MHz，UART 115200bps，J-Link Pro @ 50MHz SWD</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>格式化时间</th>
+<th>格式化占比</th>
+<th>传输时间</th>
+<th>传输占比</th>
+<th>总耗时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UART轮询</td>
+<td>~17μs</td>
+<td>~1.5%</td>
+<td>~1042μs</td>
+<td><strong>~98.5%</strong></td>
+<td>~1060μs</td>
+</tr>
+<tr>
+<td>UART中断</td>
+<td>~22μs</td>
+<td>~2%</td>
+<td>~1042μs</td>
+<td><strong>~98%</strong></td>
+<td>~1065μs</td>
+</tr>
+<tr>
+<td>UART DMA</td>
+<td>~36μs</td>
+<td>~3%</td>
+<td>~1041μs</td>
+<td><strong>~97%</strong></td>
+<td>~1080μs</td>
+</tr>
+<tr>
+<td><strong>RTT</strong></td>
+<td><strong>~10μs</strong></td>
+<td><strong>~83%</strong></td>
+<td><strong>~2μs</strong></td>
+<td><strong>~17%</strong></td>
+<td><strong>~12μs</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>推算依据</strong>：</p>
+<ul>
+<li>UART传输 = 15 × 10 ÷ 115200 = 1.3ms（含起始/停止位）</li>
+<li>RTT传输 = SEGGER官方"一行文本&lt;1μs"，15字节≈2μs</li>
+<li>格式化时间 = DigiKey测试数据，48MHz时钟下约65-68μs，168MHz下约10-20μs（按比例推算）</li>
+</ul>
+</blockquote>
+<p><strong>关键发现</strong>：</p>
+<ul>
+<li><strong>UART系列</strong>：格式化仅占1.5%-3%，<strong>98%以上时间用于串行传输</strong></li>
+<li><strong>RTT</strong>：格式化占83%，传输仅占17%，<strong>瓶颈完全反转</strong></li>
+<li><strong>RTT传输时间</strong>：仅2μs（一次内存拷贝），是UART的<strong>1/500</strong></li>
+</ul>
+<h1 id="三-核心原因分析">三、核心原因分析 </h1>
+<h2 id="31-为什么uart慢">3.1 为什么UART慢？ </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>printf("val=%d\n", 123);  // 15字节
+
+[格式化 ~15μs] → [串口发送 ~1042μs]  ← 98%时间在这里
+                      ↑
+                物理限制！
+                115200bps = 每秒11520位
+                15字节 = 120位
+                120 / 115200 = 1.04ms
+</code></pre><p><strong>串口是串行移位传输</strong>：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>字节0: [起始][bit0][bit1]...[bit7][停止] → ~87μs
+字节1: [起始][bit0][bit1]...[bit7][停止] → ~87μs
+...
+字节14: [起始][bit0][bit1]...[bit7][停止] → ~87μs
+───────────────────────────────────────────
+总计: 15 × 87μs = 1305μs ≈ 1.3ms
+</code></pre><blockquote>
+<p><strong>注</strong>：115200bps下，每个字节传输时间 = 10bit ÷ 115200bps = 86.8μs</p>
+</blockquote>
+<h2 id="32-dma为什么也慢">3.2 DMA为什么也慢？ </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>DMA传输15字节：
+[DMA读内存] → [DMA写UART FIFO] → [UART移位发送 1ms]
+     ↓               ↓                    ↓
+   占用总线        占用总线           1ms串行传输
+</code></pre><p><strong>DMA的问题</strong>：</p>
+<ul>
+<li><strong>传输时间不变</strong>：仍需1ms（波特率限制）</li>
+<li><strong>占用总线</strong>：其他DMA/总线主设备需等待</li>
+<li>DMA解决的是<strong>CPU占用</strong>，不是<strong>传输速度</strong></li>
+</ul>
+<h2 id="33-rtt为什么快">3.3 RTT为什么快？ </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>printf("val=%d\n", 123);  // 15字节
+
+[格式化 ~10μs] → [内存拷贝 ~2μs] → [完成]
+                       ↑
+                 这是内存操作！
+                 32位总线，一次拷贝4字节
+                 15字节 ≈ 4次内存写入
+                 每次 ~0.5μs
+</code></pre><blockquote>
+<p><strong>推算依据</strong>：SEGGER官方"一行文本&lt;1μs"是指纯内存拷贝，不含格式化。15字节在32位总线上约4次写入，每次~0.5μs。</p>
+</blockquote>
+<p><strong>RTT的本质</strong>：</p>
+<ul>
+<li><strong>一次内存拷贝</strong>，不是串行传输</li>
+<li>内存带宽 &gt;&gt; 串口带宽（1000倍+）</li>
+<li>不占用外设总线，不影响其他DMA</li>
+</ul>
+<h2 id="34-本质区别">3.4 本质区别 </h2>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>传输本质</th>
+<th>耗时决定因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UART轮询</td>
+<td>串行移位</td>
+<td>波特率 × 字节数</td>
+</tr>
+<tr>
+<td>UART中断</td>
+<td>串行移位</td>
+<td>波特率 × 字节数</td>
+</tr>
+<tr>
+<td>UART DMA</td>
+<td>串行移位</td>
+<td>波特率 × 字节数</td>
+</tr>
+<tr>
+<td><strong>RTT</strong></td>
+<td><strong>内存拷贝</strong></td>
+<td>内存带宽（可忽略）</td>
+</tr>
+</tbody>
+</table>
+<h1 id="四-引用数据">四、引用数据 </h1>
+<h2 id="41-segger官方性能数据">4.1 SEGGER官方性能数据 </h2>
+<p>引用自 <a href="https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/">SEGGER RTT官方文档</a>：</p>
+<h3 id="速度对比stm32f407-cortex-m4--168mhz">速度对比（STM32F407 Cortex-M4 @ 168MHz） </h3>
+<blockquote>
+<p><strong>测试条件</strong>：SEGGER官方测试，J-Link Pro @ 50MHz SWD，RTT缓冲区512字节</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>调试方式</th>
+<th>输出1KB耗时</th>
+<th>相对速度</th>
+<th>传输机制</th>
+<th>数据来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UART 115200</td>
+<td>~87ms</td>
+<td>1x</td>
+<td>串行移位</td>
+<td>计算值¹</td>
+</tr>
+<tr>
+<td>UART 921600</td>
+<td>~11ms</td>
+<td>8x</td>
+<td>串行移位</td>
+<td>计算值¹</td>
+</tr>
+<tr>
+<td>SWO (SWV)</td>
+<td>~5ms</td>
+<td>17x</td>
+<td>串行跟踪</td>
+<td>SEGGER图表估算</td>
+</tr>
+<tr>
+<td>Semihosting</td>
+<td>~200ms</td>
+<td>0.4x</td>
+<td>调试器中断</td>
+<td>典型值²</td>
+</tr>
+<tr>
+<td><strong>SEGGER RTT</strong></td>
+<td><strong>~0.5ms</strong></td>
+<td><strong>174x</strong></td>
+<td><strong>内存拷贝</strong></td>
+<td>SEGGER官方³</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注释</strong>：</p>
+<ol>
+<li>计算公式：数据量 × 10bit/字节 ÷ 波特率 × 1000ms</li>
+<li>Semihosting需要调试器中断，速度取决于调试器实现</li>
+<li>SEGGER官方："average line of text can be output in one microsecond or less"</li>
+</ol>
+</blockquote>
+<p><strong>关键结论</strong>：RTT通过调试器直接读取内存，绕过串行传输瓶颈，比标准UART快<strong>174倍</strong>。</p>
+<h3 id="rtt性能指标">RTT性能指标 </h3>
+<blockquote>
+<p><strong>数据来源</strong>：SEGGER官方文档</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>说明</th>
+<th>数据来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>写入速度</td>
+<td>&gt; 2 MB/s</td>
+<td>远超UART的11.5KB/s</td>
+<td>SEGGER官方</td>
+</tr>
+<tr>
+<td>典型延迟</td>
+<td>&lt; 1 μs</td>
+<td>内存操作，几乎无延迟</td>
+<td>SEGGER官方</td>
+</tr>
+<tr>
+<td>CPU占用</td>
+<td>&lt; 1%</td>
+<td>仅写入缓冲区</td>
+<td>SEGGER官方</td>
+</tr>
+<tr>
+<td>代码大小</td>
+<td>~500 Bytes</td>
+<td>ROM占用</td>
+<td>SEGGER官方</td>
+</tr>
+<tr>
+<td>RAM占用</td>
+<td>24B + 24B/通道</td>
+<td>控制块+缓冲区</td>
+<td>SEGGER官方</td>
+</tr>
+</tbody>
+</table>
+<p><strong>官方说明</strong>：RTT利用调试器的内存访问能力，在CPU运行时实时读取数据，无需停止目标程序。平均一行文本输出在<strong>1微秒或更少</strong>，基本上只是一次<code>memcpy()</code>的时间。</p>
+<h2 id="42-不同数据量性能对比">4.2 不同数据量性能对比 </h2>
+<blockquote>
+<p><strong>测试条件</strong>：UART 115200bps/921600bps，RTT @ 2MB/s（基于SEGGER官方数据）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>数据量</th>
+<th>UART 115200</th>
+<th>UART 921600</th>
+<th>RTT</th>
+<th>RTT加速倍数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15字节</td>
+<td>~1.3ms</td>
+<td>~0.16ms</td>
+<td>~0.008ms</td>
+<td><strong>160x</strong></td>
+</tr>
+<tr>
+<td>100字节</td>
+<td>~8.7ms</td>
+<td>~1.1ms</td>
+<td>~0.05ms</td>
+<td><strong>174x</strong></td>
+</tr>
+<tr>
+<td>1KB</td>
+<td>~87ms</td>
+<td>~11ms</td>
+<td>~0.5ms</td>
+<td><strong>174x</strong></td>
+</tr>
+<tr>
+<td>10KB</td>
+<td>~870ms</td>
+<td>~110ms</td>
+<td>~5ms</td>
+<td><strong>174x</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>计算公式</strong>：</p>
+<ul>
+<li>UART时间 = 数据量 × 10bit/字节 ÷ 波特率 × 1000ms</li>
+<li>RTT时间 = 数据量 ÷ 2MB/s × 1000ms（基于SEGGER官方"&gt;2MB/s"）</li>
+<li>加速倍数 = UART 115200时间 ÷ RTT时间</li>
+</ul>
+</blockquote>
+<h2 id="43-rtt速度优势的底层原因">4.3 RTT速度优势的底层原因 </h2>
+<blockquote>
+<p><strong>说明</strong>：基于硬件架构分析</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>UART</th>
+<th>RTT</th>
+<th>差异倍数</th>
+<th>数据来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传输机制</td>
+<td>串行移位（1bit/时钟）</td>
+<td>内存拷贝（32bit/时钟）</td>
+<td>32x</td>
+<td>硬件架构分析</td>
+</tr>
+<tr>
+<td>传输介质</td>
+<td>UART外设</td>
+<td>系统总线</td>
+<td>-</td>
+<td>硬件架构分析</td>
+</tr>
+<tr>
+<td>带宽上限</td>
+<td>11.5KB/s (115200bps)</td>
+<td>&gt;2MB/s</td>
+<td><strong>174x</strong></td>
+<td>SEGGER官方</td>
+</tr>
+<tr>
+<td>CPU参与</td>
+<td>全程/部分</td>
+<td>仅写入</td>
+<td>-</td>
+<td>SEGGER官方</td>
+</tr>
+<tr>
+<td>总线占用</td>
+<td>外设总线</td>
+<td>系统总线</td>
+<td>-</td>
+<td>硬件架构分析</td>
+</tr>
+</tbody>
+</table>
+<h2 id="44-rtt格式化函数优化">4.4 RTT格式化函数优化 </h2>
+<blockquote>
+<p><strong>说明</strong>：以下为基于SEGGER官方API设计的一般性分析，非精确测量值</p>
+</blockquote>
+<p>RTT的printf实现比C标准库更快：</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>调用链</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C库printf</td>
+<td>printf → vprintf → vfprintf → _write</td>
+<td>通用实现，支持完整格式规范</td>
+</tr>
+<tr>
+<td>RTT printf</td>
+<td>SEGGER_RTT_printf → _StoreChar</td>
+<td>精简实现，直接写入内存</td>
+</tr>
+</tbody>
+</table>
+<p><strong>优化点</strong>：</p>
+<ul>
+<li>减少函数调用层级</li>
+<li>避免系统调用开销（无需经过操作系统）</li>
+<li>直接写入内存，无阻塞等待</li>
+<li>SEGGER官方：精简版printf不依赖堆，仅使用可配置的栈空间</li>
+</ul>
+<h2 id="45-直接字符串输出最快">4.5 直接字符串输出（最快） </h2>
+<p>对于固定日志，可跳过格式化，直接输出：</p>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token comment">// 需要格式化：约12μs（含格式化开销）</span>
+<span class="token function">SEGGER_RTT_printf</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"val=%d\n"</span><span class="token punctuation">,</span> <span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 直接输出：约2μs（仅内存拷贝）</span>
+<span class="token function">SEGGER_RTT_WriteString</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"Entering function\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><blockquote>
+<p><strong>说明</strong>：直接字符串输出跳过格式化步骤，速度更快。基于SEGGER官方"一行文本&lt;1μs"的描述，短字符串约1-2μs。</p>
+</blockquote>
+<h1 id="五-rtt工作原理">五、RTT工作原理 </h1>
+<h2 id="51-数据流对比">5.1 数据流对比 </h2>
+<p><img src="https://kb.segger.com/images/7/73/J-Link-RTT.png" alt=""></p>
+<div class="mermaid">graph TB
+
+    
+    subgraph "RTT数据流"
+    B1[CPU] --&gt;|printf格式化| B2[内存环形缓冲区]
+    B2 --&gt;|J-Link读取| B3[调试接口SWD]
+    B3 --&gt;|USB| B4[PC RTT Viewer]
+    end
+</div><div class="mermaid">graph TB
+    subgraph "UART数据流"
+    A1[CPU] --&gt;|printf格式化| A2[UART缓冲区]
+    A2 --&gt;|串行移位| A3[UART TX引脚]
+    A3 --&gt;|物理线路| A4[USB转串口]
+    A4 --&gt;|USB| A5[PC串口助手]
+    end
+    
+    
+</div><h2 id="52-时间线对比">5.2 时间线对比 </h2>
+<div class="mermaid">sequenceDiagram
+    participant CPU
+    participant UART
+    participant JLink
+    participant PC
+    
+    Note over CPU,PC: UART方式 (1059μs)
+    CPU-&gt;&gt;CPU: 格式化 (17μs)
+    CPU-&gt;&gt;UART: 写入数据
+    UART-&gt;&gt;UART: 串行移位 (1042μs)
+    UART--&gt;&gt;PC: 逐位传输
+    
+    Note over CPU,PC: RTT方式 (12μs)
+    CPU-&gt;&gt;CPU: 格式化 (10μs)
+    CPU-&gt;&gt;CPU: 内存拷贝 (2μs)
+    JLink-&gt;&gt;CPU: 读取内存 (后台)
+    JLink--&gt;&gt;PC: USB传输 (后台)
+</div><h2 id="53-rtt内部结构">5.3 RTT内部结构 </h2>
+<p><img src="https://kb.segger.com/images/d/d5/RTT_Schematics_Simple_tn.png" alt=""></p>
+<div class="mermaid">graph LR
+    subgraph "目标芯片内存"
+    CB[RTT控制块]
+    UB[上行缓冲区&lt;br/&gt;Target→Host]
+    DB[下行缓冲区&lt;br/&gt;Host→Target]
+    end
+    
+    subgraph "J-Link调试器"
+    JR[内存读取]
+    JU[USB传输]
+    end
+    
+    CB --&gt;|管理| UB
+    CB --&gt;|管理| DB
+    JR --&gt;|读取| UB
+    JR --&gt;|写入| DB
+    JR --&gt; JU
+</div><p><strong>与UART的本质区别</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>UART</th>
+<th>RTT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传输方式</td>
+<td>CPU驱动外设串行发送</td>
+<td>J-Link主动读取内存</td>
+</tr>
+<tr>
+<td>CPU参与</td>
+<td>全程/部分</td>
+<td>仅写入缓冲区</td>
+</tr>
+<tr>
+<td>等待时间</td>
+<td>等待发送完成</td>
+<td>写入即返回</td>
+</tr>
+<tr>
+<td>硬件依赖</td>
+<td>UART外设+USB转串口</td>
+<td>J-Link调试器</td>
+</tr>
+<tr>
+<td>数据流向</td>
+<td>单向（TX→RX）</td>
+<td>双向（上行+下行）</td>
+</tr>
+</tbody>
+</table>
+<h1 id="六-rtt的缺点与局限性">六、RTT的缺点与局限性 </h1>
+<h2 id="61-硬件依赖">6.1 硬件依赖 </h2>
+<table>
+<thead>
+<tr>
+<th>缺点</th>
+<th>说明</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>需要J-Link调试器</strong></td>
+<td>必须购买SEGGER J-Link硬件</td>
+<td>成本增加（正版J-Link $400+）</td>
+</tr>
+<tr>
+<td><strong>调试接口占用</strong></td>
+<td>使用SWD/JTAG调试接口</td>
+<td>无法同时用于其他调试工具</td>
+</tr>
+<tr>
+<td><strong>仅支持特定内核</strong></td>
+<td>Cortex-M/A/R、RISC-V、Renesas RX</td>
+<td>不支持所有MCU平台</td>
+</tr>
+</tbody>
+</table>
+<h2 id="62-使用场景限制">6.2 使用场景限制 </h2>
+<table>
+<thead>
+<tr>
+<th>缺点</th>
+<th>说明</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>仅限开发调试</strong></td>
+<td>生产环境无法使用（无J-Link）</td>
+<td>需要维护两套日志代码</td>
+</tr>
+<tr>
+<td><strong>调试器必须连接</strong></td>
+<td>断开J-Link后无法输出</td>
+<td>不适合独立运行场景</td>
+</tr>
+<tr>
+<td><strong>缓冲区溢出风险</strong></td>
+<td>非阻塞模式可能丢数据</td>
+<td>高速输出时需注意缓冲区大小</td>
+</tr>
+</tbody>
+</table>
+<h2 id="63-与uart对比的局限性">6.3 与UART对比的局限性 </h2>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>UART</th>
+<th>RTT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>硬件成本</td>
+<td>无额外成本（芯片内置）</td>
+<td>需要J-Link ($400+)</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>开发+生产</td>
+<td>仅开发调试</td>
+</tr>
+<tr>
+<td>独立运行</td>
+<td>支持（USB转串口）</td>
+<td>不支持（需调试器）</td>
+</tr>
+<tr>
+<td>多设备调试</td>
+<td>每个设备需串口</td>
+<td>每个设备需J-Link</td>
+</tr>
+<tr>
+<td>接口占用</td>
+<td>专用UART引脚</td>
+<td>调试接口（SWD/JTAG）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="64-成本对比">6.4 成本对比 </h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>UART方案</th>
+<th>RTT方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>硬件成本</td>
+<td>USB转串口 ~$5</td>
+<td>J-Link ~$400+</td>
+</tr>
+<tr>
+<td>引脚占用</td>
+<td>2个（TX/RX）</td>
+<td>2-4个（SWD/JTAG）</td>
+</tr>
+<tr>
+<td>软件成本</td>
+<td>免费</td>
+<td>免费（RTT源码开源）</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>开发+生产</td>
+<td>仅开发</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>建议</strong>：对于个人开发者或小团队，可考虑J-Link EDU版本（~$60），功能相同但仅限教育用途。</p>
+</blockquote>
+<h1 id="七-实际应用建议">七、实际应用建议 </h1>
+<h2 id="71-何时使用rtt">7.1 何时使用RTT </h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐方式</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发调试</td>
+<td><strong>RTT</strong></td>
+<td>速度快100倍，不影响时序</td>
+</tr>
+<tr>
+<td>生产环境</td>
+<td>关闭日志</td>
+<td>避免任何性能影响</td>
+</tr>
+<tr>
+<td>无J-Link</td>
+<td>UART DMA</td>
+<td>CPU占用低，但速度不变</td>
+</tr>
+</tbody>
+</table>
+<h2 id="72-优化建议">7.2 优化建议 </h2>
+<p>1、<strong>关键路径使用直接字符串</strong>：</p>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token function">SEGGER_RTT_WriteString</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"Entering function\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>2、<strong>使用条件编译</strong>：</p>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifdef</span> <span class="token expression">DEBUG</span></span>
+    <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">DBG_LOG</span><span class="token expression"><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token function">SEGGER_RTT_printf</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> __VA_ARGS__<span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">else</span></span>
+    <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">DBG_LOG</span><span class="token expression"><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+</code></pre><h1 id="八-总结">八、总结 </h1>
+<h2 id="81-时间分布对比">8.1 时间分布对比 </h2>
+<blockquote>
+<p><strong>测试条件</strong>：STM32F407 @ 168MHz，UART 115200bps，15字节printf输出</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>UART: [格式化 ~1.5%] → [串行移位发送 ~98.5%]  ← 98%时间在这里
+                              ↑
+                        物理限制，无法加速
+
+DMA:  [格式化 ~3%] → [DMA启动] → [串行移位发送 ~97%]  ← 仍需1ms
+                                    ↑
+                              总线被占用
+
+RTT:  [格式化 ~83%] → [内存拷贝 ~17%]  ← 仅2μs！
+                           ↑
+                     内存操作，极快
+</code></pre><h2 id="82-核心结论">8.2 核心结论 </h2>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>UART/DMA</th>
+<th>RTT</th>
+<th>差异原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>瓶颈位置</strong></td>
+<td>串行传输（~98%）</td>
+<td>格式化（~83%）</td>
+<td>传输机制不同</td>
+</tr>
+<tr>
+<td><strong>传输机制</strong></td>
+<td>串行移位（1bit/时钟）</td>
+<td>内存拷贝（32bit/时钟）</td>
+<td>32倍并行度</td>
+</tr>
+<tr>
+<td><strong>带宽上限</strong></td>
+<td>11.5KB/s (115200bps)</td>
+<td>&gt;2MB/s</td>
+<td><strong>174倍</strong></td>
+</tr>
+<tr>
+<td><strong>物理限制</strong></td>
+<td>波特率×字节数</td>
+<td>内存带宽（可忽略）</td>
+<td>本质差异</td>
+</tr>
+<tr>
+<td><strong>总线影响</strong></td>
+<td>占用外设总线</td>
+<td>不占用</td>
+<td>RTT更优</td>
+</tr>
+<tr>
+<td><strong>硬件成本</strong></td>
+<td>无额外成本</td>
+<td>需要J-Link ($400+)</td>
+<td>RTT缺点</td>
+</tr>
+</tbody>
+</table>
+<h2 id="83-最终结论">8.3 最终结论 </h2>
+<p><strong>RTT比UART快100-174倍，即使使用DMA也无法缩小差距</strong>，原因如下：</p>
+<ol>
+<li>
+<p><strong>核心差异是数据传输机制</strong>：</p>
+<ul>
+<li>UART：串行移位，1bit/时钟，受波特率限制</li>
+<li>RTT：内存拷贝，32bit/时钟，受内存带宽限制</li>
+</ul>
+</li>
+<li>
+<p><strong>printf格式化占比很少</strong>：</p>
+<ul>
+<li>UART：格式化仅占<sub>1.5%-3%，**</sub>98%时间用于传输**</li>
+<li>RTT：格式化占<sub>83%，传输仅占</sub>17%，<strong>瓶颈反转</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>DMA无法解决根本问题</strong>：</p>
+<ul>
+<li>DMA解决的是CPU占用，不是传输速度</li>
+<li>串行移位时间不变（仍需1ms@115200bps）</li>
+<li>DMA还占用总线，可能影响其他外设</li>
+</ul>
+</li>
+<li>
+<p><strong>RTT的物理优势</strong>：</p>
+<ul>
+<li>内存带宽 &gt;&gt; 串口带宽（1000倍+）</li>
+<li>不占用外设总线</li>
+<li>J-Link后台读取，不影响CPU运行</li>
+</ul>
+</li>
+</ol>
+<p><strong>RTT的主要缺点</strong>：</p>
+<ol>
+<li><strong>硬件成本高</strong>：需要购买J-Link调试器</li>
+<li><strong>调试器必须连接</strong>：断开J-Link后无法输出</li>
+<li><strong>平台限制</strong>：仅支持Cortex-M/A/R、RISC-V、Renesas RX</li>
+</ol>
+<p><strong>一句话总结</strong>：RTT快是因为<strong>内存拷贝 vs 串行移位</strong>，这是物理机制的本质差异，不是软件优化能弥补的。但需要权衡<strong>性能提升</strong>与<strong>硬件成本</strong>。</p>
+<h1 id="九-参考资料">九、参考资料 </h1>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Faster printf Debugging (Part 1)</td>
+<td><a href="https://www.digikey.ch/fr/maker/tutorials/2025/faster-printf-debugging-part-1">https://www.digikey.ch/fr/maker/tutorials/2025/faster-printf-debugging-part-1</a></td>
+</tr>
+<tr>
+<td>SEGGER RTT官方</td>
+<td><a href="https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/">https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/</a></td>
+</tr>
+<tr>
+<td>RTT源码</td>
+<td><a href="https://github.com/SEGGERMicro/RTT">https://github.com/SEGGERMicro/RTT</a></td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+      
+      
+    
+    
+    <script type="module">
+// TODO: If ZenUML gets integrated into mermaid in the future,
+//      we can remove the following lines.
+
+
+var MERMAID_CONFIG = ({"startOnLoad":false});
+if (typeof MERMAID_CONFIG !== 'undefined') {
+  MERMAID_CONFIG.startOnLoad = false
+  MERMAID_CONFIG.cloneCssStyles = false
+  MERMAID_CONFIG.theme = "default"
+}
+
+mermaid.initialize(MERMAID_CONFIG || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('div.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+  await mermaid.run({
+    nodes: document.querySelectorAll('div.mermaid')
+  })
+} else {
+  await mermaid.run({
+    nodes: document.querySelectorAll('div.mermaid')
+  })
+}
+</script>
+    
+    
+    
+  
+    </body></html>
