@@ -7,7 +7,7 @@
 - RTT控制块自动搜索在部分芯片上经常失败，需要手动输入地址，非常麻烦
 - 通过分析自动探测原理，发现根本原因是RTT控制块不在J-Link数据库的RAM范围内
 - 测试了4个代表性芯片工程，验证解决方案的有效性
-- 嵌入式科普(52)Segger-RTT-Assistant v1.4.2完美解决自动搜索失败问题
+- 下一篇：嵌入式科普(52)Segger-RTT-Assistant v1.4.2完美解决自动搜索失败问题
 
 # 二、测试环境
 
@@ -662,7 +662,7 @@ SEGGER_RTT_CB _SEGGER_RTT __attribute__ ((section (".noncache_buffer._SEGGER_RTT
 | 使用非缓存SRAM | 避免缓存问题 | 需要了解内存架构 | 有缓存的芯片 |
 
 ---
-- **嵌入式科普(52)Segger-RTT-Assistant v1.4.2，完美支持修改到数据库RAM范围（推荐1）、RTT软件检索map文件（推荐2），介绍上面自动搜索可能失败的问题**
+- **下一篇：嵌入式科普(52)Segger-RTT-Assistant v1.4.2，完美支持修改到数据库RAM范围（推荐1）、RTT软件检索map文件（推荐2），介绍上面自动搜索可能失败的问题**
 ---
 - 参考链接
 
