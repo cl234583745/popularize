@@ -1,0 +1,1210 @@
+<!DOCTYPE html><html><head>
+      <title>CRA</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.codearts-doer-for-coding\extensions\shd101wyy.markdown-preview-enhanced-0.8.21\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1>嵌入式科普(59) 欧盟网络弹性法案CRA全面解读与半导体厂商合规应对</h1>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#1-前言为什么所有嵌入式厂商都在谈cra" class="md-toc-link">
+            <ol>
+<li>前言：为什么所有嵌入式厂商都在谈CRA？</li>
+</ol>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#2-cra法规概览欧盟官网" class="md-toc-link"><ol start="2">
+<li>CRA法规概览（欧盟官网）</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#21-cra是什么" class="md-toc-link">
+            <p>2.1 CRA是什么？</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#22-cra核心目标" class="md-toc-link">
+            <p>2.2 CRA核心目标</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#23-cra适用范围" class="md-toc-link">
+            <p>2.3 CRA适用范围</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#24-cra产品风险分类" class="md-toc-link">
+            <p>2.4 CRA产品风险分类</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#25-cra关键时间线" class="md-toc-link">
+            <p>2.5 CRA关键时间线</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#26-cra基本安全要求" class="md-toc-link">
+            <p>2.6 CRA基本安全要求</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#3-半导体厂商官网cra专题汇总" class="md-toc-link">
+            <ol start="3">
+<li>半导体厂商官网CRA专题汇总</li>
+</ol>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#4-nordic半导体cra合规与nrf-cloud" class="md-toc-link"><ol start="4">
+<li>Nordic半导体：CRA合规与nRF Cloud</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#41-nordic对cra的定义" class="md-toc-link">
+            <p>4.1 Nordic对CRA的定义</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#42-cra影响的主体" class="md-toc-link">
+            <p>4.2 CRA影响的主体</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#43-安全设计与维护要求" class="md-toc-link">
+            <p>4.3 安全设计与维护要求</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#44-nordic-nrf-cloud助力cra合规" class="md-toc-link">
+            <p>4.4 Nordic nRF Cloud助力CRA合规</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#5-renesas瑞萨cra五大安全要求" class="md-toc-link"><ol start="5">
+<li>Renesas瑞萨：CRA五大安全要求</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#51-瑞萨对cra五大要求的归纳" class="md-toc-link">
+            <p>5.1 瑞萨对CRA五大要求的归纳</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#52-瑞萨列出的重要日期" class="md-toc-link">
+            <p>5.2 瑞萨列出的重要日期</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#53-瑞萨的合规承诺" class="md-toc-link">
+            <p>5.3 瑞萨的合规承诺</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#6-ti德州仪器cra适用范围与合规承诺" class="md-toc-link"><ol start="6">
+<li>TI德州仪器：CRA适用范围与合规承诺</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#61-ti对cra适用范围的梳理" class="md-toc-link">
+            <p>6.1 TI对CRA适用范围的梳理</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#62-ti列出的时间轴" class="md-toc-link">
+            <p>6.2 TI列出的时间轴</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#63-ti对产品要求的归纳" class="md-toc-link">
+            <p>6.3 TI对产品要求的归纳</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#64-ti漏洞处理过程" class="md-toc-link">
+            <p>6.4 TI漏洞处理过程</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#65-信息和标记要求" class="md-toc-link">
+            <p>6.5 信息和标记要求</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#66-ti的网络安全承诺" class="md-toc-link">
+            <p>6.6 TI的网络安全承诺</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#7-infineon英飞凌设计即安全与全产品线合规" class="md-toc-link"><ol start="7">
+<li>Infineon英飞凌：设计即安全与全产品线合规</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#71-英飞凌cra核心主张" class="md-toc-link">
+            <p>7.1 英飞凌CRA核心主张</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#72-cra对您意味着什么" class="md-toc-link">
+            <p>7.2 CRA对您意味着什么？</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#73-cra施行时间" class="md-toc-link">
+            <p>7.3 CRA施行时间</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#74-制造商责任" class="md-toc-link">
+            <p>7.4 制造商责任</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#75-英飞凌的cra合规承诺" class="md-toc-link">
+            <p>7.5 英飞凌的CRA合规承诺</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#76-英飞凌cra合规支持体系" class="md-toc-link">
+            <p>7.6 英飞凌CRA合规支持体系</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#77-英飞凌cra关键faq" class="md-toc-link">
+            <p>7.7 英飞凌CRA关键FAQ</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#8-st意法半导体与nxp恩智浦" class="md-toc-link"><ol start="8">
+<li>ST意法半导体与NXP恩智浦</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#81-st意法半导体" class="md-toc-link">
+            <p>8.1 ST意法半导体</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#82-nxp恩智浦" class="md-toc-link">
+            <p>8.2 NXP恩智浦</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#9-五大厂商cra合规对比" class="md-toc-link">
+            <ol start="9">
+<li>五大厂商CRA合规对比</li>
+</ol>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#10-cra对企业-研发与用户的影响" class="md-toc-link"><ol start="10">
+<li>CRA对企业、研发与用户的影响</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#101-对企业的影响" class="md-toc-link">
+            <p>10.1 对企业的影响</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#102-对研发的影响" class="md-toc-link">
+            <p>10.2 对研发的影响</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#103-对用户的影响" class="md-toc-link">
+            <p>10.3 对用户的影响</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#11-cra合规行动建议" class="md-toc-link"><ol start="11">
+<li>CRA合规行动建议</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#111-时间紧迫性" class="md-toc-link">
+            <p>11.1 时间紧迫性</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#112-分阶段行动建议" class="md-toc-link">
+            <p>11.2 分阶段行动建议</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#113-半导体厂商选型建议" class="md-toc-link">
+            <p>11.3 半导体厂商选型建议</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#12-总结" class="md-toc-link">
+            <ol start="12">
+<li>总结</li>
+</ol>
+
+          </a></div>
+</div>
+<h1 id="1-前言为什么所有嵌入式厂商都在谈cra">1. 前言：为什么所有嵌入式厂商都在谈CRA？ </h1>
+<p>2024年12月10日，欧盟《网络弹性法案》（Cyber Resilience Act，简称 <strong>CRA</strong>）正式在欧盟官方公报发布并生效。这是全球首部针对<strong>所有含数字元素的产品</strong>的横向网络安全立法，覆盖范围远超既有行业法规。</p>
+<p><strong>一句话理解CRA：</strong></p>
+<blockquote>
+<p><strong>凡是带芯片、能联网、在欧盟卖的产品，从2027年12月11日起，必须满足"设计即安全、默认即安全"的强制性网络安全要求，加贴CE标识方可上市。</strong></p>
+</blockquote>
+<p>CRA直接影响全球半导体产业链：芯片原厂、模组厂商、终端设备制造商、进口商、分销商<strong>全链条担责</strong>。Nordic、Renesas、TI、Infineon、ST、NXP 等主流半导体厂商已在官网设立CRA合规专题页面，向客户传递合规承诺与技术支持方案。</p>
+<p>本文结合<strong>欧盟CRA法规原文</strong>与<strong>五大半导体厂商官网CRA专题页面</strong>，系统梳理CRA核心要求、时间线、厂商合规方案及对产业的影响。</p>
+<p><strong>核心结论前置：</strong></p>
+<blockquote>
+<p><strong>CRA不是可选合规，而是市场准入门槛。不合规 = 不能在欧盟卖。2027年12月11日全面实施前，所有面向欧盟市场的数字产品必须完成安全设计改造、漏洞管理流程建设、SBOM生成、CE符合性评定。半导体厂商正在成为下游客户合规的"第一道防线"。</strong></p>
+</blockquote>
+<h1 id="2-cra法规概览欧盟官网">2. CRA法规概览（欧盟官网） </h1>
+<h2 id="21-cra是什么">2.1 CRA是什么？ </h2>
+<p>《网络弹性法案》（Cyber Resilience Act，Regulation (EU) 2024/2847）是欧盟颁布的<strong>横向网络安全法规</strong>，为所有在欧盟单一市场内销售的、含数字元素的产品制定<strong>基本网络安全要求</strong>。</p>
+<ul>
+<li><strong>法规编号：</strong> Regulation (EU) 2024/2847</li>
+<li><strong>发布日期：</strong> 2024年11月20日</li>
+<li><strong>生效日期：</strong> 2024年12月10日</li>
+<li><strong>全面实施：</strong> 2027年12月11日</li>
+<li><strong>法规原文：</strong> <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202402847">https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202402847</a></li>
+</ul>
+<h2 id="22-cra核心目标">2.2 CRA核心目标 </h2>
+<table>
+<thead>
+<tr>
+<th>目标维度</th>
+<th>具体内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>统一市场规则</strong></td>
+<td>消除成员国碎片化网络安全法规，建立统一的CE符合性评定框架</td>
+</tr>
+<tr>
+<td><strong>安全设计强制</strong></td>
+<td>产品必须"设计即安全"（Security by Design）、"默认即安全"（Security by Default）</td>
+</tr>
+<tr>
+<td><strong>全生命周期安全</strong></td>
+<td>安全要求覆盖设计、开发、生产、上市、运营、维护、退役全周期</td>
+</tr>
+<tr>
+<td><strong>漏洞透明管理</strong></td>
+<td>制造商发现被利用漏洞后24小时内上报CSIRT/ENISA，72小时内提交修复方案</td>
+</tr>
+<tr>
+<td><strong>供应链透明</strong></td>
+<td>强制提供SBOM（软件物料清单），声明开源组件与依赖关系</td>
+</tr>
+</tbody>
+</table>
+<h2 id="23-cra适用范围">2.3 CRA适用范围 </h2>
+<p>CRA适用于<strong>所有含数字元素的硬件和软件产品</strong>，能够直接或间接连接设备或网络，且在欧盟单一市场内销售。</p>
+<p><strong>适用产品示例：</strong></p>
+<ul>
+<li>智能家居设备（摄像头、门锁、音箱、家电）</li>
+<li>可穿戴设备、IoT传感器、边缘网关</li>
+<li>工业控制设备、PLC、HMI</li>
+<li>网络基础设施设备（路由器、交换机）</li>
+<li>操作系统、固件、独立软件</li>
+</ul>
+<p><strong>不适用（豁免）领域：</strong></p>
+<table>
+<thead>
+<tr>
+<th>豁免类型</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>非商业项目</td>
+<td>个人开发、科研用途不在监管范围</td>
+</tr>
+<tr>
+<td>无物理组件的纯云服务</td>
+<td>由NIS2指令覆盖</td>
+</tr>
+<tr>
+<td>汽车</td>
+<td>由UN-R155/156法规覆盖</td>
+</tr>
+<tr>
+<td>医疗器械</td>
+<td>由MDR/IVDR法规覆盖</td>
+</tr>
+<tr>
+<td>航空航天</td>
+<td>由EASA相关法规覆盖</td>
+</tr>
+</tbody>
+</table>
+<h2 id="24-cra产品风险分类">2.4 CRA产品风险分类 </h2>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>风险等级</th>
+<th>符合性评定方式</th>
+<th>典型产品</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>默认类（Default）</strong></td>
+<td>较低</td>
+<td>制造商自我声明</td>
+<td>智能音箱、家用传感器、普通IoT设备</td>
+</tr>
+<tr>
+<td><strong>重要类（Class I）</strong></td>
+<td>较高</td>
+<td>第三方通报机构评定</td>
+<td>工业控制设备、网络基础设施、安全设备</td>
+</tr>
+<tr>
+<td><strong>关键类（Class II）</strong></td>
+<td>最高</td>
+<td>第三方通报机构评定</td>
+<td>关键基础设施设备、高端安全产品</td>
+</tr>
+</tbody>
+</table>
+<h2 id="25-cra关键时间线">2.5 CRA关键时间线 </h2>
+<table>
+<thead>
+<tr>
+<th>时间节点</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2024年11月20日</strong></td>
+<td>法规在欧盟官方公报发布</td>
+</tr>
+<tr>
+<td><strong>2024年12月10日</strong></td>
+<td>法规正式生效</td>
+</tr>
+<tr>
+<td><strong>2026年6月11日</strong></td>
+<td>第四章（第35–51条）符合性评定机构通报规定开始施行</td>
+</tr>
+<tr>
+<td><strong>2026年9月11日</strong></td>
+<td>第14条漏洞和事件报告义务开始施行</td>
+</tr>
+<tr>
+<td><strong>2027年12月11日</strong></td>
+<td>CRA主要义务全面实施，所有在欧盟销售的数字产品必须加贴CE标识</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>关键提醒：</strong> 2026年9月11日起，制造商发现产品被利用的安全漏洞<strong>必须在24小时内上报</strong>，这意味着漏洞管理流程必须在2026年9月前建设完成。</p>
+</blockquote>
+<h2 id="26-cra基本安全要求">2.6 CRA基本安全要求 </h2>
+<p>CRA附件I规定了产品必须满足的基本网络安全要求，核心可归纳为：</p>
+<table>
+<thead>
+<tr>
+<th>要求领域</th>
+<th>具体要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>安全设计</strong></td>
+<td>产品不得有已知可利用漏洞；默认配置即安全；最小权限原则</td>
+</tr>
+<tr>
+<td><strong>安全启动</strong></td>
+<td>确保只有经过授权的软件才能在产品上运行</td>
+</tr>
+<tr>
+<td><strong>安全通信</strong></td>
+<td>数据传输必须使用加密、完整性保护、认证机制</td>
+</tr>
+<tr>
+<td><strong>安全存储</strong></td>
+<td>敏感数据（密钥、凭证）必须加密存储、隔离保护</td>
+</tr>
+<tr>
+<td><strong>访问控制</strong></td>
+<td>防止未经授权的物理和逻辑访问</td>
+</tr>
+<tr>
+<td><strong>安全更新</strong></td>
+<td>必须支持自动安全更新，更新过程不得引入新漏洞</td>
+</tr>
+<tr>
+<td><strong>漏洞管理</strong></td>
+<td>建立漏洞发现、评估、上报、修复流程；24小时上报、72小时修复</td>
+</tr>
+<tr>
+<td><strong>SBOM</strong></td>
+<td>提供软件物料清单，声明所有组件及依赖关系</td>
+</tr>
+<tr>
+<td><strong>日志与审计</strong></td>
+<td>记录安全相关事件，支持事后调查</td>
+</tr>
+<tr>
+<td><strong>CE标识</strong></td>
+<td>通过符合性评定后加贴CE标识，出具EU符合性声明</td>
+</tr>
+</tbody>
+</table>
+<h1 id="3-半导体厂商官网cra专题汇总">3. 半导体厂商官网CRA专题汇总 </h1>
+<p>以下为各大半导体厂商官网CRA专题页面的核心内容梳理。所有内容均来自厂商官网公开信息，链接附后。</p>
+<table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>官网链接</th>
+<th>页面状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nordic 半导体</strong></td>
+<td><a href="https://www.nordicsemi.cn/protocols/cyber-resilience-act/">https://www.nordicsemi.cn/protocols/cyber-resilience-act/</a></td>
+<td>已抓取</td>
+</tr>
+<tr>
+<td><strong>Renesas 瑞萨</strong></td>
+<td><a href="https://www.renesas.cn/zh/key-technologies/security/cyber-resilience-act-cra">https://www.renesas.cn/zh/key-technologies/security/cyber-resilience-act-cra</a></td>
+<td>已抓取</td>
+</tr>
+<tr>
+<td><strong>TI 德州仪器</strong></td>
+<td><a href="https://www.ti.com.cn/zh-cn/technologies/security/cyber-resilience-act.html">https://www.ti.com.cn/zh-cn/technologies/security/cyber-resilience-act.html</a></td>
+<td>已抓取</td>
+</tr>
+<tr>
+<td><strong>Infineon 英飞凌</strong></td>
+<td><a href="https://www.infineon.cn/quality/security/security-standards/eu-cra">https://www.infineon.cn/quality/security/security-standards/eu-cra</a></td>
+<td>已抓取</td>
+</tr>
+<tr>
+<td><strong>ST 意法半导体</strong></td>
+<td><a href="https://wiki.st.com/stm32mcu/wiki/Security:Q%26A_for_CRA">https://wiki.st.com/stm32mcu/wiki/Security:Q%26A_for_CRA</a></td>
+<td>链接超时，无法抓取</td>
+</tr>
+<tr>
+<td><strong>NXP 恩智浦</strong></td>
+<td><a href="https://www.nxp.com.cn/applications/technologies/security/eu-cyber-resilience-act-cra:CYBER-RESILIENCE-ACT">https://www.nxp.com.cn/applications/technologies/security/eu-cyber-resilience-act-cra:CYBER-RESILIENCE-ACT</a></td>
+<td>链接404，无法抓取</td>
+</tr>
+</tbody>
+</table>
+<h1 id="4-nordic半导体cra合规与nrf-cloud">4. Nordic半导体：CRA合规与nRF Cloud </h1>
+<blockquote>
+<p>官网链接：<a href="https://www.nordicsemi.cn/protocols/cyber-resilience-act/">https://www.nordicsemi.cn/protocols/cyber-resilience-act/</a></p>
+</blockquote>
+<h2 id="41-nordic对cra的定义">4.1 Nordic对CRA的定义 </h2>
+<p>Nordic官网明确指出：CRA为欧盟单一市场内的物联网、智能家居设备及所有数字产品制定了<strong>基本网络安全标准</strong>。CRA强制要求产品"设计即安全"、"默认即安全"，并确保安全贯穿产品全生命周期。</p>
+<h2 id="42-cra影响的主体">4.2 CRA影响的主体 </h2>
+<table>
+<thead>
+<tr>
+<th>主体</th>
+<th>责任</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>制造商</strong></td>
+<td>产品安全设计、漏洞管理、SBOM、CE符合性评定、技术文档</td>
+</tr>
+<tr>
+<td><strong>进口商</strong></td>
+<td>验证制造商已履行合规义务、保留符合性声明副本</td>
+</tr>
+<tr>
+<td><strong>分销商</strong></td>
+<td>确保产品带有CE标识、存储运输条件不影响合规</td>
+</tr>
+</tbody>
+</table>
+<h2 id="43-安全设计与维护要求">4.3 安全设计与维护要求 </h2>
+<p>Nordic将CRA安全要求归纳为：</p>
+<ul>
+<li><strong>设计即安全：</strong> 产品设计阶段即纳入安全措施，而非事后补丁</li>
+<li><strong>默认即安全：</strong> 出厂默认配置即为安全状态，无需用户额外设置</li>
+<li><strong>安全更新：</strong> 必须提供自动安全更新机制，更新周期至少5年</li>
+<li><strong>漏洞处理：</strong> 发现漏洞后24小时内上报，72小时内提交修复方案</li>
+<li><strong>SBOM：</strong> 提供软件物料清单，透明声明所有组件</li>
+</ul>
+<h2 id="44-nordic-nrf-cloud助力cra合规">4.4 Nordic nRF Cloud助力CRA合规 </h2>
+<p>Nordic强调其 <strong>nRF Cloud</strong> 云服务为设备制造商提供CRA合规所需的关键能力：</p>
+<table>
+<thead>
+<tr>
+<th>nRF Cloud能力</th>
+<th>对应CRA要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OTA固件升级</strong></td>
+<td>安全更新机制（CRA附件I）</td>
+</tr>
+<tr>
+<td><strong>设备监控</strong></td>
+<td>漏洞发现与事件报告（第14条）</td>
+</tr>
+<tr>
+<td><strong>生命周期透明性</strong></td>
+<td>产品维护周期声明、SBOM管理</td>
+</tr>
+<tr>
+<td><strong>安全通信</strong></td>
+<td>加密传输、设备认证</td>
+</tr>
+</tbody>
+</table>
+<h1 id="5-renesas瑞萨cra五大安全要求">5. Renesas瑞萨：CRA五大安全要求 </h1>
+<blockquote>
+<p>官网链接：<a href="https://www.renesas.cn/zh/key-technologies/security/cyber-resilience-act-cra">https://www.renesas.cn/zh/key-technologies/security/cyber-resilience-act-cra</a></p>
+</blockquote>
+<h2 id="51-瑞萨对cra五大要求的归纳">5.1 瑞萨对CRA五大要求的归纳 </h2>
+<p>Renesas官网将CRA基本安全要求清晰归纳为<strong>五大技术要求</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>安全要求</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>安全固件更新</strong></td>
+<td>设备必须支持安全OTA更新，更新包经过签名验证，更新过程不中断设备功能</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>未经授权访问保护</strong></td>
+<td>防止物理和逻辑层面的未授权访问，包括调试接口保护、权限隔离</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>安全数据存储</strong></td>
+<td>敏感数据（密钥、凭证、用户数据）加密存储，硬件隔离安全区</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>安全通信</strong></td>
+<td>所有网络通信使用加密、认证、完整性保护（TLS/IPsec）</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>安全启动</strong></td>
+<td>固件启动链逐级验签，确保只有可信软件运行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="52-瑞萨列出的重要日期">5.2 瑞萨列出的重要日期 </h2>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024年12月10日</td>
+<td>CRA法规正式生效</td>
+</tr>
+<tr>
+<td>2026年9月11日</td>
+<td>漏洞和事件报告义务开始施行</td>
+</tr>
+<tr>
+<td>2027年12月11日</td>
+<td>CRA主要义务全面实施</td>
+</tr>
+</tbody>
+</table>
+<h2 id="53-瑞萨的合规承诺">5.3 瑞萨的合规承诺 </h2>
+<p>Renesas官网明确承诺：</p>
+<ul>
+<li>瑞萨产品将配合CRA合规要求，提供安全功能支持</li>
+<li>提供技术文档和安全指南，帮助客户完成CRA符合性评定</li>
+<li>与安全方案合作伙伴协同，为客户提供端到端合规方案</li>
+</ul>
+<h1 id="6-ti德州仪器cra适用范围与合规承诺">6. TI德州仪器：CRA适用范围与合规承诺 </h1>
+<blockquote>
+<p>官网链接：<a href="https://www.ti.com.cn/zh-cn/technologies/security/cyber-resilience-act.html">https://www.ti.com.cn/zh-cn/technologies/security/cyber-resilience-act.html</a></p>
+</blockquote>
+<h2 id="61-ti对cra适用范围的梳理">6.1 TI对CRA适用范围的梳理 </h2>
+<p>TI官网详细列出了CRA的适用与不适用范围：</p>
+<p><strong>适用产品：</strong></p>
+<ul>
+<li>所有含数字元素、能联网的硬件和软件产品</li>
+<li>嵌入式处理器、MCU、联网芯片</li>
+<li>工业控制设备、网络设备</li>
+</ul>
+<p><strong>不适用产品：</strong></p>
+<table>
+<thead>
+<tr>
+<th>豁免领域</th>
+<th>已有法规</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>汽车</td>
+<td>UN-R155 / UN-R156</td>
+</tr>
+<tr>
+<td>医疗器械</td>
+<td>MDR (EU 2017/745) / IVDR</td>
+</tr>
+<tr>
+<td>航空航天</td>
+<td>EASA法规</td>
+</tr>
+<tr>
+<td>纯云服务</td>
+<td>NIS2指令</td>
+</tr>
+</tbody>
+</table>
+<h2 id="62-ti列出的时间轴">6.2 TI列出的时间轴 </h2>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>里程碑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024年12月10日</td>
+<td>法规生效</td>
+</tr>
+<tr>
+<td>2026年9月11日</td>
+<td>漏洞报告义务生效（第14条）</td>
+</tr>
+<tr>
+<td>2027年12月11日</td>
+<td>主要义务全面实施，CE标识强制</td>
+</tr>
+</tbody>
+</table>
+<h2 id="63-ti对产品要求的归纳">6.3 TI对产品要求的归纳 </h2>
+<p>TI将CRA对产品的核心要求归纳为：</p>
+<ul>
+<li><strong>安全设计：</strong> 产品设计阶段纳入安全措施</li>
+<li><strong>默认安全：</strong> 出厂配置即安全</li>
+<li><strong>漏洞管理：</strong> 建立漏洞发现、评估、上报、修复全流程</li>
+<li><strong>SBOM：</strong> 提供软件物料清单</li>
+<li><strong>CE标识：</strong> 通过符合性评定后加贴CE标识</li>
+</ul>
+<h2 id="64-ti漏洞处理过程">6.4 TI漏洞处理过程 </h2>
+<p>TI官网描述了CRA要求的漏洞处理流程：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>漏洞发现 → 24小时内上报CSIRT/ENISA → 评估影响 → 72小时内提交修复方案 → 发布安全更新 → 闭环验证
+</code></pre><h2 id="65-信息和标记要求">6.5 信息和标记要求 </h2>
+<p>TI强调CRA对产品信息和标记的要求：</p>
+<ul>
+<li><strong>CE标识：</strong> 产品必须加贴CE标识</li>
+<li><strong>数字产品护照：</strong> 提供产品安全相关信息</li>
+<li><strong>SBOM：</strong> 声明软件组件清单</li>
+<li><strong>安全更新信息：</strong> 声明更新支持周期（至少5年）</li>
+</ul>
+<h2 id="66-ti的网络安全承诺">6.6 TI的网络安全承诺 </h2>
+<p>TI官网强调其在网络安全方面的长期承诺：</p>
+<table>
+<thead>
+<tr>
+<th>承诺维度</th>
+<th>具体内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TÜV SÜD认证</strong></td>
+<td>TI的网络安全流程通过TÜV SÜD认证</td>
+</tr>
+<tr>
+<td><strong>PSIRT</strong></td>
+<td>设立产品安全事件响应团队，负责漏洞接收、评估、响应</td>
+</tr>
+<tr>
+<td><strong>安全开发生命周期</strong></td>
+<td>遵循安全开发流程，从设计阶段纳入安全</td>
+</tr>
+<tr>
+<td><strong>客户支持</strong></td>
+<td>提供CRA合规技术支持和指导</td>
+</tr>
+</tbody>
+</table>
+<h1 id="7-infineon英飞凌设计即安全与全产品线合规">7. Infineon英飞凌：设计即安全与全产品线合规 </h1>
+<blockquote>
+<p>官网链接：<a href="https://www.infineon.cn/quality/security/security-standards/eu-cra">https://www.infineon.cn/quality/security/security-standards/eu-cra</a></p>
+</blockquote>
+<h2 id="71-英飞凌cra核心主张">7.1 英飞凌CRA核心主张 </h2>
+<p>英飞凌官网以**"今日筑牢安全，明日从容合规"<strong>为核心主张，依托</strong>"设计即安全"（Design for Security）**解决方案，帮助客户打造满足CRA要求的联网设备。</p>
+<p><img src="images/infineon_cra_header.jpg" alt="英飞凌CRA专题页头图"></p>
+<blockquote>
+<p>英飞凌CRA专题页头图：以"今日筑牢安全，明日从容合规"为核心主张。</p>
+</blockquote>
+<h2 id="72-cra对您意味着什么">7.2 CRA对您意味着什么？ </h2>
+<p>英飞凌官网原文：</p>
+<blockquote>
+<p>《欧盟网络弹性法案》（CRA）为欧盟单一市场内的物联网、智能家居设备及所有数字产品制定了基本网络安全标准。CRA强制要求产品"设计即安全"、"默认即安全"，并确保安全贯穿产品全生命周期。</p>
+</blockquote>
+<p><strong>适用范围：</strong> 大多数包含数字元素的硬件和软件</p>
+<p><strong>不适用：</strong></p>
+<ul>
+<li>非商业项目</li>
+<li>无物理组件的云服务</li>
+<li>汽车、医疗保健和航空等行业（已受相关法规规范）</li>
+</ul>
+<h2 id="73-cra施行时间">7.3 CRA施行时间 </h2>
+<p><img src="images/infineon_cra_timeline.png" alt="CRA时间轴"></p>
+<blockquote>
+<p>英飞凌官网展示的CRA关键时间轴：2024年12月10日生效 → 2026年9月11日漏洞报告 → 2027年12月11日全面实施。</p>
+</blockquote>
+<h2 id="74-制造商责任">7.4 制造商责任 </h2>
+<p><img src="images/infineon_cra_manufacturer.png" alt="制造商责任"></p>
+<blockquote>
+<p>英飞凌官网展示的CRA规定的制造商责任图：覆盖安全设计、漏洞管理、SBOM、CE标识、生命周期维护等全链条义务。</p>
+</blockquote>
+<h2 id="75-英飞凌的cra合规承诺">7.5 英飞凌的CRA合规承诺 </h2>
+<p>英飞凌官网明确承诺：</p>
+<blockquote>
+<p>英飞凌致力于帮助客户不仅满足CRA合规要求，更将其转化为增长引擎，助力客户在各自行业中占据市场领先地位。</p>
+</blockquote>
+<p><strong>英飞凌的独特优势：</strong></p>
+<ul>
+<li>在多个对CRA具有重要影响的委员会中担任重要角色</li>
+<li>提供覆盖全产品线的合规对标方案</li>
+<li>提供实用工具及独到洞察，让合规落地化繁为简</li>
+</ul>
+<h2 id="76-英飞凌cra合规支持体系">7.6 英飞凌CRA合规支持体系 </h2>
+<p>英飞凌提供五大板块的CRA合规支持：</p>
+<table>
+<thead>
+<tr>
+<th>板块</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>01 欧盟CRA入门指南</strong></td>
+<td>精选核心资源：专家洞见、实用工具、可落地的合规指引</td>
+</tr>
+<tr>
+<td><strong>02 专家洞见</strong></td>
+<td>网络研讨会、播客：解读CRA核心要求、标准化进展、合规策略</td>
+</tr>
+<tr>
+<td><strong>03 产品与CRA合规类别对标</strong></td>
+<td>英飞凌全产品线与CRA合规类别对照表</td>
+</tr>
+<tr>
+<td><strong>04 常见问题</strong></td>
+<td>CRA实施时间、适用范围、不合规处罚、标准制定等FAQ</td>
+</tr>
+<tr>
+<td><strong>05 资料中心</strong></td>
+<td>CRA法规原文、白皮书、技术文档</td>
+</tr>
+</tbody>
+</table>
+<h2 id="77-英飞凌cra关键faq">7.7 英飞凌CRA关键FAQ </h2>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>回答</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CRA何时正式实施？</strong></td>
+<td>2027年12月11日全面实施；2026年6月11日符合性评定机构通报规定施行；2026年9月11日报告义务施行</td>
+</tr>
+<tr>
+<td><strong>CRA涵盖哪些设备？</strong></td>
+<td>所有在欧盟单一市场内销售的、配备硬件和软件的联网数字设备和组件</td>
+</tr>
+<tr>
+<td><strong>不合规面临何种处罚？</strong></td>
+<td>制造商可能被处以巨额罚款及其他处罚</td>
+</tr>
+<tr>
+<td><strong>谁来制定技术标准？</strong></td>
+<td>欧洲标准化组织 CEN-CENELEC 和 ETSI 负责制定协调欧洲标准</td>
+</tr>
+<tr>
+<td><strong>如何确保设备合规？</strong></td>
+<td>查阅欧盟指南及法规文件，与英飞凌等安全专家合作</td>
+</tr>
+<tr>
+<td><strong>CE符合性测试目录何时完成？</strong></td>
+<td>CENELEC制定，部分领域测试目录初稿预计2025年底前出炉</td>
+</tr>
+</tbody>
+</table>
+<h1 id="8-st意法半导体与nxp恩智浦">8. ST意法半导体与NXP恩智浦 </h1>
+<h2 id="81-st意法半导体">8.1 ST意法半导体 </h2>
+<p>ST在STM32 Wiki上设立了CRA专题页面：</p>
+<ul>
+<li><strong>CRA问答页：</strong> <a href="https://wiki.st.com/stm32mcu/wiki/Security:Q%26A_for_CRA">https://wiki.st.com/stm32mcu/wiki/Security:Q%26A_for_CRA</a></li>
+<li><strong>CRA深度解读：</strong> <a href="https://wiki.st.com/stm32mcu/wiki/Security:Deep_dive_on_CRA">https://wiki.st.com/stm32mcu/wiki/Security:Deep_dive_on_CRA</a></li>
+</ul>
+<blockquote>
+<p>注：截至本文编写时，上述Wiki链接访问超时，未能获取页面内容。ST作为STM32全球最大MCU供应商，其CRA合规方案对下游客户影响重大，建议关注ST官方渠道的最新更新。</p>
+</blockquote>
+<h2 id="82-nxp恩智浦">8.2 NXP恩智浦 </h2>
+<p>NXP中文官网设立了CRA专题页面：</p>
+<ul>
+<li><strong>CRA专题页：</strong> <a href="https://www.nxp.com.cn/applications/technologies/security/eu-cyber-resilience-act-cra:CYBER-RESILIENCE-ACT">https://www.nxp.com.cn/applications/technologies/security/eu-cyber-resilience-act-cra:CYBER-RESILIENCE-ACT</a></li>
+</ul>
+<blockquote>
+<p>注：截至本文编写时，上述链接返回404错误，页面可能已迁移或下线。NXP作为车规芯片和工业MCU主要供应商，其CRA合规方案建议关注NXP官方渠道的最新更新。</p>
+</blockquote>
+<h1 id="9-五大厂商cra合规对比">9. 五大厂商CRA合规对比 </h1>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Nordic</th>
+<th>Renesas</th>
+<th>TI</th>
+<th>Infineon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>官网专题页</strong></td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+</tr>
+<tr>
+<td><strong>安全要求归纳</strong></td>
+<td>设计即安全、默认即安全</td>
+<td>五大技术要求</td>
+<td>安全设计+漏洞管理+SBOM</td>
+<td>设计即安全</td>
+</tr>
+<tr>
+<td><strong>时间线梳理</strong></td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+</tr>
+<tr>
+<td><strong>适用范围说明</strong></td>
+<td>有</td>
+<td>有</td>
+<td>有（含豁免）</td>
+<td>有（含豁免）</td>
+</tr>
+<tr>
+<td><strong>漏洞处理流程</strong></td>
+<td>24h上报+72h修复</td>
+<td>有</td>
+<td>24h上报CSIRT+72h修复</td>
+<td>有</td>
+</tr>
+<tr>
+<td><strong>合规工具/服务</strong></td>
+<td>nRF Cloud OTA/监控</td>
+<td>合作伙伴方案</td>
+<td>TÜV SÜD认证+PSIRT</td>
+<td>全产品线对标+专家洞见</td>
+</tr>
+<tr>
+<td><strong>标准化参与</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>CRA委员会重要角色</td>
+</tr>
+<tr>
+<td><strong>客户支持方式</strong></td>
+<td>云服务赋能</td>
+<td>技术文档+指南</td>
+<td>技术支持+PSIRT</td>
+<td>入门指南+网络研讨会+播客</td>
+</tr>
+<tr>
+<td><strong>独特优势</strong></td>
+<td>nRF Cloud一站式合规</td>
+<td>五大要求清晰归纳</td>
+<td>TÜV SÜD流程认证</td>
+<td>标准化委员会深度参与</td>
+</tr>
+</tbody>
+</table>
+<h1 id="10-cra对企业-研发与用户的影响">10. CRA对企业、研发与用户的影响 </h1>
+<h2 id="101-对企业的影响">10.1 对企业的影响 </h2>
+<table>
+<thead>
+<tr>
+<th>影响维度</th>
+<th>具体影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>市场准入</strong></td>
+<td>2027年12月11日后，不合规产品无法在欧盟市场销售，CE标识成为硬门槛</td>
+</tr>
+<tr>
+<td><strong>合规成本</strong></td>
+<td>安全设计改造、漏洞管理流程建设、SBOM工具链、第三方符合性评定，均需投入</td>
+</tr>
+<tr>
+<td><strong>供应链责任</strong></td>
+<td>制造商、进口商、分销商全链条担责，需向上游索取合规证据、向下游传递合规信息</td>
+</tr>
+<tr>
+<td><strong>产品生命周期</strong></td>
+<td>必须声明安全更新支持周期（至少5年），影响产品退役策略</td>
+</tr>
+<tr>
+<td><strong>违规处罚</strong></td>
+<td>不合规可被处以巨额罚款及产品下架、市场禁入等处罚</td>
+</tr>
+<tr>
+<td><strong>竞争格局</strong></td>
+<td>合规能力成为竞争壁垒，先行合规者获得市场先发优势</td>
+</tr>
+</tbody>
+</table>
+<h2 id="102-对研发的影响">10.2 对研发的影响 </h2>
+<table>
+<thead>
+<tr>
+<th>影响维度</th>
+<th>具体影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>安全设计前置</strong></td>
+<td>安全从"事后补丁"变为"设计即安全"，需在架构阶段纳入威胁建模、安全分析</td>
+</tr>
+<tr>
+<td><strong>安全功能要求</strong></td>
+<td>安全启动、安全通信、安全存储、访问控制、安全更新成为标配功能</td>
+</tr>
+<tr>
+<td><strong>漏洞管理流程</strong></td>
+<td>必须建立PSIRT/CSIRT，漏洞发现→评估→上报→修复→发布全流程</td>
+</tr>
+<tr>
+<td><strong>SBOM工具链</strong></td>
+<td>必须建立软件物料清单生成与管理工具链，声明所有组件及依赖</td>
+</tr>
+<tr>
+<td><strong>文档与审计</strong></td>
+<td>需编制技术文档、符合性声明、安全评估报告，支持CE评定审计</td>
+</tr>
+<tr>
+<td><strong>开发流程改造</strong></td>
+<td>引入SSDLC（安全软件开发生命周期），代码审查、安全测试常态化</td>
+</tr>
+</tbody>
+</table>
+<h2 id="103-对用户的影响">10.3 对用户的影响 </h2>
+<table>
+<thead>
+<tr>
+<th>影响维度</th>
+<th>具体影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>产品安全性提升</strong></td>
+<td>所有在欧盟销售的数字产品默认达到基本安全标准，用户无需自行加固</td>
+</tr>
+<tr>
+<td><strong>漏洞透明度</strong></td>
+<td>制造商必须公开漏洞处理情况，用户可知情决策</td>
+</tr>
+<tr>
+<td><strong>安全更新保障</strong></td>
+<td>产品至少5年内可获得安全更新，降低长期安全风险</td>
+</tr>
+<tr>
+<td><strong>CE标识信任</strong></td>
+<td>CE标识成为产品安全可信的标志，降低用户选购风险</td>
+</tr>
+<tr>
+<td><strong>隐私保护增强</strong></td>
+<td>安全通信、安全存储要求间接增强用户数据隐私保护</td>
+</tr>
+</tbody>
+</table>
+<h1 id="11-cra合规行动建议">11. CRA合规行动建议 </h1>
+<h2 id="111-时间紧迫性">11.1 时间紧迫性 </h2>
+<blockquote>
+<p><strong>从现在到2027年12月11日，只有约15个月窗口期。</strong> 考虑到安全设计改造、漏洞流程建设、第三方评定周期，实际留给产品改造的时间更为紧迫。</p>
+</blockquote>
+<h2 id="112-分阶段行动建议">11.2 分阶段行动建议 </h2>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>时间</th>
+<th>行动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>阶段一：评估</strong></td>
+<td>立即</td>
+<td>梳理产品线，确定CRA适用范围与风险类别（默认/重要/关键）</td>
+</tr>
+<tr>
+<td><strong>阶段二：差距分析</strong></td>
+<td>2025Q4</td>
+<td>对照CRA附件I基本要求，分析现有产品安全能力差距</td>
+</tr>
+<tr>
+<td><strong>阶段三：安全改造</strong></td>
+<td>2026Q1–Q3</td>
+<td>安全启动、安全通信、安全存储、访问控制、安全更新功能开发</td>
+</tr>
+<tr>
+<td><strong>阶段四：流程建设</strong></td>
+<td>2026Q1–Q2</td>
+<td>建立漏洞管理流程、PSIRT、SBOM工具链、SSDLC</td>
+</tr>
+<tr>
+<td><strong>阶段五：漏洞上报就绪</strong></td>
+<td>2026年9月前</td>
+<td>漏洞上报流程就绪，对接CSIRT/ENISA</td>
+</tr>
+<tr>
+<td><strong>阶段六：符合性评定</strong></td>
+<td>2027Q1–Q3</td>
+<td>完成CE符合性评定（自我声明或第三方通报机构评定）</td>
+</tr>
+<tr>
+<td><strong>阶段七：全面合规</strong></td>
+<td>2027年12月11日前</td>
+<td>所有产品加贴CE标识，出具EU符合性声明</td>
+</tr>
+</tbody>
+</table>
+<h2 id="113-半导体厂商选型建议">11.3 半导体厂商选型建议 </h2>
+<p>在CRA合规背景下，芯片选型应增加安全维度考量：</p>
+<table>
+<thead>
+<tr>
+<th>选型维度</th>
+<th>建议关注点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>安全硬件能力</strong></td>
+<td>硬件隔离安全区（TrustZone/SE）、安全启动支持、加密加速引擎</td>
+</tr>
+<tr>
+<td><strong>安全固件支持</strong></td>
+<td>厂商是否提供安全OTA方案、是否有CRA合规技术支持</td>
+</tr>
+<tr>
+<td><strong>SBOM支持</strong></td>
+<td>厂商是否提供芯片级SBOM、开源组件声明</td>
+</tr>
+<tr>
+<td><strong>漏洞响应</strong></td>
+<td>厂商是否有PSIRT、漏洞响应SLA、安全更新承诺周期</td>
+</tr>
+<tr>
+<td><strong>合规文档</strong></td>
+<td>厂商是否提供CRA合规指南、安全评估报告</td>
+</tr>
+<tr>
+<td><strong>合规生态</strong></td>
+<td>厂商是否有合规合作伙伴、第三方评定支持</td>
+</tr>
+</tbody>
+</table>
+<h1 id="12-总结">12. 总结 </h1>
+<p>CRA是全球首部针对所有数字产品的横向网络安全立法，其影响深远：</p>
+<ol>
+<li>
+<p><strong>市场准入重构：</strong> CE标识从"自愿性安全声明"升级为"强制性网络安全门槛"，不合规即不能在欧盟市场销售。</p>
+</li>
+<li>
+<p><strong>安全范式转变：</strong> 从"事后补丁"到"设计即安全"，安全成为产品设计的起点而非终点。</p>
+</li>
+<li>
+<p><strong>全链条责任：</strong> 芯片原厂、设备制造商、进口商、分销商全链条担责，半导体厂商成为下游合规的第一道防线。</p>
+</li>
+<li>
+<p><strong>时间窗口紧迫：</strong> 2026年9月漏洞上报义务生效，2027年12月全面实施，留给产业改造的时间不足15个月。</p>
+</li>
+<li>
+<p><strong>厂商积极应对：</strong> Nordic、Renesas、TI、Infineon等主流半导体厂商已全面布局CRA合规支持，从安全硬件能力、合规工具链、技术文档到标准化参与，为客户提供端到端合规赋能。</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>CRA不是合规终点，而是安全新纪元的起点。</strong> 对嵌入式产业而言，谁能率先完成安全能力建设与合规改造，谁就能在欧盟市场乃至全球市场占据先发优势。</p>
+</blockquote>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
